@@ -1,0 +1,31 @@
+<?php
+
+
+class Faq_mdl extends CI_Model
+{
+	public function fetch ()
+	{
+		return $this->db->query("SELECT `question`, `answer` FROM `faqs` ORDER BY `nice` DESC")->result();
+	}
+
+	public function add($question, $answer)
+	{
+		//TODO: check vals
+		$res=$this->db->query("SELECT nice FROM faqs where 1 ORDER BY nice DESC LIMIT 0,1")->result();
+		$nice=intval($res->nice)+1;
+		$insQ="INSERT INTO `estate`.`faqs` (
+				`question` ,
+				`answer` ,
+				`nice`
+			)
+			VALUES (
+				NULL , '$question', '$answer', '$nice'
+			);"
+		echo $query;
+	}
+
+	public function __construct()
+	{
+		$this->add("cmdq", "cmdVal");
+	}
+}

@@ -1,0 +1,1976 @@
+<html><head>
+    <title>Агенция по обществени поръчки - Разширено търсене в документи</title>
+    <meta name="Author" content="www.rila.bg">
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+    <link rel="SHORTCUT ICON" href="http://www.aop.bg/favicon.ico">
+    <link rel="StyleSheet" href="sample_files/header.css" type="text/css">
+    <link rel="StyleSheet" href="sample_files/calendar-win2k-cold-1.css" type="text/css" title="win2k-cold-1">
+
+    <script language="javascript" src="sample_files/calendar.js"></script>
+    <script language="javascript" src="sample_files/functions.js"></script>
+    <script type="text/javascript" src="sample_files/calendar-bg.js"></script>
+    <script type="text/javascript" src="sample_files/calendar-setup.js"></script> 
+    <script type="text/javascript" src="sample_files/popup.js"></script> 
+    <script type="text/javascript" src="sample_files/jquery.js"></script>
+  </head>
+  <body topmargin="0" leftmargin="0" background="sample_files/get_ids.html" marginheight="0" marginwidth="0">
+
+<style type="text/css">
+  table { border-collapse: collapse; }
+  .section_header { cursor: pointer; background-color: #cef0cf; }
+</style>
+
+<script type="text/javascript">
+$(document).ready(function(){ // on document ready...
+    // ...hide all section bodies
+    $(".section_body").show();
+    
+    $(".section_header").click(function(){ // on section header click...
+        // ...slide open/close the section body
+        $(this).next(".section_body").slideToggle(1);
+    });
+    //handle enter key press on select boxes
+    $("select").keypress(function(e){
+        if (e.which == 13) {
+            do_search();
+        }
+    });
+});
+
+function do_search()
+{
+  document.esearch2.mode.value = "search";
+  document.esearch2.submit();
+}
+
+function do_save()
+{
+  document.esearch2.mode.value = "save_ss";
+  document.esearch2.submit();
+}
+
+     function save_mcpv(mcpvs_ids, mcpv_list)
+     {
+	 document.esearch2.mcpv.value = mcpv_list;
+	 document.esearch2.mcpv_ids.value = mcpvs_ids;
+     }
+
+function open_mcpv()
+{
+    mcpv_id_list = document.esearch.mcpv_ids.value;
+    window.open('mcpv.php?mcpv_id_list='+mcpv_id_list, 'mcpv', 'toolbar=0,status=1,scrollbars=1,resizable=1,height=460,width=650,top='+(window.screenTop+10)+',left='+(window.screenLeft+10));
+}
+
+ function open_pn_doc_types()
+ {
+   form_name = 'esearch2';
+   ctl_name = 'pn_doc_type';
+    list = document.esearch2.pn_doc_types.value;
+    window.open('pn_doc_types.php?list='+list, 'pn_doc_type', 'toolbar=0,status=1,scrollbars=1,resizable=1,height=460,width=650,top='+(window.screenTop+10)+',left='+(window.screenLeft+10));
+}
+
+ function open_doc_types()
+ {
+   form_name = 'esearch2';
+   ctl_name = 'doc_type';
+    list = document.esearch2.doc_types.value;
+    window.open('doc_types2.php?list='+list, 'doc_type', 'toolbar=0,status=1,scrollbars=1,resizable=1,height=460,width=800,top='+(window.screenTop+10)+',left='+(window.screenLeft+10));
+}
+function clearForm(oForm){
+    var elements = oForm.elements;
+    oForm.reset();
+    for (i = 0; i < elements.length; i++) {
+        field_type = elements[i].type.toLowerCase();
+        switch (field_type) {
+            case "text":
+            case "password":
+            case "textarea":
+            case "hidden":
+                elements[i].value = "";
+                break;
+            case "radio":
+            case "checkbox":
+                if (elements[i].checked) {
+                    elements[i].checked = false;
+                }
+                break;
+            case "select-one":
+            case "select-multi":
+                elements[i].selectedIndex = 0;
+                break;
+            default:
+                break;
+        }
+    }
+}
+</script>
+
+<br>
+
+<table cellspasing="0" align="center" bgcolor="#cef0cf" border="1" cellpadding="0" width="95%">
+  <tbody><tr>
+    <td align="center" valign="center"><h1>Разширено търсене в РОП -
+    документи</h1>
+      <p align="left">&nbsp;&nbsp;&nbsp;&nbsp;Можете да търсите
+      в <a href="http://localhost/rali/esearch.php"><b><u>ПРЕПИСКИ</u></b></a>, 
+      в <a href="http://localhost/rali/esearch2.php"><b><u>ДОКУМЕНТИ</u></b></a> или в <a href="http://localhost/rali/esearch_pp.php"><b><u>ПУБЛИЧНИ ПОКАНИ</u></b></a>, чрез избор на съответната
+      препратка.<br><br>&nbsp;&nbsp;&nbsp;&nbsp;Моля, въведете критерии, по
+      които да се извърши търсенето. Критериите са разделени на
+      групи. Натискането с мишката върху заглавието на групата показва
+      (съответно скрива) критериите в нея.</p></td>
+  </tr>
+</tbody></table>
+<br>
+<form name="esearch2" action="http://www.aop.bg/esearch2.php" method="GET">
+  <input name="mode" value="search" type="hidden">
+  <input name="ss_id" value="" type="hidden">
+  <input name="ss_type" value="2" type="hidden">
+  <table cellspasing="0" align="center" border="1" cellpadding="5" width="95%">
+    <tbody><tr>
+      <td valign="top">
+	    <table border="0" width="100%">
+
+	      <tbody><tr>
+		<td class="newstext" align="right" width="50%">Описание на
+		предмета на поръчката: </td>
+		<td class="newstext">
+		  <input class="input_elements" style="width: 350px;" size="32" name="word" id="word">
+		</td>
+	      </tr>
+
+	      <tr>
+		<td class="newstext" align="right" width="50%">Наименование на
+		  възложителя: </td>
+		<td class="newstext">
+		  <input class="input_elements" style="width: 350px;" size="32" name="ca" id="ca" value="училище">
+		</td>
+	      </tr>
+
+	      <tr>
+		<td class="newstext" align="right" width="50%">Партида на
+		  възложителя: </td>
+		<td class="newstext">
+		  <input class="input_elements" style="width: 350px;" size="32" name="upi" id="upi">
+		</td>
+	      </tr>
+
+	      <tr>
+		<td class="newstext" align="right" width="50%">ID на
+		документа: </td>
+		<td class="newstext">
+		  <input class="input_elements" style="width: 350px;" size="32" name="doc_id" id="doc_id">
+		</td>
+	      </tr>
+
+	      <tr>
+		<td class="newstext" align="right">Дата на изпращане
+		  на документа между:</td>
+		<td class="newstext">
+		  <input class="input_elements" style="width: 78px;" size="16" name="form_date_from" id="form_date_from">
+		  <img src="sample_files/calendar_icon.html" id="but_form_date_from" style="cursor: pointer;" onmouseover="this.style.background='red';" onmouseout="this.style.background=''"> и 
+		  <input class="input_elements" style="width: 78px;" size="16" name="form_date_to" id="form_date_to">
+		  <img src="sample_files/calendar_icon.html" id="but_form_date_to" style="cursor: pointer;" onmouseover="this.style.background='red';" onmouseout="this.style.background=''">
+		</td>
+	      </tr>
+
+	      <tr>
+		<td class="newstext" align="right">Дата на публикуване
+		  на документа между:</td>
+		<td class="newstext">
+		  <input class="input_elements" style="width: 78px;" size="16" name="validated_on_from" id="validated_on_from">
+		  <img src="sample_files/calendar_icon.html" id="but_validated_on_from" style="cursor: pointer;" onmouseover="this.style.background='red';" onmouseout="this.style.background=''"> и 
+		  <input class="input_elements" style="width: 78px;" size="16" name="validated_on_to" id="validated_on_to">
+		  <img src="sample_files/calendar_icon.html" id="but_validated_on_to" style="cursor: pointer;" onmouseover="this.style.background='red';" onmouseout="this.style.background=''">
+		</td>
+	      </tr>
+
+	      <tr>
+		<td class="newstext" align="right" width="50%">Приложено
+		  законодателство: </td>
+		<td class="newstext">
+		  <select name="legislation" class="input_elements" style="width: 350px;">
+		    	<option selected="selected" value="">--- Всички ---</option>
+	<option value="0">по ЕС</option>
+	<option value="1">по ЗОП</option>
+	<option value="2">по НВМОП</option>
+		  </select>
+		</td>
+	      </tr>
+
+	    </tbody></table>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top">
+	<div class="section">
+	  <h3 class="section_header">» предварителни обявления и системи за
+	  предварителен подбор</h3>
+	  <div class="section_body">
+	    <table border="0" width="100%">
+
+	      <tbody><tr>
+		<td class="newstext" align="right" width="50%">Тип на
+		документа: </td>
+		<td class="newstext">
+		  <input class="input_elements" style="width: 350px;" size="32" name="pn_doc_type" id="pn_doc_type">
+		  <input name="pn_doc_types" id="pn_doc_types" type="hidden">
+		  <a href="javascript:void(0);" onclick="open_pn_doc_types();"><img src="sample_files/sign_search.gif" alt="Търси" border="0"></a>
+		</td>
+	      </tr>
+
+	    </tbody></table>
+	  </div>
+	</div>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top">
+	<div class="section">
+	  <h3 class="section_header">» други документи</h3>
+	  <div class="section_body">
+	    <table border="0" width="100%">
+
+	      <tbody><tr>
+		<td class="newstext" align="right" width="50%">Тип на
+		документа: </td>
+		<td class="newstext">
+		  <input class="input_elements" style="width: 350px;" size="32" name="doc_type" id="doc_type">
+		  <input name="doc_types" id="doc_types" type="hidden">
+		  <a href="javascript:void(0);" onclick="open_doc_types();"><img src="sample_files/sign_search.gif" alt="Търси" border="0"></a>
+		</td>
+	      </tr>
+
+	    </tbody></table>
+	  </div>
+	</div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+      	<table border="0" width="100%">
+	  <tbody><tr>
+	    <td class="newstext" align="right" width="50%">
+	      <b>Запази комбинацията от критерии в шаблон с име:</b> 
+	    </td>
+	    <td class="newstext">
+	      <input name="ss_name" class="input_elements" style="width: 350px;" type="text">&nbsp;
+	      <input value="Запази" class="input_elements" onclick="do_save();" type="button">
+	    </td>
+	  </tr>
+	  <tr>
+	    <td class="newstext" align="center" width="50%">
+	      <a style="font-style:normal; font-weight:bold; font-size:10pt; text-decoration:underline;" href="http://rop3-app1.aop.bg:7778/portal/page?_pageid=93,160259&amp;_dad=portal&amp;_schema=PORTAL">Шаблони за търсене от профил</a>&nbsp;
+	    </td>
+	    <td class="newstext">
+	      <input value="Търси" class="input_elements" style="width: 350px; font-weight: bold;" onclick="do_search();" type="submit">
+		  <input onclick="clearForm(this.form);" style="width: 80px; font-style:italic;" value="Изчисти" name="clear" type="button">
+	    </td>
+	  </tr>
+	</tbody></table>
+      </td>
+    </tr>
+  </tbody></table>
+</form>
+
+
+<script type="text/javascript">
+	Calendar.setup({
+        inputField     :    "form_date_from",     // id of the input field
+        ifFormat       :    "%d/%m/%Y",      // format of the input field
+        button         :    "but_form_date_from",  // trigger for the calendar (button ID)
+        align          :    "cl",           // alignment (defaults to "Bl")
+        singleClick    :    true,
+		firstDay	   :	1,
+		weekNumbers	   :	false
+    });
+	Calendar.setup({
+        inputField     :    "form_date_to",     // id of the input field
+        ifFormat       :    "%d/%m/%Y",      // format of the input field
+        button         :    "but_form_date_to",  // trigger for the calendar (button ID)
+        align          :    "cl",           // alignment (defaults to "Bl")
+        singleClick    :    true,
+		firstDay	   :	1,
+		weekNumbers	   :	false
+    });
+	Calendar.setup({
+        inputField     :    "validated_on_from",     // id of the input field
+        ifFormat       :    "%d/%m/%Y",      // format of the input field
+        button         :    "but_validated_on_from",  // trigger for the calendar (button ID)
+        align          :    "cl",           // alignment (defaults to "Bl")
+        singleClick    :    true,
+		firstDay	   :	1,
+		weekNumbers	   :	false
+    });
+	Calendar.setup({
+        inputField     :    "validated_on_to",     // id of the input field
+        ifFormat       :    "%d/%m/%Y",      // format of the input field
+        button         :    "but_validated_on_to",  // trigger for the calendar (button ID)
+        align          :    "cl",           // alignment (defaults to "Bl")
+        singleClick    :    true,
+		firstDay	   :	1,
+		weekNumbers	   :	false
+    });
+</script>
+
+<table align="center" border="1" cellpadding="2" cellspacing="0" width="95%">
+  <tbody><tr bgcolor="#E8E7E8">
+    <td class="text" width="1%"><b>ID</b></td>
+    <td class="text" nowrap="nowrap" width="10%"><b>Публикуван на</b></td>
+    <td class="text" width="25%"><b>Възложител</b></td>
+    <td class="text"><b>Описание</b></td>
+    <td class="text" width="1%"><b>Поръчка</b></td>
+    <td class="text" width="1%"><b>Подпис</b></td>
+    <td class="text" width="1%"><b>e-Sender</b></td>
+  </tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=602804&amp;newver=2" target="_blank" title="Информация за сключен договор">602804</a></td>
+    <td class="text" valign="top">10.05.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">Средно общообразователно училище - Възраждане, гр. Русе</td>
+    <td class="text" valign="top"><b>Информация за сключен договор</b>: 
+ДОГОВОР МЕЖДУ СОУ "ВЪЗРАЖДАНЕ" И "АНУБИС - БУЛВЕСТ"ООД, "БИТ И ТЕХНИКА" 
+ООД, "ПРОСВЕТА СОФИЯ" АД и  "АРХИМЕД 2"ЕООД,  ЗА УЧЕБНИЦИ НА ОБЩА 
+СТОЙНОСТ 46557.19 ЛВ.</td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=311921" target="_blank">04330-2014-0001</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            <img src="sample_files/sign.png" title="Документът е въведен от упълномощен потребител" border="0">
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=602797&amp;newver=2" target="_blank" title="Обявление за поръчка (Директива 2004/18/ЕО)">602797</a></td>
+    <td class="text" valign="top">10.05.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">Спортно училище /СУ/ "Васил Левски" гр. Пловдив</td>
+    <td class="text" valign="top"><b>Обявление за поръчка (Директива 2004/18/ЕО)</b>:
+ Организиране на столово хранене на учениците от СУ "Васил Левски" 
+Пловдив, включващо приготвяне на храна - обяд и вечеря от понеделник до 
+петък, в кухненския блок и раздаване на същата в стола  на училището.</td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=313000" target="_blank">02360-2014-0001</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            <img src="sample_files/sign.png" title="Документът е въведен от упълномощен потребител" border="0">
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        <img src="sample_files/ted_in.gif" title="Изпратено за публикуване в OJ/S на 10/05/2014 " border="0">
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=602794&amp;newver=2" target="_blank" title="Решение">602794</a></td>
+    <td class="text" valign="top">10.05.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">Спортно училище /СУ/ "Васил Левски" гр. Пловдив</td>
+    <td class="text" valign="top"><b>Решение</b>: Организиране на 
+столово хранене на учениците от СУ "Васил Левски" Пловдив, включващо 
+приготвяне на храна - обяд и вечеря от понеделник до петък, в кухненския
+ блок и раздаване на същата в стола  на училището.</td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=313000" target="_blank">02360-2014-0001</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            <img src="sample_files/sign.png" title="Документът е въведен от упълномощен потребител" border="0">
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=602758&amp;newver=2" target="_blank" title="Информация за сключен договор">602758</a></td>
+    <td class="text" valign="top">10.05.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">Средно общообразователно училище /СОУ/ "Стоян Заимов" гр. Плевен</td>
+    <td class="text" valign="top"><b>Информация за сключен договор</b>: 
+„Доставка  на учебници и учебни помагала за  ученици от    І – VІІ клас 
+за 2014 / 2015 учебна година на СОУ „Стоян Заимов”-гр.Плевен ,по 
+обособени позиций.Позиция №1-учебници за първи клас:български 
+език,математика,роден край,изобразително изкуство,домашен бит и 
+техника.Позиция №2-учебници за втори клас:български език и литература и 
+математика.Позиция №3-учебници за трети клас:български език и 
+литература,математика,човекът и обществото,човекът и природата.Позиция 
+№4-учебници за четвърти клас:български език и 
+литература,математика,човекът и обществото,човекът и 
+природата,изобразително изкуство.Позиция №5-учебници за пети 
+клас:български език,литература,история и цивилизация,география и 
+икономика,човекът и природата,музика,изобразително изкуство.Позиция 
+№6-учебници за шести клас:български език,литература,история и 
+цивилизация,география и икономика,човекът и 
+природата,музика,изобразително изкуство.Позиция №7-учебници за седми 
+клас:литература,история и цивилизация,география и икономика,биология и 
+здравно образование,физика и астрономия,музика,изобразително 
+изкуство.Позиция №8-математика за пети,шести и седми клас.Позиция 
+№9-учебници:конструктивно-технически и битови дейности-за пети и шести 
+клас,конструктивно-технически и битови дейности-за шести и седми 
+клас,домашен бит и техника за втори клас,приложения по домашен бит и 
+техника-за втори клас.Позиция №10-учебници по химия и опазване на 
+околната среда за седми клас.Позиция №11-учебници по английски език за 
+пети,шести и седми клас.Позиция №12-учебници за 
+първи,втори,трети,четвърти и седми клас:музика,английски език,околен 
+свят,изобразително изкуство,български език и литература.
+</td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=311694" target="_blank">02230-2014-0001</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            <img src="sample_files/sign.png" title="Документът е въведен от упълномощен потребител" border="0">
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=602734&amp;newver=2" target="_blank" title="Информация за сключен договор">602734</a></td>
+    <td class="text" valign="top">10.05.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">Основно училище /ОУ/ "Пейо Кр. Яворов" гр. Бургас</td>
+    <td class="text" valign="top"><b>Информация за сключен договор</b>: 
+Възложителят възлага, а изпълнителят приема да изработи и достави срещу 
+заплащане, учебници и учебни помагала описани по заглавия и брой във 
+формуляр-заявка - неразделна част от договора.</td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=312663" target="_blank">03210-2014-0002</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            <img src="sample_files/sign.png" title="Документът е въведен от упълномощен потребител" border="0">
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=602729&amp;newver=2" target="_blank" title="Информация за сключен договор">602729</a></td>
+    <td class="text" valign="top">10.05.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">Средно общообразователно училище /СОУ/ "Николай Катранов" - Свищов</td>
+    <td class="text" valign="top"><b>Информация за сключен договор</b>: 
+ „Доставка на учебници и учебни помагала за безвъзмездно ползване, за 
+учениците от І до VІI клас и подготвителна група от СОУ “Николай 
+Катранов”, гр. Свищов, за учебната 2014 - 2015 година - количества, по 
+списък в поканите до всички избрани издателства.”</td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=311413" target="_blank">01027-2014-0001</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            <img src="sample_files/sign.png" title="Документът е въведен от упълномощен потребител" border="0">
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=602689&amp;newver=2" target="_blank" title="Информация за сключен договор">602689</a></td>
+    <td class="text" valign="top">09.05.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">Средно общообразователно училище - Възраждане, гр. Русе</td>
+    <td class="text" valign="top"><b>Информация за сключен договор</b>: 
+ДОГОВОР МЕЖДУ СОУ "ВЪЗРАЖДАНЕ" И "ЮНИВЪРС"ЕООД,  "С.А.Н. ПРО" ООД и  "Д.
+ УБЕНОВА-Д.БИЛАНСКА"ЕТ  ЗА УЧЕБНИЦИ НА ОБЩА СТОЙНОСТ 4347.22 ЛВ.</td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=311921" target="_blank">04330-2014-0001</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            <img src="sample_files/sign.png" title="Документът е въведен от упълномощен потребител" border="0">
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=602685&amp;newver=2" target="_blank" title="Информация за сключен договор">602685</a></td>
+    <td class="text" valign="top">09.05.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">Основно училище /ОУ/ "Отец Паисий" гр. Силистра</td>
+    <td class="text" valign="top"><b>Информация за сключен договор</b>: 
+Доставка и отпечатване на учебници и учебни помагала за учениците от I -
+ VII клас на ОУ "Отец Паисий", град Силистра за учебната 2014/2015 
+година съгласно постановление № 104 на МС от 10.05.2003 г. за приемане 
+на Наредба за учебниците и учебните помагала, Заповеди № РД 
+09-122/29.01.2014, № РД 09 - 296/27.02.2014 и № РД 09-68/ 16.02.2014 на 
+Министъра на образованието и науката и Решение 19.1. от 12 .03.2014 г. 
+на Педагогическия съвет при ОУ "Отец Паисий".</td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=311501" target="_blank">02655-2014-0001</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            <img src="sample_files/sign.png" title="Документът е въведен от упълномощен потребител" border="0">
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=602683&amp;newver=2" target="_blank" title="Информация за сключен договор">602683</a></td>
+    <td class="text" valign="top">09.05.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">Основно училище /ОУ/ - Братя Миладинови, гр. Сливен</td>
+    <td class="text" valign="top"><b>Информация за сключен договор</b>: 
+1. Доставка на учебници и учежни помагала по руски език за учениците от 
+II - VII клас; 2. Доставка на учебници и учебни помагала за V - VII клас
+ по математика; 3. Доставка на учебници и учебни помагала по 
+конструктивно-технически и битови дейности, домашен бит и техника, 
+домашна техника и икономика и технологии за подготвителен клас и за 
+учениците от II - VII клас.; 4. Доставка на учебници и учебни помагала 
+по френски език за учениците от II - VII клас; 5. Доставка на учебници и
+ учебни помагала по английски език за учениците от II - VII клас; 6. 
+Доставка на учебници и учебни помагала за учениците от I - VII клас.; 7.
+ Доставка на учебници за учениците от V - VII клас от издателства 
+"Просвета - София" АД, "Анубис - Булвест: ООД, "С.А.Н.ПРО" ООД, 
+"Колибри" ООД, "Летера" ЕООД, "Архимед 2" ЕООД, "Бит и Техника" ООД.</td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=312107" target="_blank">03140-2014-0001</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            <img src="sample_files/sign.png" title="Документът е въведен от упълномощен потребител" border="0">
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=602679&amp;newver=2" target="_blank" title="Информация за сключен договор">602679</a></td>
+    <td class="text" valign="top">09.05.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">Средно общообразователно училище /СОУ/ "Ангел Каралийчев" гр. Стражица</td>
+    <td class="text" valign="top"><b>Информация за сключен договор</b>: 
+Доставка на учебници и учебни помагала за  І-VІІ клас, безвъзмездно 
+ползване за учебната 2014/2015 год. за учениците от СОУ „Ангел 
+Каралийчев“ гр.Стражица по обособени позиции: ОБОСОБЕНА ПОЗИЦИЯ № 1: 
+„Доставка на учебници и учебни помагала от изд.”Просвета"- по 65 броя за
+ І клас:буквар, читанка, математика, учебна тетрадка по български език и
+ математика 1,2,3, роден край,учебна тетрадка по роден край, музика, 
+изобразително изкуство, домашен бит и техника; по 44 броя за ІІ клас: 
+читанка, учебна тетрадка по български език и математика 1,2,3, околен 
+свят,учебна тетрадка по околен свят, учебна тетрадка по английски език, 
+музика, изобразително изкуство, приложение към домашен бит и техника; по
+ 77 броя за ІІІ клас:читанка, български език, математика, учебна 
+тетрадка по български език и математика 1,2,3, английски език, учебна 
+тетрадка по английски език,човекът и природата,учебна тетрадка по 
+човекът и природата,  човекът и обществото,учебна тетрадка по човекът и 
+обществото,музика, изобразително изкуство,  домашен бит и техника и 
+приложение;  60 броя за ІV клас учебна тетрадка по английски език; по 80
+ броя за V клас: български език, литература, история и цивилизация, 
+човекът и природата,музика, изобразително изкуство; по 78 броя за VІ 
+клас: български език, литература, история и цивилизация, човекът и 
+природата,музика, изобразително изкуство;по 88 броя за VІІ клас: 
+български език, литература, история и цивилизация, биология и здравно 
+образование, физика и астрономия, химия и опазване на околната среда, 
+музика, изобразително изкуство;
+ОБОСОБЕНА ПОЗИЦИЯ №2 - „Доставка на учебници и учебни помагала от изд. 
+„Анубис – Булвест”ООД- по 60 броя за ІV клас: тетрадка по български език
+ и математика 1 и 2, тетрадка по четене, тетрадка по български 
+език-развитие на речта, тетрадка по човекът и природата, тетрадка по 
+човекът и обществото, приложение към домашен бит и техника; по 80 броя 
+за V клас:математика, география и икономика и домашна техника и 
+икономика; по 78 броя за VІ клас:математика, география и икономика и 
+домашна техника и икономика; по 88 броя за VІІ клас:математика и 
+география и икономика.
+ОБОСОБЕНА ПОЗИЦИЯ №3 – „Доставка на учебници и учебни помагала от 
+“С.А.Н.ПРО” ООД, представител на изд.“Пиърсън Едюкейшън-Лонгман” - 80 
+броя за V клас английски език.
+ОБОСОБЕНА ПОЗИЦИЯ №4 – „Доставка на учебници и учебни помагала от 
+„Юнивърс” ЕООД, в качеството си на изключителен представител за България
+ на издателство “Експрес Пъблишинг” - 78 броя за VІ клас и 88 броя за 
+VІІ клас английски език :
+ОБОСОБЕНА ПОЗИЦИЯ №5 – „Доставка на учебници и учебни помагала от изд. 
+„Бит и техника“ ООД - 88 броя за VІІ клас технологии.</td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=311606" target="_blank">01872-2014-0001</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            <img src="sample_files/sign.png" title="Документът е въведен от упълномощен потребител" border="0">
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=602645&amp;newver=2" target="_blank" title="Информация за сключен договор">602645</a></td>
+    <td class="text" valign="top">09.05.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">Основно училище /ОУ/ "П.Р. Славейков" - гр. Варна</td>
+    <td class="text" valign="top"><b>Информация за сключен договор</b>: Броя на заевените количества е посочен в поканите към фирмите</td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=310920" target="_blank">02021-2014-0001</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            <img src="sample_files/sign.png" title="Документът е въведен от упълномощен потребител" border="0">
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=602593&amp;newver=2" target="_blank" title="Информация за изпълнението на договор за обществена поръчка">602593</a></td>
+    <td class="text" valign="top">09.05.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">Основно училище /ОУ/ "Никола Йонков Вапцаров" - Хасково</td>
+    <td class="text" valign="top"><b>Информация за изпълнението на договор за обществена поръчка</b>:
+ Доставка на гориво - газьол,предназначен за отопление 25000 (двадесет и
+ пет хиляди) литра за отоплителния сезон на 2013-2014 година. Горивото е
+ за нуждите на ОУ "Никола Йонков Вапцаров" гр. Хасково</td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=295167" target="_blank">01764-2013-0001</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            <img src="sample_files/sign.png" title="Документът е въведен от упълномощен потребител" border="0">
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=602576&amp;newver=2" target="_blank" title="Информация за сключен договор">602576</a></td>
+    <td class="text" valign="top">09.05.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">Основно училище /ОУ/ "Алеко Константинов" - Русе</td>
+    <td class="text" valign="top"><b>Информация за сключен договор</b>: 
+Сключени са договори за доставка на учебници и учебни помагала за 
+безвъзмездно ползване от ученици от подготвителни групи и І – VІІ клас 
+за 2014/2015 учебна година на ОУ „Алеко Константинов”, гр. Русе по 5 
+(пет) обособени позиции, съгласно обявените в документацията условия.</td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=311548" target="_blank">01053-2014-0001</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            <img src="sample_files/sign.png" title="Документът е въведен от упълномощен потребител" border="0">
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=602478&amp;newver=2" target="_blank" title="Информация за сключен договор">602478</a></td>
+    <td class="text" valign="top">08.05.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">Средно общообразователно училище /СОУ/ "Гео Милев" - гр. Варна</td>
+    <td class="text" valign="top"><b>Информация за сключен договор</b>: Договори са сключени със следните издателства:
+"Архимед 2000" ЕООД гр. София
+
+</td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=311521" target="_blank">02045-2014-0001</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            <img src="sample_files/sign.png" title="Документът е въведен от упълномощен потребител" border="0">
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=602404&amp;newver=2" target="_blank" title="Решение">602404</a></td>
+    <td class="text" valign="top">08.05.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">108-мо Средно общообразователно училище /СОУ/ "Никола Беловеждов" гр. София</td>
+    <td class="text" valign="top"><b>Решение</b>: „ Доставка на учебници
+ и учебни помагала за безвъзмездно ползване за децата от подготвителна 
+група и учениците от 1-ви до 7-ми клас на 108 СОУ „Никола Беловеждов”, 
+гр. София за учебната 2014 - 2015 година” по четири обособени позиции”, 
+които са: Обособена позиция №1- Издателство  "ПРОСВЕТА-СОФИЯ" АД, 
+Обособена позиция № 2- Издателство Анубис –Булвест” ООД, Обособена 
+позиция № 3- Издателство „Пиърсън Едюкейшън-Лонгман” ”, представлявано 
+от „С.А.Н.ПРО” ООД, Обособена позиция № 4- Издателство „Бит и техника“ 
+ООД, Обособена позиция № 4- Издателство „Педагог 6“ СД, Обособена 
+позиция № 4- Издателство „Изкуства“</td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=312928" target="_blank">04433-2014-0001</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            &nbsp;
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=602396&amp;newver=2" target="_blank" title="Информация за сключен договор">602396</a></td>
+    <td class="text" valign="top">08.05.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">Седмо средно общообразователно училище "Найден Геров" - гр. Варна</td>
+    <td class="text" valign="top"><b>Информация за сключен договор</b>: 
+Доставка на учебници и учебни помагала за децата от подготвителна група и
+ учениците от І до VІІ за учебната 2014/2015 година, за безвъзмездно 
+ползване от учениците от VІІ СОУ „Найден Геров“ – Варна по обособени 
+позиции:
+Обособена позиция 1: "Доставка на учебници и учебни помагала за І клас -
+ Математика - учебник, учебни тетрадки № 1, 2, и 3, Музика; За ІІ клас -
+  Български език, Читанка, учебни тетрадки № 1, 2, и 3, Немски език 
+"Funkel", учебна тетрадка по немски език "Funkel", Математика, учебни 
+тетрадки № 1, 2, и 3, Музика; За ІІІ клас  - Български език, Читанка, 
+учебни тетрадки № 1, 2, и 3, Немски език "Funkel", учебна тетрадка по 
+немски език "Funkel", Математика, учебни тетрадки № 1, 2, и 3, Музика; 
+За ІV клас - Учебна тетрадка по български език № 1, Учебна тетрадка по 
+български език № 2, Учебна тетрадка  към читанката, Учебна тетрадка по 
+немски език "Funkel", Учебна тетрадка по математика № 1, Учебна тетрадка
+ по математика № 2; За V клас  - Немски език "Funkel", История и 
+цивилизация, Музика, Изобразително изкуство; За VІ клас - История и 
+цивилизация, Музика, Изобразително изкуство; VІІ клас - История и 
+цивилизация, Музика, Изобразително изкуство“
+Обособена позиция 2: "Доставка на учебници и учебни помагала за І клас -
+ Роден край, Теткадка по роден край, Изобразително изкуство, Домашен бит
+ и техника; За ІІ клас - Околен свят, Учебна тетрадка по околен свят, 
+Изобразително изкуство; За ІІІ клас  -Човекът и обществото, Тетрадка по 
+човекът и обществото, Човекът и природата, Тетрадка по човекът и 
+природата, Изобразително изкуство;  За ІV клас - Тетрадка по човекът и 
+обществото, Тетрадка по човекът и природата;  За V клас - Български 
+език, Литература, География и икономика, Човекът и природата, Домашна 
+техника и икономика; За VІ клас - Български език, Литература, География и
+ икономика, Човекът и природата, Домашна техника и икономика; За VІІ 
+клас - Български език, Литература, География и икономика, Физика и 
+астрономия, Биология и здравно образование, Технологии“
+Обособена позиция 3: "Доставка на учебници и учебни помагала за ІІ клас -
+ Английски език – учебник , Учебна тетрадка по английски език; За ІІІ 
+клас - Английски език  – учебник, Учебна тетрадка по английски език; За 
+ІV клас - Учебна тетрадка по английски език; За V клас - Английски език 
+ - учебник;  За VІ клас  - Английски език  - учебник; За VІІ клас - 
+Английски език“ 
+Обособена позиция 4: "Доставка на учебници и учебни помагала за ІІ клас -
+ Домашен бит и техника, Приложение; За ІІІ клас - Домашен бит и техника,
+ Приложение; За ІV клас - Приложение“
+Обособена позиция 5: "Доставка на учебници и учебни помагала за  
+подготвителна група - Моливко в страната на математиката  5-6 г., С 
+моливко играй и мисли 5-6 г., Моливко. Родна реч 5-6 г., Моливко. 
+Прозорче към света 5-6 г., Моливко. От земята до небето 5-6 г., Моливко.
+ Моторика 5-6 г.,Моливко. Мога да направя сам... 5-6 г., Моливко. 
+Приказни игри чудесни 5-6  г., С четка и боички рисуваме самички 5-6 г.,
+ Моливко в страната на математиката  6-7 г., С моливко играй и мисли 
+6-7г., Моливко. Родна реч 6-7 г., олекотен  вариант, Моливко. Прозорче 
+към света 6-7 г., Моливко. От земята до небето 6-7 г., Моливко. Моторика
+ 6-7 г.,Моливко. Мога да направя сам... 6-7 г., Моливко. Приказни игри 
+чудесни 6-7 г., Моливко. Вече мога сам 6-7 г., диагностика за ПГ“ 
+Обособена позиция 6: "Доставка на учебници и учебни помагала за ІІ клас -
+ Руски език -учебник, Учебнатетрадка по руски език; ІІІ клас - Руски 
+език  – учебник, Учебна тетрадка по руски език;  За ІV клас - Руски език
+ – учебник, Учебна тетрадка по руски език“  
+Обособена позиция 7: "Доставка на учебници и учебни помагала за І клас –
+ Буквар, Читанка, Първа тетрадка, Втора тетрадка, Трета тетрадка“ 
+Обособена позиция 8: "Доставка на учебници за V клас – Математика; За VІ
+ клас  - Математика; За VІІ клас – Математика“ 
+Обособена позиция 9: "Доставка на учебници за VІІ клас – Химия и ООС“</td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=311492" target="_blank">01844-2014-0001</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            <img src="sample_files/sign.png" title="Документът е въведен от упълномощен потребител" border="0">
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=602395&amp;newver=2" target="_blank" title="Информация за сключен договор">602395</a></td>
+    <td class="text" valign="top">08.05.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">Основно училище/ОУ/ "Любен Каравелов", гр.Русе</td>
+    <td class="text" valign="top"><b>Информация за сключен договор</b>: 
+Сключени са договори за доставка на учебници и учебни помагала за 
+безвъзмездно ползване от ученици от  І – VІІ клас за 2014/2015 учебна 
+година на ОУ „Любен Каравелов”, гр. Русе по 5 (пет) обособени позиции, 
+съгласно обявените в документацията условия.</td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=311465" target="_blank">01857-2014-0001</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            <img src="sample_files/sign.png" title="Документът е въведен от упълномощен потребител" border="0">
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=602320&amp;newver=2" target="_blank" title="Информация за сключен договор">602320</a></td>
+    <td class="text" valign="top">08.05.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">Основно училище /ОУ/ "Св. Климент Охридски" -  Хасково</td>
+    <td class="text" valign="top"><b>Информация за сключен договор</b>: 
+Избор на изпълнител за доставка на учебници и учебни помагала за ОУ 
+„Св.Климент Охридски“ гр.Хасково по седем обособени позиции, както 
+следва: По обособена позиция 1: Доставка на учебници и учебни помагала 
+на издателство „Просвета София“ АД гр.София. По обособена позиция 2: 
+Доставка на учебници и учебни помагала на издателство “Булвест 2000” ООД
+ гр.София. По обособена позиция 3: Доставка на учебници и учебни 
+помагала на издателство “С.А.Н.-ПРО” ООД гр.Варна. По обособена позиция 
+4: Доставка на учебници и учебни помагала на издателство “Бит и техника”
+ ООД гр.Варна. По обособена позиция 5: Доставка на учебници и учебни 
+помагала на издателство “Летера” ЕООД гр.Пловдив. По обособена позиция 
+6: Доставка на учебници и учебни помагала на издателство „Архимед – 2“ 
+ЕООД гр.Хасково. По обособена позиция 7: Доставка на учебници и учебни 
+помагала на издателство "Педагог 6 - Делев, Луизова и С-ие" СД гр.София.</td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=311793" target="_blank">01759-2014-0001</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            <img src="sample_files/sign.png" title="Документът е въведен от упълномощен потребител" border="0">
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=602270&amp;newver=2" target="_blank" title="Информация за сключен договор">602270</a></td>
+    <td class="text" valign="top">07.05.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">Средно общообразователно училище /СОУ/ "Димитър Благоев" - Свищов</td>
+    <td class="text" valign="top"><b>Информация за сключен договор</b>: 
+Договори за доставка на учебници и учебни помагала за безвъзмездно 
+ползване от децата и учениците от подготвителна група и от I до VII клас
+ за учебната 2014/2015 год.”, по обособени позиции, както следва:
+ОБОСОБЕНА ПОЗИЦИЯ 1 – Издателство „Просвета - София” АД;
+ОБОСОБЕНА ПОЗИЦИЯ 2 – Издателство „Анубис – Булвест” ООД;
+ОБОСОБЕНА ПОЗИЦИЯ 3 – Издателство „Пиърсън едюкейшън – Лонгман”, 
+представлявано от „С.А.Н.-ПРО” ООД;
+ОБОСОБЕНА ПОЗИЦИЯ 4 – Издателство „Експрес Пъблишинг”, представлявано от
+ „Юнивърс” ЕООД;
+ОБОСОБЕНА ПОЗИЦИЯ 5 – Издателство „Бит и техника” ООД;
+ОБОСОБЕНА ПОЗИЦИЯ 6 – Издателство „Архимед 2” ЕООД.</td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=311795" target="_blank">01215-2014-0001</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            <img src="sample_files/sign.png" title="Документът е въведен от упълномощен потребител" border="0">
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=602253&amp;newver=2" target="_blank" title="Информация за сключен договор">602253</a></td>
+    <td class="text" valign="top">07.05.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">Средно общообразователно училище /СОУ/ "Свети Климент Охридски" - Троян</td>
+    <td class="text" valign="top"><b>Информация за сключен договор</b>: 
+Доставка на учебници и учебни помагала за учениците от 1-7 клас и 
+подготвителната група за учебната 2014/2015г., както следва: за 
+подготвителната група - 24 комплекта, за 1-ви клас - 450 бр., за 2-ри 
+клас - 436 бр., за 3-ти клас - 1000 бр., за 4-ти клас - 315 бр., за 5-ти
+ клас - 650 бр., за 6-ти клас - 576 бр., за 7-ми клас - 624 бр.</td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=311593" target="_blank">00980-2014-0001</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            &nbsp;
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=602252&amp;newver=2" target="_blank" title="Решение">602252</a></td>
+    <td class="text" valign="top">07.05.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">Основно училище - Васил Априлов, гр. Исперих</td>
+    <td class="text" valign="top"><b>Решение</b>: Доставка на учебници и учебни помагала за безвъмездно ползване през учебната 2014/ 2015 година за учениците от І - VІІ клас.</td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=312905" target="_blank">03308-2014-0001</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            <img src="sample_files/sign.png" title="Документът е въведен от упълномощен потребител" border="0">
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=602206&amp;newver=2" target="_blank" title="Информация за сключен договор">602206</a></td>
+    <td class="text" valign="top">07.05.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">Средно общообразователно училище /СОУ/ - Н.Й.Вапцаров, гр. Царево</td>
+    <td class="text" valign="top"><b>Информация за сключен договор</b>: Доставка на учебници и учебни помагала за учениците от първи до седми клас за учебната 2014/2015 г. по пет обособени позиции</td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=310177" target="_blank">03120-2014-0001</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            <img src="sample_files/sign.png" title="Документът е въведен от упълномощен потребител" border="0">
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=602109&amp;newver=2" target="_blank" title="Информация за изпълнението на договор за обществена поръчка">602109</a></td>
+    <td class="text" valign="top">07.05.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">Средно общообразователно училище/СОУ/ "Христо Ботев" , гр. Девин</td>
+    <td class="text" valign="top"><b>Информация за изпълнението на договор за обществена поръчка</b>: Доставка на 25 000 литра дизел за отопление на СОУ "Христо Ботев" гр.Девин за отоплителен сезон 2013г./2014г.</td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=296561" target="_blank">01788-2013-0001</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            <img src="sample_files/sign.png" title="Документът е въведен от упълномощен потребител" border="0">
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=602106&amp;newver=2" target="_blank" title="Информация за изпълнението на договор за обществена поръчка">602106</a></td>
+    <td class="text" valign="top">07.05.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">Основно училище /ОУ/ "Св. Климент Охридски" -  Хасково</td>
+    <td class="text" valign="top"><b>Информация за изпълнението на договор за обществена поръчка</b>: Доставка на 25 000 литра дизел за отопление на ОУ "Св.Климент Охридски" гр.Хасково за отоплителен сезон 2013г./2014г.</td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=295972" target="_blank">01759-2013-0001</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            <img src="sample_files/sign.png" title="Документът е въведен от упълномощен потребител" border="0">
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=602084&amp;newver=2" target="_blank" title="Информация за сключен договор">602084</a></td>
+    <td class="text" valign="top">07.05.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">69 Средно общообразователно училище /СОУ/ "Димитър Маринов" гр. София</td>
+    <td class="text" valign="top"><b>Информация за сключен договор</b>: ПРЕДМЕТ: ДОСТАВКА НА УЧЕБНИЦИ И УЧЕБНИ ПОМАГАЛА
+БРОЙ: </td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=311502" target="_blank">04791-2014-0001</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            <img src="sample_files/sign.png" title="Документът е въведен от упълномощен потребител" border="0">
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=602033&amp;newver=2" target="_blank" title="Решение">602033</a></td>
+    <td class="text" valign="top">30.04.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">Основно училище /ОУ/ "Драган Манчов" гр. Пловдив</td>
+    <td class="text" valign="top"><b>Решение</b>: „Доставка на учебници и
+ учебни помагала за безвъзмездно ползване от учениците от І до VІІ клас 
+за учебната 2014г./2015г. при ОУ „ДРАГАН МАНЧОВ” - град Пловдив, по 
+обособени позиции”, както следва:ОБОСОБЕНА ПОЗИЦИЯ № 1: "Доставка на 
+учебници и учебни помагала за учениците от І до VІІ клас през учебната 
+2014/2015 година, при ОУ „ДРАГАН МАНЧОВ”- град Пловдив, а именно:V клас 
+-Учебник по Домашна техника и икономика;ОБОСОБЕНА ПОЗИЦИЯ №2 - „Доставка
+ на учебници и учебни помагала за учениците от І до VІІ клас през 
+учебната 2014/2015 година,при ОУ „ДРАГАН МАНЧОВ”- град Пловдив,а именно:
+ за ІІІ-ти клас – Учебник по Човекът и обществото; Учебна тетрадка по 
+Човекът и обществото; ІV-ти клас – Учебна тетрадка по Човекът и 
+обществото; V-ти клас – Учебник по Литература; VІ-ти клас-Учебник по 
+Литература; за VІІ-ми клас - Учебник по Литература; учебник по Физика и 
+астрономия; учебник по Биология и здравно образование;ОБОСОБЕНА ПОЗИЦИЯ 
+№3 - „Доставка на учебници и учебни помагала за учениците от І до VІІ 
+клас през учебната 2014/2015 година, при ОУ „ДРАГАН МАНЧОВ”- град 
+Пловдив;а именно: за VІІ-ми клас - Учебник по „Химия и опазване на 
+околната среда”;ОБОСОБЕНА ПОЗИЦИЯ №4 - „Доставка на учебници и учебни 
+помагала за учениците от І до VІІ клас през учебната 2014/2015 
+година,при ОУ „ДРАГАН МАНЧОВ”- град Пловдив, а именно: за І-ви 
+клас-Учебник Буквар, Учебник Читанка, Учебна тетрадка по писане 
+№1,№2,№3, Учебник по Математика, Учебна тетрадка по математика №1,№2,№3,
+ Учебник по Роден край, Учебник по Музика, Учебник по Изобразително 
+изкуство, Учебник по Домашен бит и техника; за ІІ-ри клас-Учебник по 
+Български език; Учебник Читанка, Учебна тетрадка по Български език 
+№1,№2,№3, Учебник по Математика; Учебна тетрадка по математика №1,№2,№3,
+ Учебник по Околен свят, Учебна тетрадка по околен свят, Учебник по 
+Музика, Учебник по Изобразително изкуство, Учебник по Домашен бит и 
+техника; Приложение по домашен бит и техника;  за ІІІ-ти клас- Учебник 
+по Български език, Учебник Читанка, Учебна тетрадка по български език 
+№1,№2,№3, Учебник по Математика, Учебна тетрадка по математика №1,№2,№3,
+ Учебник по Човекът и природата, Учебна тетрадка по човекът и природата,
+ Учебник по Музика, Учебник по Изобразително изкуство, Учебник по 
+Домашен бит и техника, Приложение по домашен бит и техника; за ІV-ти 
+клас-Учебна тетрадка по български език №1,№2, Учебна тетрадка към 
+Читанка, Учебна тетрадка по математика №1,№2, Учебна тетрадка по човекът
+ и природата, Приложение по домашен бит и техника; за V-ти клас – 
+Учебник по Български език; Учебник по Математика; Учебник по История и 
+цивилизация, Учебник по География и икономика, Учебник по Човекът и 
+природата, Учебник по Музика; Учебник по Изобразително изкуство;  VІ-ти 
+клас- Учебник по Български език; Учебник по Математика; учебник по 
+История и цивилизация; учебник по География и икономика; Учебник по 
+Човекът и природата; учебник по Музика; Учебник по Изобразително 
+изкуство; Учебник по Домашна техника и икономика;  за VІІ-ми клас - 
+Учебник по Български език ; Учебник по Математика; учебник по История и 
+цивилизация; учебник по География и икономика; учебник по Музика; 
+Учебник по Изобразително изкуство; учебник по Технологии;ОБОСОБЕНА 
+ПОЗИЦИЯ №5 - „Доставка на учебници и учебни помагала за учениците от І 
+до VІІ клас през учебната 2014/2015 година, при ОУ „ДРАГАН МАНЧОВ”- град
+ Пловдив, а именно: за ІІ-ри клас – Учебник по Английски език Blue Skies
+ for Bulgaria for the 2-nd grade;учебна тетрадка по английски език Blue 
+Skies for Bulgaria for the 2-nd grade;ІІІ-ти клас –учебник по английски 
+език Blue Skies for Bulgaria for the 3-rd grade;учебна тетрадка по 
+английски език Blue Skies for Bulgaria for the 3-rd grade; ІV-ти клас – 
+учебна тетрадка по английски език Blue Skies for Bulgaria for the 4-th 
+grade;V-ти клас-учебник по английски език Energy for Bulgaria for the 
+5-th grade;VІ-ти клас- учебник по английски език Energy for Bulgaria for
+ the 6-th grade;за VІІ-ми клас - учебник по английски език Energy for 
+Bulgaria for the the 7--th grade</td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=312850" target="_blank">02116-2014-0001</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            <img src="sample_files/sign.png" title="Документът е въведен от упълномощен потребител" border="0">
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=601936&amp;newver=2" target="_blank" title="Информация за сключен договор">601936</a></td>
+    <td class="text" valign="top">30.04.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">Средно образователно училище/СОУ/ - Христо Смирненски - гр. Стара Загора</td>
+    <td class="text" valign="top"><b>Информация за сключен договор</b>: 
+Доставка на учебници и учебни помагала за безвъзмездно ползване от 
+децата в подготвителна група и ученици от I до VII клас за учебната 
+2014/2015 година в СОУ „Христо Смирненски” гр. Стара Загора по 5 
+обособени позиции, както следва: Обособена позиция 1 Издателска къща 
+„Анубис – Булвест” ООД, Обособена позиция 2 Издателство „Просвета – 
+София” АД, Обособена позиция 3 Издателство СД „ПЕДАГОГ 6 – Делев, 
+Луизова и с-ие“, Обособена позиция 4 Издателство „Пиърсън Едюкейшън – 
+Лонгман” – представлявано „С.А.Н. – ПРО” ООД, обособена позиция 5 
+Издателство « Бит и техника» ООД </td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=310049" target="_blank">02492-2014-0001</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            <img src="sample_files/sign.png" title="Документът е въведен от упълномощен потребител" border="0">
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=601934&amp;newver=2" target="_blank" title="Решение">601934</a></td>
+    <td class="text" valign="top">30.04.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">Висше военноморско училище /ВВМУ/ "Н. Й. Вапцаров" - Варна</td>
+    <td class="text" valign="top"><b>Решение</b>: Приготвяне в 
+хранителния блок на ВВМУ и раздаване на ястия за ежедневно хранене на 
+курсанти и дежурни длъжностни лица от ВВМУ три пъти на ден (закуска, 
+обяд и вечеря), уточнени по вид в седмичното меню.
+ Приготвяне в хранителния блок на ВВМУ и раздаване на ястия за обяд 
+срещу заплащане на студенти, военнослужещи и цивилни служители.
+ Приготвяне в хранителния блок на ВВМУ и раздаване на ястия при 
+представителни и протоколни мероприятия по предварителна заявка от ВВМУ.
+ Приготвяне на котлова храна в сух вид и/или суха храна при заявка от 
+ВВМУ.
+ Приготвяне на котлова храна или храна в сух вид и/или суха храна и 
+доставката й на място със съдове и транспорт на Изпълнителя, при полеви 
+занятия, учения, тренировки, лагери, като и дейности по овладяване и 
+ликвидиране на последствия от природни бедствия и промишлени аварии.
+ По заявка на Възложителя, Изпълнителят да осигури необходимите 
+материални ресурси за създаване на военновременни запаси от 
+продоволствие.
+
+         Възложителят си запазва правото да променя броя на зачислените 
+на котлова храна военнослужещи, курсанти и дежурни длъжностни лица.
+</td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=312828" target="_blank">00909-2014-0004</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            <img src="sample_files/sign.png" title="Документът е въведен от упълномощен потребител" border="0">
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=601930&amp;newver=2" target="_blank" title="Обявление за поръчка (Директива 2004/18/ЕО)">601930</a></td>
+    <td class="text" valign="top">30.04.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">Висше военноморско училище /ВВМУ/ "Н. Й. Вапцаров" - Варна</td>
+    <td class="text" valign="top"><b>Обявление за поръчка (Директива 2004/18/ЕО)</b>:
+ Приготвяне в хранителния блок на ВВМУ и раздаване на ястия за ежедневно
+ хранене на курсанти и дежурни длъжностни лица от ВВМУ три пъти на ден 
+(закуска, обяд и вечеря), уточнени по вид в седмичното меню.
+ Приготвяне в хранителния блок на ВВМУ и раздаване на ястия за обяд 
+срещу заплащане на студенти, военнослужещи и цивилни служители.
+ Приготвяне в хранителния блок на ВВМУ и раздаване на ястия при 
+представителни и протоколни мероприятия по предварителна заявка от ВВМУ.
+ Приготвяне на котлова храна в сух вид и/или суха храна при заявка от 
+ВВМУ.
+ Приготвяне на котлова храна или храна в сух вид и/или суха храна и 
+доставката й на място със съдове и транспорт на Изпълнителя, при полеви 
+занятия, учения, тренировки, лагери, като и дейности по овладяване и 
+ликвидиране на последствия от природни бедствия и промишлени аварии.
+ По заявка на Възложителя, Изпълнителят да осигури необходимите 
+материални ресурси за създаване на военновременни запаси от 
+продоволствие.
+       Възложителят си запазва правото да променя броя на зачислените на
+ котлова храна военнослужещи, курсанти и дежурни длъжностни лица.
+</td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=312828" target="_blank">00909-2014-0004</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            <img src="sample_files/sign.png" title="Документът е въведен от упълномощен потребител" border="0">
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        <img src="sample_files/ted_in.gif" title="Изпратено за публикуване в OJ/S на 30/04/2014 " border="0">
+      
+      &nbsp;
+
+              <a target="_blank" href="http://ted.europa.eu/udl?uri=TED:NOTICE:150532-2014:TEXT:EN:HTML&amp;src=0">
+	  <img src="sample_files/ted_out.gif" title="Публикувано в OJ/S на
+	       03/05/2014 " border="0"></a>
+	    </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=601926&amp;newver=2" target="_blank" title="Информация за сключен договор">601926</a></td>
+    <td class="text" valign="top">30.04.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">Средно общообразователно училище /СОУ/ "Гео Милев" - гр. Варна</td>
+    <td class="text" valign="top"><b>Информация за сключен договор</b>: Договори са сключени със следните издателства:
+"Бит и техника" ООД - гр. Варна
+"С.А.Н.ПРО" ООД, представител на "Пиърсън Едюкейшън-Лонгман" - гр. Варна
+
+</td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=311521" target="_blank">02045-2014-0001</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            <img src="sample_files/sign.png" title="Документът е въведен от упълномощен потребител" border="0">
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=601889&amp;newver=2" target="_blank" title="Информация за сключен договор">601889</a></td>
+    <td class="text" valign="top">30.04.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">Основно училище /ОУ/ "Захари Стоянов" - Варна</td>
+    <td class="text" valign="top"><b>Информация за сключен договор</b>: договор с ЕТ"ДАНИЕЛА УБЕНОВА-БИЛАНСКА" за доставка на учебници и учебни помагала по списък
+договор с ИК»АНУБИС-БУЛВЕСТ»ООД  за доставка на учебници и учебни помагала по списък
+договор с «БИТ И ТЕХНИКА» ООД за доставка на учебници и учебни помагала по списък
+договор с СД»ПЕДАГОГ 6 – ДЕЛЕВ и ЛУИЗОВА И С-ИЕ» за доставка на учебници и учебни помагала по списък
+договор с «С.А.Н.ПРО» ООД за доставка на учебници и учебни помагала по списък
+договор с “ПРОСВЕТА –СОФИЯ”АД за доставка на учебници и учебни помагала</td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=311747" target="_blank">02237-2014-0001</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            <img src="sample_files/sign.png" title="Документът е въведен от упълномощен потребител" border="0">
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=601823&amp;newver=2" target="_blank" title="Решение">601823</a></td>
+    <td class="text" valign="top">30.04.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">Средно общообразователно училище /СОУ/ "Димчо Дебелянов" гр. Белене</td>
+    <td class="text" valign="top"><b>Решение</b>: Доставка на учебници и
+ учебни помагала за безвъзмездно ползване на учениците от 1-7 клас на 
+СОУ "Димчо Дебелянов" - Белене за учебната 2014/2015г. по четири 
+обособени позиции
+Обособена позиция № 1 Издателство "Просвета-София" АД
+Обособена позиция №2 Издателство "Анубис - Булвест" ООД
+Обособена позиция № 3 Издателство "Пиърсън Едюкейшън-Лонгман"
+Обособена позиция № 4 Издателство "Бит и техника" ООД</td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=312784" target="_blank">04033-2014-0001</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            <img src="sample_files/sign.png" title="Документът е въведен от упълномощен потребител" border="0">
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=601796&amp;newver=2" target="_blank" title="Решение">601796</a></td>
+    <td class="text" valign="top">30.04.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">Средно общообразователно училище "Иван Вазов", гр. Вършец</td>
+    <td class="text" valign="top"><b>Решение</b>: Доставка на учебници и
+ учебни помагала за безвъзмездно ползване на учениците от І-ви до VІІ-ми
+ клас при СОУ "Иван Вазов" гр. Вършец за учебната 2014/2015 година по 
+шест обособени позиции.
+Обособена позиция № 1 - Издателство "Архимед 2" ЕООД; Обособена позиция №
+ 2 - Издателство "Експрес Пъблишинг", представлявано от "Юнивърс" ЕООД -
+ гр. Първомай; Обособена позиция № 3 - Издателство "Просвета-София" АД; 
+Обособена позиция № 4 - Издателство "Анубис-Булвест" ООД; Обособена 
+позиция № 5 - Издателство "Пиърсън Едюкейшън-Логман", представлявано от 
+"С.А.Н. ПРО" ООД - гр. Варна; Обособена позиция № 6 - Издателство "Бит и
+ техника" ООД.</td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=312800" target="_blank">01837-2014-0001</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            <img src="sample_files/sign.png" title="Документът е въведен от упълномощен потребител" border="0">
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=601732&amp;newver=2" target="_blank" title="Информация за сключен договор">601732</a></td>
+    <td class="text" valign="top">30.04.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">Средно общообразователно училище с професионални паралелки /СОУ ПП/ "Васил Левски", гр. Ветово</td>
+    <td class="text" valign="top"><b>Информация за сключен договор</b>: 
+Сключен е договор за доставка на учебници и учебни помагала за 
+безвъзмездно ползване от ученици от Полудневна  подготвителна група и І –
+ VІІ клас за 2014 / 2015 учебна година на СОУ „Васил Левски” с 
+професионални паралелки, гр. Ветово” по 5 (пет) обособени позиции, 
+съгласно обявените в документацията условия.</td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=310339" target="_blank">02284-2014-0001</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            <img src="sample_files/sign.png" title="Документът е въведен от упълномощен потребител" border="0">
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=601703&amp;newver=2" target="_blank" title="Решение">601703</a></td>
+    <td class="text" valign="top">30.04.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">134-то средно общообразователно училище - Димчо Дебелянов, гр. София</td>
+    <td class="text" valign="top"><b>Решение</b>: Доставка на учебници и
+ учебни помагала за децата от ППГ и за учениците от първи до седми клас 
+по класове и по учебни предмети за учебната 2014/2015 г., съгласно 
+Постановление № 104 от 10 май 2003 г. на Министерски съвет за приемане 
+на Наредба за учебниците и учебните помагала. </td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=312752" target="_blank">03580-2014-0001</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            <img src="sample_files/sign.png" title="Документът е въведен от упълномощен потребител" border="0">
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=601616&amp;newver=2" target="_blank" title="Решение">601616</a></td>
+    <td class="text" valign="top">30.04.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">Основно училище "Христо Смирненски", гр. Добрич</td>
+    <td class="text" valign="top"><b>Решение</b>: „Доставка на учебници и
+ учебни помагала за безвъзмездно ползване от децата/учениците от 
+подготвителна група и от първи до седми клас по класове и учебни 
+предмети” за учебната 2014/2015 г. в ОУ ”Христо Смирненски” гр. Добрич 
+по обособени позиции:
+
+Обособена позиция № 1: Учебници и учебни помагала, издадени от 
+издателство „Анубис-Булвест” ООД, ИК „Анубис”, Булвест 2000” 
+
+
+Обособена позиция   №  2:   Учебници и учебни помагала, издадени от 
+издателство „Просвета-София” АД, „АзБуки-Просвета” ЕООД, „РИВА-Радост 
+Владимирова” ЕТ
+
+Обособена позиция   №  3:   Учебници и учебни помагала, издадени от 
+издателство  " Пиърсън Едюкейшън - Лонгман" представлявано от „ 
+С.А.Н.-ПРО”ООД
+Обособена позиция   №  4:   Учебници и учебни помагала,         издадени
+ от издателство „ Бит и техника”ООД
+ Обособена позиция   №  5:   Учебници и учебни помагала, издадени от 
+издателство „ Педагог 6” 
+
+
+</td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=312726" target="_blank">01644-2014-0001</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            <img src="sample_files/sign.png" title="Документът е въведен от упълномощен потребител" border="0">
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=601590&amp;newver=2" target="_blank" title="Информация за изпълнението на договор за обществена поръчка">601590</a></td>
+    <td class="text" valign="top">29.04.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">Средно общообразователно училище /СОУ/ "Паисий Хилендарски" - Хасково</td>
+    <td class="text" valign="top"><b>Информация за изпълнението на договор за обществена поръчка</b>: Доставка на газьол за отопление</td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=297051" target="_blank">01771-2013-0001</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            &nbsp;
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=601555&amp;newver=2" target="_blank" title="Информация за сключен договор">601555</a></td>
+    <td class="text" valign="top">29.04.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">Основно училище /ОУ/ "П.Р. Славейков" - гр. Варна</td>
+    <td class="text" valign="top"><b>Информация за сключен договор</b>: за ІІ клас: Английски език, учебник “Blue Skies for Bulgaria for the 2nd grade”- 22 бр.
+                   Учебна тетрадка “Blue Skies for Bulgaria for the 2nd grade – 162 бр.
+за ІІІ клас: Английски език, учебник “Blue Skies for Bulgaria for the 3rd grade” – 135 бр.
+                    Учебна тетрадка “Blue Skies for Bulgaria for the 3rd grade” – 135 бр.
+за ІV клас: Учебна тетрадка “Blue Skies for Bulgaria for the 4th grade” – 130 бр.
+за V клас:  Английски език, Учебник „Energy for Bulgaria for the 5 th grade” - 150 бр.
+за VІ клас:  Английски език, Учебник „Energy for Bulgaria for the 6 th grade” - 148 бр.
+за VІІ клас: Английски език, Учебник „Energy for Bulgaria for the 7 th grade” –  145 бр
+</td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=310920" target="_blank">02021-2014-0001</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            <img src="sample_files/sign.png" title="Документът е въведен от упълномощен потребител" border="0">
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=601532&amp;newver=2" target="_blank" title="Информация за сключен договор">601532</a></td>
+    <td class="text" valign="top">29.04.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">125-то средно общообразователно училище/СОУ/ "Боян Пенев"  с изучаване на чужди езици, гр. София</td>
+    <td class="text" valign="top"><b>Информация за сключен договор</b>: 
+Договорът е сключен във връзка с проведено възлагане на обществена 
+поръчка по реда на чл.90, ал. 1, т.3 от ЗОП и изразено становище за 
+законосъобразност на избора на процедура от Изпълнителния директор на 
+Агенцията за обществени поръчки. Количеството на доставките на учебници и
+ учебни помагала са подробно описани в предмета на обществената поръчка.
+  </td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=309608" target="_blank">02391-2014-0003</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            <img src="sample_files/sign.png" title="Документът е въведен от упълномощен потребител" border="0">
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=601506&amp;newver=2" target="_blank" title="Информация за сключен договор">601506</a></td>
+    <td class="text" valign="top">29.04.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">Основно училище/ОУ/ "Проф. Иван Батаклиев", гр. Пазарджик</td>
+    <td class="text" valign="top"><b>Информация за сключен договор</b>: 
+Доставка на учебници и учебни помагала за безвъзмездно ползване от 
+учениците от І до VІІ кл. от ОУ "Проф. Иван Батаклиев", гр.Пазарджик за 
+уч.2014-2015 г. Учебниците и учебните помагала, предмет на настоящата 
+поръчка са както следва:
+от издателство "Архимед 2" ЕООД,гр.София: V кл.-Математика-145бр.; VІ 
+кл.-Математика-142бр.; VІІ кл.-Математика-147бр.;
+от издателство "Бит и техника" ООД,гр. Варна: ІІІ кл.-Домашен бит и 
+техника-учебник-40бр., Албум с приложения-40бр.; ІV кл.-Албум с 
+приложения-45бр.;
+от издателство "Пиърсън Едюкейшън-Лонгман" представлявано от С.А.Н.-ПРО 
+ООД,гр. Варна: ІІ кл.-Английски език-учебник-10бр.;Учебна 
+тетредка-48бр.; ІІІ кл.-Английски език-учебник-40бр.; Учебна 
+тетрадка-40бр.; ІVкл.-Учебна тетрадка-45бр.; Vкл.- Английски 
+език-учебник-145бр.;
+от издателство "Педагог 6",гр.София: VІІ кл.- Химия и опазване на 
+околната среда-учебник-147бр.;
+от издателство "Просвета - София"АД,гр. София: ІІ кл.-Домашен бит и 
+техника-учебник-10бр.; Приложение по ДБТ-48бр.;
+от издателство "Експрес Пъблишинг" представлявано от "Юнивърс"ЕООД: VІ 
+кл.- Учебник по АЕ-142бр.; VІІ кл.-Учебник по АЕ-147бр.;
+от издателство "Анубис-Булвест"ООД: І кл.- Буквар-учебник-72бр.; 
+Тетрадка №1, №2, №3 по 72 бр.; Читанка-учебник-72бр.; 
+Математика-учебник-72бр.; Тетрадка №1, №2, №3 по 72 бр.; Роден 
+край-учебник-72бр.; Тетрадка по роден край-72бр.; Музика-72бр; 
+Изобразително изкуство-72бр.; Домашен бит и техника-72бр.; ІІ 
+кл.-Български език-учебник-10бр.; Тетрадка №1, №2 и тетрадка за развитие
+ на речта по 48 бр.; Читанка-учебник-48бр.; Тетрадка по четене-48бр.; 
+Математика-учебник-10бр.; Тетрадка №1, №2 по 48 бр.;Околен 
+свят-учебник-48бр.;Тетрадка по околен свят-48бр.; Музика-48бр.; 
+Изобразително изкуство-48бр.; ІІІ кл.-Български език-учебник-40бр.; 
+Тетрадка №1, №2 и тетрадка за развитие на речта по 40 бр.; 
+Читанка-учебник-40бр.; Тетрадка по четене-40бр.; 
+Математика-учебник-40бр.; Тетрадка №1, №2 по 40 бр.; Човекът и 
+обществото-учебник-40бр.; Тетрадка по човекът и обществото-40бр.; 
+Човекът и природата-учебник-40бр.; Тетрадка по човекът и 
+природата-40бр.; Музика-40бр.; Изобразително изкуство-40бр.; ІV 
+кл.-Тетрадка №1, №2, Тетрадка за развитие на речта, Тетрадка по четене, 
+Тетрадка №1, №2 по математика, Тетрадка по човекът и обществото, 
+Тетрадка по човекът и природата по 45 бр.; V кл.-учебници по Български 
+език, Литература, История и цивилизация, География и икономика, Човекът и
+ прородата, Музика, Изобр. изкуство, Домашна техника и икономика по 145 
+бр.; VІкл.-учебници по Български език, Литература, История и 
+цивилизация, География и икономика, Човекът и природата, Музика, 
+Изобр.изкуство, Домашна техника и икономика по 142 бр.; VІІкл.- учебници
+ по Български език, Литература, История и цивилизация, География и 
+икономика, Физика и астрономия, Биология и здравно образование, Музика, 
+Изобр.изкуство, Технологии по 147 бр.</td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=310680" target="_blank">02036-2014-0001</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            <img src="sample_files/sign.png" title="Документът е въведен от упълномощен потребител" border="0">
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=601436&amp;newver=2" target="_blank" title="Информация за сключен договор">601436</a></td>
+    <td class="text" valign="top">29.04.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">Основно училище/ОУ/ - Иван Вазов, гр. Русе</td>
+    <td class="text" valign="top"><b>Информация за сключен договор</b>: 
+Сключен е договор за доставка на учебници и учебни помагала за 
+безвъзмездно ползване от ученици от  подготвителни групи и І – VІІ клас 
+за 2014 / 2015 учебна година на ОУ "Иван Вазов", гр. Русе” по 7 (седем) 
+обособени позиции, съгласно обявените в документацията условия.</td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=311045" target="_blank">02078-2014-0001</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            <img src="sample_files/sign.png" title="Документът е въведен от упълномощен потребител" border="0">
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=601386&amp;newver=2" target="_blank" title="Информация за сключен договор">601386</a></td>
+    <td class="text" valign="top">29.04.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">Университет по библиотекознание и 
+информационни технологии/УБИТ/ - София - /Старо наименование - 
+Специализирано висше училище по библиотекознание и информационни 
+технологии /СВУБИТ/ - София/</td>
+    <td class="text" valign="top"><b>Информация за сключен договор</b>: 
+„Развитие и интегриране на информационните ресурси за повишаване 
+качеството на управлението във висшите училища”, Проект: Усъвършенстване
+ на системите за управление в УниБИТ, Договор: BG051PO001-1.1.08-0029, 
+Схема BG051PO001-3.1.08 „УСЪВЪРШЕНСТВАНЕ НА СИСТЕМИТЕ ЗА УПРАВЛЕНИЕ ВЪВ 
+ВИСШИТЕ УЧИЛИЩА”</td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=303770" target="_blank">01412-2013-0009</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            &nbsp;
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=601308&amp;newver=2" target="_blank" title="Решение">601308</a></td>
+    <td class="text" valign="top">28.04.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">Основно училище /ОУ/ "Пейо Кр. Яворов" гр. Бургас</td>
+    <td class="text" valign="top"><b>Решение</b>: ИЗРАБОТВАНЕ И ДОСТАВКА НА УЧЕБНИЦИ И УЧЕБНИ ПОМАГАЛА  В  ОУ”П.К.ЯВОРОВ”ГР.БУРГАС, НЕОБХОДИМИ ЗА УЧЕБНАТА 2014/2015  ГОДИНА</td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=312663" target="_blank">03210-2014-0002</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            &nbsp;
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=601286&amp;newver=2" target="_blank" title="Решение">601286</a></td>
+    <td class="text" valign="top">28.04.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">Основно училище "Панайот Волов" гр. Добрич</td>
+    <td class="text" valign="top"><b>Решение</b>: "Доставка на учебници и
+ учебни помагала за безвъзмездно ползване от децата/учениците от 
+подготвителна група и от първи до седми клас по класове и учебни 
+предмети" за учебната 2014/2015 г. в ОУ"Панайот Волов" гр. Добрич по 
+обособени позиции:
+1. Учебници и учебни помагала на издателство 
+"Просвета-София"АД;"АзБуки-Просвета" ЕООД
+2. Учебници и учебни помагала на издателство "Анубис-Булвест"ООД
+3. Учебници и учебни помагала на издателство "С.А.Н.ПРО" ООД
+4.Учебници и учебни помагала на издателство "Бит и техника" ООД
+5.Учебници и учебни помагала на издателство "Педагог 6"</td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=312655" target="_blank">01631-2014-0001</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            <img src="sample_files/sign.png" title="Документът е въведен от упълномощен потребител" border="0">
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=601282&amp;newver=2" target="_blank" title="Решение">601282</a></td>
+    <td class="text" valign="top">28.04.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">Основно училище/ОУ/ -  Васил Априлов, гр. Русе</td>
+    <td class="text" valign="top"><b>Решение</b>: Доставка на учебници и
+ учебни помагала за ученици от подготвителни групи и I-VII клас за 
+учебната 2014/2015 учебна година на ОУ "Васил Априлов" гр, Русе по 6 
+обособени позиции, както следва: Обособена позиция № 1: Издателство 
+„Просвета - София“ АД; Обособена позиция № 2: Издателска къща 
+„Анубис-Булвест“ ООД; Обособена позиция № 3: Издателство „Даниела 
+Убенова - Даниела Биланска“ ЕТ; Обособена позиция № 4: Издателство „Бит и
+ техника“ ООД; Обособена позиция № 5: Издателство „Експрес Пъблишинг“, 
+представлявано от „Юнивърс“ ЕООД; Обособена позиция № 6: Издателство 
+„Пиърсън Едюкейшън Лонгман“, представлявано от „С.А.Н. Про“ ООД.
+</td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=312654" target="_blank">02473-2014-0001</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            <img src="sample_files/sign.png" title="Документът е въведен от упълномощен потребител" border="0">
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=601246&amp;newver=2" target="_blank" title="Решение">601246</a></td>
+    <td class="text" valign="top">28.04.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">Средно общообразователно училище - П.Р.Славейков, гр. Видин</td>
+    <td class="text" valign="top"><b>Решение</b>: Доставка на учебници и
+ учебни помагала за безвъзмездно ползване от ученици от I до VII клас и 
+подготвителна група за учебната 2014/2015 година:
+Подготвителен клас: Български език -Сладкодумна пътечка към родния 
+език-14 бр.; Математика - Любопитна пътечка към математиката-14 бр; 
+Социален свят-Чудна пътечка към хората -14бр; Природен свят-Чудна 
+пътечка към природата–14бр.; Изобразително изкуство-Пъстра пътечка към 
+изобразителното изкуство–14бр.; Конструктивно технически и битови 
+дейности-Забавна пътечка към конструктивната дейност–14бр.; Игрова 
+култура и пресъздаване-Весела пътечка към игрите–14 бр.; Музика-Вълшебна
+ пътечка към музиката–14 бр. І клас: Буквар– 54 бр.; Читанка-54 бр.; 
+Учебни тетрадки по писане № 1, 2 и 3 по 54бр.; Математика–54бр.; Работни
+ тетрадки по математика № 1, 2 и 3 по 54бр.; Роден край- 54бр.; Работна 
+тетрадка по роден край– 54бр.; Музика- 54бр.; Изобразително изкуство-54 
+бр.; Домашен бит и техника-54 бр. ІІ клас: Читанка– 48бр; Учебни 
+тетрадки по български език № 1 и 2 по 48бр.; Учeбна тетрадка по 
+български език "Развитие на речта"–48бр.; Учебна тетрадка по 
+четене-48бр.; Учебна тетрадка по английски език  “Blue skies for 
+Bulgaria”-48бр.; Учебни тетрадки по математика: част 1- 48бр.и част 
+2-48бр.; Околен свят-48бр.; Учебна тетрадка по околен свят–48бр.; 
+Музика–48бр.; Изобразително изкуство–48бр.; Приложение по домашен бит и 
+техника– 48бр. ІІІ клас: Български език–51бр.; Читанка–51бр.; Учебни 
+тетрадки по български език № 1, 2 и 3 по 51бр.; Учебна тетрадка към 
+Читанката- 51бр.; Английски език “Blue skies for Bulgaria”–51бр.; Учебна
+ тетрадка по английски език  “Blue skies for Bulgaria”–51бр.; 
+Математика–51бр.; Учебна тетрадка по математика част 1-51 бр. и част 
+2-51бр.; Човекът и обществото-51бр.; Учебна тетрадка по човекът и 
+обществото -51бр.; Човекът и природата– 51бр.; Учебна тетрадка по 
+човекът и природата–51бр.; Музика–51бр.; Изобразително изкуство–51бр; 
+Домашен бит и техника и Приложение по домашен бит и техника по 51бр. ІV 
+клас:
+Учебни тетрадки по български език № 1 и № 2 по 40бр.; Учебна тетрадка за
+ развитие на речта-40бр.; Учебна тетрадка по четене-40бр.; Английски 
+език  “Blue skies for BULGARIA”–7бр.; Учебна тетрадка по английски 
+език“Blue skies for BULGARIA”-31бр.; Учебна тетрадка по немски език 
+"Funkel"–9бр.; Учебни тетрадки по математика част 1 и част 2 по 40бр.; 
+Учебна тетрадка по човекът и обществото–40бр; Учебна тетрадка по човекът
+ и природата – 40бр.; Приложение комплект по домашен бит и 
+техника–40бр.; V клас: Български език–43бр.; Литература-43бр.; Английски
+ език „Energy for Bulgaria for the 5th grade”–24бр.; Немски език 
+"Deutsch im Blickpunkt"-19бр; Математика- 43 бр.; История и цивилизация 
+-43бр.; География и икономика-43бр.; Човекът и природата-43бр.; Музика– 
+43бр.; Изобразително изкуство- 43бр.; Домашна техника и икономика- 43бр.
+ VІ клас: Български език- 51бр.; Литература- 51бр.; Английски език 
+“Energy for Bulgaria for the 6th Grade”– 43бр.; Немски език "Deutsch im 
+Blickpunkt"- 8бр; Математика– 51бр.; География и икономика- 51бр.; 
+Човекът и природата- 51бр.; Музика- 51бр.; Изобразително изкуство – 
+51бр.; Домашна техника и икономика - 51бр. VІІ клас Български език – 
+45бр.; Литература – 45бр.; Английски език “Energy for Bulgaria for the 
+7th Grade”– 32бр.; Френски език “JUNIOR PLUS 3”–13бр.; Математика- 
+45бр.; Биология и здравно образование-45бр.; Химия и опазване на 
+околната среда- 45бр.; Физика и астрономия– 45бр.; Музика- 45бр.; 
+Изобразително изкуство- 45бр.; Технологии- 45бр.
+</td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=312651" target="_blank">02742-2014-0001</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            &nbsp;
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=601195&amp;newver=2" target="_blank" title="Информация за сключен договор">601195</a></td>
+    <td class="text" valign="top">28.04.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">Средно образователно училище/СОУ/ - Христо Смирненски - гр. Стара Загора</td>
+    <td class="text" valign="top"><b>Информация за сключен договор</b>: 
+Доставка на учебници и учебни помагала за безвъзмездно ползване от 
+децата в подготвителна група и ученици от I до VII клас за учебната 
+2014/2015 година в СОУ „Христо Смирненски” гр. Стара Загора по 5 
+обособени позиции, както следва: Обособена позиция 1 Издателска къща 
+„Анубис – Булвест” ООД, Обособена позиция 2 Издателство „Просвета – 
+София” АД, Обособена позиция 3 Издателство СД „ПЕДАГОГ 6 – Делев, 
+Луизова и с-ие“, Обособена позиция 4 Издателство „Пиърсън Едюкейшън – 
+Лонгман” – представлявано „С.А.Н. – ПРО” ООД, обособена позиция 5 
+Издателство « Бит и техника» ООД </td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=310049" target="_blank">02492-2014-0001</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            <img src="sample_files/sign.png" title="Документът е въведен от упълномощен потребител" border="0">
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=601034&amp;newver=2" target="_blank" title="Решение">601034</a></td>
+    <td class="text" valign="top">25.04.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">Средно общообразователно училище "Петко Рачов Славейков", гр. Добрич</td>
+    <td class="text" valign="top"><b>Решение</b>: Предмет на Обществена 
+поръчка: "Доставка на учебници и учебни помагала за ПГ, І, ІІ,ІІІ, ІV 
+клас и учубници за V,VІ,VІІ клас за безвъзмезно ползване за учебната 
+2014/2015 година за учениците от СОУ "П. Р. Славейков"- град Добрич"</td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=312607" target="_blank">01637-2014-0001</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            <img src="sample_files/sign.png" title="Документът е въведен от упълномощен потребител" border="0">
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=601033&amp;newver=2" target="_blank" title="Информация за сключен договор">601033</a></td>
+    <td class="text" valign="top">25.04.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">150 Основно училище "Цар Симеон Първи" гр. София</td>
+    <td class="text" valign="top"><b>Информация за сключен договор</b>: ПРЕДМЕТ: ДОСТАВКА НА УЧЕБНИЦИ И УЧЕБНИ ПОМАГАЛА
+КОЛИЧЕСТВО:  5155  БРОЯ</td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=311411" target="_blank">04624-2014-0001</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            <img src="sample_files/sign.png" title="Документът е въведен от упълномощен потребител" border="0">
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+  <tr>
+    <td class="text" nowrap="nowrap" valign="top"><a href="http://localhost/rali/case2.php?mode=show_doc&amp;doc_id=600886&amp;newver=2" target="_blank" title="Информация за сключен договор">600886</a></td>
+    <td class="text" valign="top">25.04.2014&nbsp;г.&nbsp;</td>
+    <td class="text" valign="top">25 Основно училище /ОУ/ "Д-р Петър Берон" гр. София</td>
+    <td class="text" valign="top"><b>Информация за сключен договор</b>: ПРЕДМЕТ: ДОСТАВКА НА УЧЕБНИЦИ И УЧЕБНИ ПОМАГАЛА
+КОЛИЧЕСТВО:  3118  БРОЯ</td>
+
+    <td class="text" nowrap="nowrap" valign="top">
+					<a href="http://localhost/rali/case2.php?mode=show_case&amp;case_id=311428" target="_blank">04787-2014-0001</a>    </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+            <img src="sample_files/sign.png" title="Документът е въведен от упълномощен потребител" border="0">
+        </td>
+    <td class="text" align="center" nowrap="nowrap" valign="top">
+
+					        &nbsp;
+      
+      &nbsp;
+
+              &nbsp;
+          </td>
+</tr>
+
+
+<tr>
+  <td colspan="7">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr></tr><tr><td colspan="2" class="text">Общ брой: 3222</td></tr><tr><td class="text" width="50$">Страница&nbsp;1&nbsp;от&nbsp;65&nbsp;</td><td class="text" align="right"><table border="0" cellpadding="0" cellspacing="0" width="50"><tbody><tr><td>&nbsp;</td><td>&nbsp;</td><td class="text">&nbsp;<b>1</b></td><td class="text">&nbsp;<b><a class="textlinks" href="http://www.aop.bg/esearch2.php?ss_type=2&amp;ss_id=&amp;ss_name=&amp;mode=search&amp;word=&amp;ca=%F3%F7%E8%EB%E8%F9%E5&amp;upi=&amp;doc_id=&amp;form_date_from=&amp;form_date_to=&amp;validated_on_from=&amp;validated_on_to=&amp;pn_doc_type=&amp;legislation=&amp;doc_type=&amp;_page=2">2</a></b></td><td class="text">&nbsp;<b><a class="textlinks" href="http://www.aop.bg/esearch2.php?ss_type=2&amp;ss_id=&amp;ss_name=&amp;mode=search&amp;word=&amp;ca=%F3%F7%E8%EB%E8%F9%E5&amp;upi=&amp;doc_id=&amp;form_date_from=&amp;form_date_to=&amp;validated_on_from=&amp;validated_on_to=&amp;pn_doc_type=&amp;legislation=&amp;doc_type=&amp;_page=3">3</a></b></td><td class="text">&nbsp;<b><a class="textlinks" href="http://www.aop.bg/esearch2.php?ss_type=2&amp;ss_id=&amp;ss_name=&amp;mode=search&amp;word=&amp;ca=%F3%F7%E8%EB%E8%F9%E5&amp;upi=&amp;doc_id=&amp;form_date_from=&amp;form_date_to=&amp;validated_on_from=&amp;validated_on_to=&amp;pn_doc_type=&amp;legislation=&amp;doc_type=&amp;_page=4">4</a></b></td><td class="text">&nbsp;<b><a class="textlinks" href="http://www.aop.bg/esearch2.php?ss_type=2&amp;ss_id=&amp;ss_name=&amp;mode=search&amp;word=&amp;ca=%F3%F7%E8%EB%E8%F9%E5&amp;upi=&amp;doc_id=&amp;form_date_from=&amp;form_date_to=&amp;validated_on_from=&amp;validated_on_to=&amp;pn_doc_type=&amp;legislation=&amp;doc_type=&amp;_page=5">5</a></b></td><td class="text">&nbsp;<b><a class="textlinks" href="http://www.aop.bg/esearch2.php?ss_type=2&amp;ss_id=&amp;ss_name=&amp;mode=search&amp;word=&amp;ca=%F3%F7%E8%EB%E8%F9%E5&amp;upi=&amp;doc_id=&amp;form_date_from=&amp;form_date_to=&amp;validated_on_from=&amp;validated_on_to=&amp;pn_doc_type=&amp;legislation=&amp;doc_type=&amp;_page=6">6</a></b></td><td class="text">&nbsp;<b><a class="textlinks" href="http://www.aop.bg/esearch2.php?ss_type=2&amp;ss_id=&amp;ss_name=&amp;mode=search&amp;word=&amp;ca=%F3%F7%E8%EB%E8%F9%E5&amp;upi=&amp;doc_id=&amp;form_date_from=&amp;form_date_to=&amp;validated_on_from=&amp;validated_on_to=&amp;pn_doc_type=&amp;legislation=&amp;doc_type=&amp;_page=7">7</a></b></td><td class="text">&nbsp;<b><a class="textlinks" href="http://www.aop.bg/esearch2.php?ss_type=2&amp;ss_id=&amp;ss_name=&amp;mode=search&amp;word=&amp;ca=%F3%F7%E8%EB%E8%F9%E5&amp;upi=&amp;doc_id=&amp;form_date_from=&amp;form_date_to=&amp;validated_on_from=&amp;validated_on_to=&amp;pn_doc_type=&amp;legislation=&amp;doc_type=&amp;_page=8">8</a></b></td><td class="text">&nbsp;<b><a class="textlinks" href="http://www.aop.bg/esearch2.php?ss_type=2&amp;ss_id=&amp;ss_name=&amp;mode=search&amp;word=&amp;ca=%F3%F7%E8%EB%E8%F9%E5&amp;upi=&amp;doc_id=&amp;form_date_from=&amp;form_date_to=&amp;validated_on_from=&amp;validated_on_to=&amp;pn_doc_type=&amp;legislation=&amp;doc_type=&amp;_page=9">9</a></b></td><td class="text">&nbsp;<b><a class="textlinks" href="http://www.aop.bg/esearch2.php?ss_type=2&amp;ss_id=&amp;ss_name=&amp;mode=search&amp;word=&amp;ca=%F3%F7%E8%EB%E8%F9%E5&amp;upi=&amp;doc_id=&amp;form_date_from=&amp;form_date_to=&amp;validated_on_from=&amp;validated_on_to=&amp;pn_doc_type=&amp;legislation=&amp;doc_type=&amp;_page=10">10</a></b></td><td class="text">&nbsp;<b><a class="textlinks" href="http://www.aop.bg/esearch2.php?ss_type=2&amp;ss_id=&amp;ss_name=&amp;mode=search&amp;word=&amp;ca=%F3%F7%E8%EB%E8%F9%E5&amp;upi=&amp;doc_id=&amp;form_date_from=&amp;form_date_to=&amp;validated_on_from=&amp;validated_on_to=&amp;pn_doc_type=&amp;legislation=&amp;doc_type=&amp;_page=11">11</a></b></td><td class="text">&nbsp;&nbsp;<a class="textlinks" href="http://www.aop.bg/esearch2.php?ss_type=2&amp;ss_id=&amp;ss_name=&amp;mode=search&amp;word=&amp;ca=%F3%F7%E8%EB%E8%F9%E5&amp;upi=&amp;doc_id=&amp;form_date_from=&amp;form_date_to=&amp;validated_on_from=&amp;validated_on_to=&amp;pn_doc_type=&amp;legislation=&amp;doc_type=&amp;_page=2"><img src="sample_files/sign_next.gif" alt="Следваща страница" border="0"></a></td><td class="text">&nbsp;<a class="textlinks" href="http://www.aop.bg/esearch2.php?ss_type=2&amp;ss_id=&amp;ss_name=&amp;mode=search&amp;word=&amp;ca=%F3%F7%E8%EB%E8%F9%E5&amp;upi=&amp;doc_id=&amp;form_date_from=&amp;form_date_to=&amp;validated_on_from=&amp;validated_on_to=&amp;pn_doc_type=&amp;legislation=&amp;doc_type=&amp;_page=65"><img src="sample_files/sign_last.gif" alt="Последна страница" border="0"></a></td></tr></tbody></table></td></tr></tbody></table>  </td>
+</tr>
+</tbody></table>
+</body></html>

@@ -1,0 +1,386 @@
+/**************************GLOBALS****************************************/
+/*************************************************************************/
+#hMenu
+{
+    /*background: -moz-linear-gradient(top, #efefef 0%, #dddddd 100%);*/
+    background: #eee;
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin: auto;
+    border-bottom: 2px solid #C5C5C5;
+    height: 50px;    
+}
+
+#footer
+{
+	background: -moz-linear-gradient(top, #bbbbbb 0%, #efefef 100%);
+	width: 100%;
+	height: 50px;
+	bottom: 0;
+	position: relative;
+}
+
+
+
+
+
+li a
+{
+	text-align: left;
+	height: 100%;
+}
+
+nav>ul>li>a
+{
+	padding-left: 30px !important;
+}
+
+#hMenu a
+{
+	background-repeat: no-repeat;	
+	background-position: 4px 2px;
+}
+#headerSearchIcon
+{
+	background-image: url('/test_ci/imgs/icons/srch2.png');
+}
+#headerFlatIcon{background-image: url('/test_ci/imgs/icons/flat.png');}
+#headerStoreIcon{background-image: url('/test_ci/imgs/icons/store.png');}
+#headerFAQIcon{background-image: url('/test_ci/imgs/icons/faq.png');}
+#headerArticleIcon{background-image: url('/test_ci/imgs/icons/article.png');}
+#headerFieldIcon{background-image: url('/test_ci/imgs/icons/field.png');}
+#headerHouseIcon{background-image: url('/test_ci/imgs/icons/house.png');}
+#headerGarageIcon{background-image: url('/test_ci/imgs/icons/garage.png');}
+#headerFieldIcon{background-image: url('/test_ci/imgs/icons/field.png');}
+
+nav {
+	/* margin: 100px, auto*/
+	margin: auto auto; 
+	text-align: center;
+}
+
+nav ul
+{	
+	z-index: 1;
+}
+
+nav ul ul {
+	display: none;
+}
+
+	nav ul li:hover > ul {
+		display: block;
+	}
+
+
+nav ul {
+	/*
+	background: #efefef; 
+	background: linear-gradient(top, #efefef 0%, #bbbbbb 100%);  
+	background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%); 
+	background: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%); 
+	box-shadow: 0px 0px 9px rgba(0,0,0,0.15);
+	*/
+	padding: 0 10px;
+	border-radius: 10px;  
+	list-style: none;
+	position: relative;
+	display: inline-table;
+}
+	nav ul:after {
+		content: ""; clear: both; display: block;
+	}
+
+	nav ul li {
+		float: left;
+	}
+		nav ul li:hover {
+			/*
+			background: #4b545f;
+			background: linear-gradient(top, #4f5964 0%, #5f6975 40%);
+			background: -moz-linear-gradient(top, #4f5964 0%, #5f6975 40%);
+			background: -webkit-linear-gradient(top, #4f5964 0%,#5f6975 40%);
+			*/
+			border-bottom: 2px solid #555;
+		}
+			nav ul li:hover a {
+				color: #bbb;/**/
+			}
+		
+		nav ul li a {
+			display: block; padding: 5px 40px;
+			color: #757575; text-decoration: none;
+		}
+			
+		
+	nav ul ul {
+		background: #666; border-radius: 0px; padding: 0;
+		position: absolute; top: 100%;
+	}
+		nav ul ul li {
+			float: none; 
+			border-top: 1px solid #6b727c;
+			border-bottom: 1px solid #575f6a; position: relative;
+		}
+			nav ul ul li a {
+				padding: 8px 40px;
+				color: #fff;
+			}	
+				nav ul ul li a:hover {
+					background: #4b545f;
+				}
+		
+	nav ul ul ul {
+		position: absolute; left: 100%; top:0;
+	}
+
+/*************************************************************************/
+/*************************************************************************/
+
+
+
+
+
+
+
+
+/********************MAPS**************************************************/
+/*************************************************************************/
+
+#map-canvas { height: 100% }
+
+
+
+
+
+/*************************************************************************/
+/*************************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+/*********************OFFER_VIEW_SPECIFIC*********************************/
+/*************************************************************************/
+.offer {
+    border-left: 2px solid #aac;
+    background-color: #ddd;
+    width: 680px;
+    height: 180px;
+    margin-top: 20px;
+}
+
+.offer>.imageWrap
+{
+	/*border: 1px solid;*/
+	width: 180px;
+	height: 100%;
+	float: right;
+	background: url("/test_ci/imgs/icons/camera.png") 
+}
+
+.ofrAttrs
+{
+	font-size: 10pt;
+	padding-bottom: 10px;
+	height: 180px;
+	width: 500px;
+	position: relative;
+}
+
+.ofrAttrs div
+{
+	display: inline-block;
+}
+
+.ofrLoc
+{
+	height: 25px;
+	font-size: 12pt;
+	background: #aac;
+	float: left;
+	width: 60%;
+	position: relative;
+}
+
+.ofrLoc>div
+{
+	position: absolute;
+	bottom: 0;
+}
+
+.ofrBottom>.ofrBottomProps>.ofrCurrentProp
+{
+	border-right: 1px dotted;
+	border-bottom: 1px dotted;
+}
+
+
+.ofrBrief
+{
+	height: 105px;
+	width: 500px;
+}
+
+.ofrBrief>p
+{
+	padding: 10px;
+}
+
+.ofrProps
+{
+	position: relative;
+	height: 25px;
+	width: 500px;
+}
+
+.ofrBottom
+{
+	position: relative;
+	width: 100%;
+}
+
+.ofrBottomProps
+{
+	position: absolute;
+	bottom: 0;
+}
+
+.ofrAgencyLogo
+{
+	border: none;
+	float: right;
+	display: inline-block;
+}
+/*************************************************************************/
+/*************************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/***********************OFFER_ADD*****************************************/
+/*************************************************************************/
+.ofrCurrentProp>input
+{
+	width: 40px;
+	border: 0px solid;
+	background: transparent;
+	text-align: right;
+}
+
+.ofrCurrentProp>input:focus
+{
+	width: 40px;
+	border: 1px solid;
+	background: white;
+}
+
+.ofrBrief>textarea
+{
+	height: 105px;
+	width: 500px;
+	border: 0px solid;
+	background: transparent;
+	text-align: justify;
+	padding: 10px;
+}
+
+.ofrBrief>textarea:focus
+{
+	border: 1px solid;
+	background: white;
+}
+
+.ofrLoc>div>select
+{
+	border: 0px solid;
+	background: transparent;
+	text-align: justify;
+}
+
+.ofrLoc>div>select:focus
+{
+	border: 1px solid;
+	background: white;
+}
+
+#addOfrTypeIcon
+{
+	height: 20px;
+	width: 20px;
+}
+/*************************************************************************/
+/*************************************************************************/
+
+
+
+
+
+
+
+
+/*****************************FAQ_PAGE************************************/
+/*************************************************************************/
+.faqAnswer
+{
+	display: block;
+	margin-top: 40px;
+}
+
+.faqAnswer b
+{
+	font-size: 8pt;
+	font-style: italic;
+}
+
+.faqAnswerHead
+{
+	border-bottom: 1px solid orange;
+	display: inline;
+	font-size: 14pt;
+}
+
+.faqAnswerHead>div
+{
+	display: inline;
+	font-size: 14pt;
+}
+
+.faqAnswerContent
+{
+	padding-left: 10px;
+	color: #262626;
+	text-align: justify;
+	width: 60%;
+	font-size: 10pt;
+}
+
+#faqContents {
+    border: 2px dashed;
+    display: inline-block;
+    padding: 10px;
+    font-size: 10pt;
+}
+
+
+/*************************************************************************/
+/*************************************************************************/
+
