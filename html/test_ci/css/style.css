@@ -170,7 +170,39 @@ nav ul {
 
 /*********************OFFER_VIEW_SPECIFIC*********************************/
 /*************************************************************************/
-.offer {
+.ofrBoxImgIndEl
+{
+	display: inline-block;
+	float: left;
+}
+
+#imgBoxContainer_0
+{
+	border: 2px solid;
+	padding: 2px;
+	width: 680px;
+	height: 450px;
+	overflow-y: scroll;
+}
+
+.ofrBoxImg
+{
+	border: 1px solid;
+	margin: 2px;
+	display: inline-block;
+}
+
+.ofrBoxImgDel
+{
+	display: inline-block;
+}
+
+.ofrBoxImgType
+{
+	display: inline-block;
+}
+.offer
+{
     border-left: 2px solid #aac;
     background-color: #ddd;
     width: 680px;

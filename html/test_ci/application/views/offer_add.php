@@ -1,7 +1,7 @@
 <?php $set=isset($offer);?>
 <div class="offer">
 	<div class="imageWrap">
-		<img src="<?=$set?$offer->photo:'';?>" alt="image" width="180" height="180"  />
+		<img id="addOfrFrontImg" src="<?=$set?$offer->photo:'';?>" alt="image" width="180" height="180"  />
 	</div>
 	<div class="ofrAttrs">
 		<div class="ofrLoc">
@@ -54,6 +54,10 @@ Type a brief description here...
 				</div>
 			</div>
 		</div>
+	</div>
+	<div id='imgBoxContainer_0'>
+		<input type='file' id='uplImgsId'/>
+		<br />
 	</div>
 </div>
 
