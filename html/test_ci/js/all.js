@@ -1,16 +1,32 @@
 var IMGS = null;
 function initMaps() {
+	var center=new google.maps.LatLng(-34.397, 150.644);
+	var zoom=10;
 	var mapOptions = {
-	center: new google.maps.LatLng(-34.397, 150.644),
-	zoom: 8
+		center: center, 
+		zoom: zoom
 	};
 	var map = new google.maps.Map(document.getElementById("map-canvas"),
 	mapOptions);
+	var marker=new google.maps.Marker({
+		position: center,
+		map: map,
+		draggable: true,
+		title: "Drag me to the offer location",
+	});
+	google.maps.event.addListener(marker, 'dragend', function(e){
+		$.getJSON(
+			url: "test_ci/query/rgc";
+		);
+		console.log(e);
+	});
 }
+
 //google.maps.event.addDomListener(window, 'load', initiMaps);
 
 	var photoImgEl = function(url, type)
 	{
+		"use strict"
 		this.url=url;
 		this.type=type;
 		this.visible=false;
@@ -24,20 +40,21 @@ function initMaps() {
 
 		this.delEl=document.createElement('div');
 		$(this.delEl).addClass('ofrBoxImgDel');
-		this.delEl.innerHTML="X";
+		this.delEl.innerHTML=" ";
 		
 		this.tEl=document.createElement('select');
 		$(this.tEl).addClass('ofrBoxImgType');
 		var optLbl="";
-		for(var i=0;i<3;i++)
+		for(var i=1;i<4;i++)
 		{
-			if(i==0) optLbl="Interior"
-			else if(i==1) optLbl="Exterior"
-			else if(i==2) optLbl="Scheme"
+			if(i==1) optLbl="Interior"
+			else if(i==2) optLbl="Exterior"
+			else if(i==3) optLbl="Scheme"
 			
 			var option = document.createElement("option");
 			option.setAttribute("value", i+'');
 			option.innerHTML = optLbl;
+			if(i==type) option.setAttribute('selected', 1);
 			this.tEl.appendChild(option);
 		};
 		
@@ -50,13 +67,13 @@ function initMaps() {
 		this.wrapEl.appendChild(document.createElement('br'));
 		this.wrapEl.appendChild(this.tEl);
 		
-		this.show = function(cntId)
+		this.show = function(cntEl)
 		{
-			if(!this.visible) document.getElementById(cntId).appendChild(this.wrapEl);
+			if(!this.visible) cntEl.appendChild(this.wrapEl);
 			this.visible = true;
 		};
 		
-		this.hide = function(cntId)
+		this.hide = function(cntEl)
 		{
 			if(this.visible)
 			{
@@ -67,11 +84,13 @@ function initMaps() {
 		
 		this.del = function()
 		{
-			this.remove();
+			this.hide();
 			delete this.imgEl;
 			delete this.wrapEl;
 			delete this.url;
 			delete this.type;
+			this.show=function(){};
+			this.hide=function(){};
 		};
 
 		this.setInd=function(isInd)
@@ -81,24 +100,27 @@ function initMaps() {
 		};
 	};
 
-	imgArr = function()
+	imgArr = function(args)
 	{
+		"use strict"
+		if(args==undefined)
+		{
+			args={};
+		};
 		this.imgs = new Array();
 		this.indexId = null;
 		this.showType=0;
 		this.cntId='imgBoxContainer_0';
 		this.dspList=true;
-		
+		this.cntEl=document.createElement('div');
+		$(this.cntEl).attr('class', 'imgBoxContainerCl');
+		this.wrapIn=$((typeof args.wrapIn!="string")?'body':args.wrapIn);
+
 		this.addImg = function(url, type)
 		{
 			var il = this.imgs.length;
-			if(this.imgs.length==0) this.indexId=0;
 			this.imgs.push(new photoImgEl(url, type));
-			if(type==this.showType)
-			{
-				this.imgs[il].append(this.cntId);
-			};
-			if(this.showType==type||this.showType==0) this.imgs[il].show(this.cntId);
+			if(this.showType==type||this.showType==0) this.imgs[il].show(this.cntEl);
 			$(this.imgs[this.imgs.length-1].delEl).click({id: this.imgs.length-1, obj: this},function(dta){
 				dta.data.obj.removeImg(dta.data.id);
 			});
@@ -108,15 +130,29 @@ function initMaps() {
 				dta.data.imgar.chIndex(dta.data.id);
 			});
 			//*/
+			$(this.imgs[il].tEl).change({imgar: this, id: il}, function(dta){
+				var inp=dta.data;
+				var val=parseInt(this.value);
+				inp.imgar.imgs[inp.id].type=this.value;
+				if(inp.imgar.showType!=val&&inp.imgar.showType!=0) inp.imgar.imgs[inp.id].hide();
+			});
+
+			if(this.imgs.length==1)
+			{
+				this.indexId=0;
+				this.chIndex(0);
+				this.wrapIn.append(this.cntEl);
+			};
 			return this.imgs.length;
 		};
 		
 		this.removeImg = function(id)
 		{
-			this.imgs[id].hide();
-			//this.imgs[id].del();
-			console.log("de "+id);
-			this.imgs.splice(id, 1);
+			this.imgs[id].del();
+			if(id==this.indexId)
+			{
+				this.chIndex(0);
+			};
 		};
 		
 		//change display type
@@ -126,8 +162,8 @@ function initMaps() {
 			if(this.showType == to) return;
 			for(var i=0; i<this.imgs.length; i++)
 			{
-				if(this.imgs[i].type==to||to==0) this.imgs[i].show(this.cntId);
-				else this.imgs[i].hide(this.cntId);
+				if(this.imgs[i].type==to||to==0) this.imgs[i].show(this.cntEl);
+				else this.imgs[i].hide(this.cntEl);
 			};
 			this.showType = to;
 		};
@@ -136,10 +172,8 @@ function initMaps() {
 		{
 			this.imgs[this.indexId].setInd(false);
 			this.indexId = parseInt(indId);
-			console.log(this.imgs[this.indexId].url);
 			$('#addOfrFrontImg').attr("src", this.imgs[indId].url);
 			this.imgs[this.indexId].setInd(true);
-			//addOfrFrontImg
 		};
 
 	}
@@ -341,7 +375,22 @@ function rdy(elem)
 
 $(document).ready(rdy);
 $(document).ready(function(){
-	IMGS = new imgArr();
-	for(var i=0;i<15;i++) IMGS.addImg("https://i1.ytimg.com/vi/vzTsEJjFL0k/default.jpg", 1);
-	//initMaps();
+	IMGS = new imgArr({wrapIn: '#imgsin'});
+	//IMGS.addImg("http://img01.imovelweb.com.br//logos/755474_imovelweblogo.jpg", 1);
+	//for(var i=0;i<15;i++) IMGS.addImg("https://i1.ytimg.com/vi/vzTsEJjFL0k/default.jpg", 1);
+	$('#uplImgsId').change(function(){
+		"use strict"
+		for(var  i=0;i<this.files.length;i++)
+		{
+			if(!this.files[i].type.match(/image/g)) continue;
+			var type=(this.files[i].type.match(/png|svg|gif/))?3:1;
+			var oFReader = new FileReader();
+			oFReader.readAsDataURL(this.files[i]);
+			oFReader.fType=type;
+			oFReader.onload = function (e) {
+				IMGS.addImg(e.target.result, this.fType);
+			};
+		};
+	});
+	initMaps();
 });

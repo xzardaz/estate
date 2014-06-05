@@ -6,23 +6,15 @@
 	<div class="ofrAttrs">
 		<div class="ofrLoc">
 			<div>
-				<img src="/test_ci/imgs/icons/house.png" id="addOfrTypeIcon" />
-				<select>
-					<option>
-						Flat
-					</option>
-					<option>
-						Store
-					</option>
-					<option>
-						Garage
-					</option>
-					<option>
-						Field
-					</option>
-					<option>
-						House
-					</option>
+				<select class="ofrTypeSelect">
+					<?php
+						foreach($types as $type) 
+						{
+							echo "
+								<option style='background:url(\"".$type['icon']."\") no-repeat'>
+									 ".$type['name']."
+								</option>";
+						}; ?>
 				</select>
 				in
 				 location here
@@ -30,7 +22,7 @@
 		</div>
 		<div class="ofrBrief">
 				<textarea>
-Type a brief description here...
+					Type a brief description here...
 				</textarea>
 		</div>
 		<div class="ofrProps">
@@ -55,9 +47,9 @@ Type a brief description here...
 			</div>
 		</div>
 	</div>
-	<div id='imgBoxContainer_0'>
-		<input type='file' id='uplImgsId'/>
-		<br />
+	
+	<input type='file' id='uplImgsId' multiple/>
+	<div id='imgsin'>
 	</div>
 </div>
 

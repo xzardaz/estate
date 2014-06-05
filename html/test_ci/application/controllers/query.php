@@ -99,12 +99,19 @@ class Query extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
+
+	public function rgc()
+	{
+		echo "manyman";
+	}
+
 	public function index()
 	{
 		$this->load->view('welcome_message');
 		//$this->load->view();
 		//echo "rewrite";
 	}
+
 	public function mtwo($p1, $p2)
 	{
 		echo "hello $p1, $p2";
