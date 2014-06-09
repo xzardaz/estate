@@ -7,6 +7,8 @@
 	 <link rel="stylesheet" href="<?php echo base_url()."css/style.css"  ?>">  </link>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js">
 	</script>
+	<script type="text/javascript" src="<?=base_url();?>js/swfobject.js">
+	</script>
 	<script type="text/javascript" src="<?=base_url();?>js/all.js"></script>
 <script type="text/javascript"
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxdE883_vL4xH4ApZQrfrAkvJPVYmi_tE&sensor=TRUE">

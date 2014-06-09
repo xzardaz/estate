@@ -48,11 +48,25 @@
 		</div>
 	</div>
 	
-	<input type='file' id='uplImgsId' multiple/>
-	<div id='imgsin'>
-	</div>
 </div>
+<!--
+<h4>
+	Photos
+</h4>
+<input type='file' id='uplImgsId' multiple/>
+<div id='imgsin'>
+</div>
+-->
 
+<h4>
+	Video
+</h4>
+<input type="text"   id="addVidTxtBoxId" value="type the id"/>
+<input type="button" id="addVidBtnId"    value="GoGo"       />
+<br/>
 
+<object style="visibility: visible;" data="http://www.youtube.com/v/pNt0iVG2VOA?enablejsapi=1&;playerapiid=addVidWrapper&;version=3" id="addVidWrapper" type="application/x-shockwave-flash" height="356" width="680"><param value="always" name="allowScriptAccess"></object>
+<!--
 <div id="map-canvas"/>
+-->
 

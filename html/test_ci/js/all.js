@@ -1,4 +1,5 @@
 var IMGS = null;
+var YTPLR=null;
 function initMaps() {
 	var center=new google.maps.LatLng(-34.397, 150.644);
 	var zoom=10;
@@ -14,12 +15,12 @@ function initMaps() {
 		draggable: true,
 		title: "Drag me to the offer location",
 	});
-	google.maps.event.addListener(marker, 'dragend', function(e){
-		$.getJSON(
-			url: "test_ci/query/rgc";
-		);
-		console.log(e);
-	});
+	//google.maps.event.addListener(marker, 'dragend', function(e){
+	//	$.getJSON(
+	//		url: "test_ci/query/rgc";
+	//	);
+	//	console.log(e);
+	//});
 }
 
 //google.maps.event.addDomListener(window, 'load', initiMaps);
@@ -374,7 +375,22 @@ function rdy(elem)
 }
 
 $(document).ready(rdy);
+function onYouTubePlayerReady(playerId) {
+	YTPLR = document.getElementById("addVidWrapper");
+	//console.log(YTPLR.loadVideoById)
+	//alert('ld');
+};
+
 $(document).ready(function(){
+	$('#addVidBtnId').click(function(){
+		var video_id=$('#addVidTxtBoxId').val().split('v=')[1];
+		var ampersandPosition = video_id.indexOf('&');
+		if(ampersandPosition != -1) {
+			video_id = video_id.substring(0, ampersandPosition);
+		};
+		//console.log(video_id);
+		YTPLR.cueVideoById(video_id);
+	});
 	IMGS = new imgArr({wrapIn: '#imgsin'});
 	//IMGS.addImg("http://img01.imovelweb.com.br//logos/755474_imovelweblogo.jpg", 1);
 	//for(var i=0;i<15;i++) IMGS.addImg("https://i1.ytimg.com/vi/vzTsEJjFL0k/default.jpg", 1);
@@ -392,5 +408,5 @@ $(document).ready(function(){
 			};
 		};
 	});
-	initMaps();
+	//initMaps();
 });
