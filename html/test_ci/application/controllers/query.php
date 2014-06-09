@@ -66,7 +66,7 @@ class Query extends CI_Controller {
 			
 
 			//echo $q;
-		};
+		}
 		else if($_POST["action"]=="list")
 		{
 			$q=" SELECT
@@ -102,6 +102,7 @@ class Query extends CI_Controller {
 
 	public function rgc()
 	{
+		
 		echo "manyman";
 	}
 

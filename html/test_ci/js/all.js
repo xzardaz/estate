@@ -15,12 +15,20 @@ function initMaps() {
 		draggable: true,
 		title: "Drag me to the offer location",
 	});
-	//google.maps.event.addListener(marker, 'dragend', function(e){
-	//	$.getJSON(
-	//		url: "test_ci/query/rgc";
-	//	);
-	//	console.log(e);
-	//});
+	google.maps.event.addListener(marker, 'dragend', function(e){
+		var gCoder = new google.maps.Geocoder();
+		gCoder.geocode({'latLng':e.latLng}, function(r, s){
+			if(s=='OK')
+			{
+				var str = r[0].formatted_address;
+				if(str.length>20) str=str.substring(0,17)+'...';
+				$('#ofrLocTxt').text(str);
+			}
+			console.log(s);
+			console.log(r);
+		});
+		console.log(e);
+	});
 }
 
 //google.maps.event.addDomListener(window, 'load', initiMaps);
@@ -381,14 +389,36 @@ function onYouTubePlayerReady(playerId) {
 	//alert('ld');
 };
 
-$(document).ready(function(){
-	$('#addVidBtnId').click(function(){
+function addOfferRdy()
+{
+	$('#addVidTxtBoxId').focusin(function(){
+		$(this).removeClass('grayBoldText').val('');
+	});
+	$('.addVidControls>form').submit(function(e){
+		e.preventDefault();
 		var video_id=$('#addVidTxtBoxId').val().split('v=')[1];
 		var ampersandPosition = video_id.indexOf('&');
 		if(ampersandPosition != -1) {
 			video_id = video_id.substring(0, ampersandPosition);
 		};
-		//console.log(video_id);
+		if(YTPLR==null)
+		{
+			var url="http://www.youtube.com/v/" +
+				video_id +
+				"?enablejsapi=1&playerapiid=ytplayer&version=3";
+			swfobject.embedSWF(
+				url,
+				"addVidWrapper",
+				"680",
+				"420",
+				"8",
+				null,
+				null,
+				{allowScriptAccess: "always"},
+				{id: "addVidWrapper"}
+			);
+			YTPLR=document.getElementById('addVidWrapper');
+		};
 		YTPLR.cueVideoById(video_id);
 	});
 	IMGS = new imgArr({wrapIn: '#imgsin'});
@@ -408,5 +438,9 @@ $(document).ready(function(){
 			};
 		};
 	});
-	//initMaps();
+	initMaps();
+}
+
+$(document).ready(function(){
+	addOfferRdy();
 });

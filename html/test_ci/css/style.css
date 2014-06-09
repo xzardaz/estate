@@ -282,9 +282,58 @@ nav ul {
 
 
 
+/*************************************************************************/
+/*************************GENERAL_THINGS**********************************/
+.grayBoldText
+{
+	font-weight: bold;
+	color: gray;
+}
+
+h4
+{
+	border-bottom: 2px solid orange;
+	width: 680px;
+}
+
+/*************************************************************************/
+/*************************************************************************/
+
+
+
+
+
+
+
+
+
+
+
 
 /***********************OFFER_ADD*****************************************/
 /*************************************************************************/
+.addVidControls
+{
+	width: 680px;
+	margin-bottom: 1px;
+}
+
+#addVidTxtBoxId
+{
+	width: 80%;
+	border: 0px;
+	background-color: #DDD;
+	border-bottom: 2px solid gray;
+	border-right: 2px solid gray;
+	margin-right: 0px;
+	display: inline-block;
+}
+
+#addVidBtnId
+{
+	width: 18%;
+}
+
 .ofrBoxImgIndEl
 {
 	display: inline-block;
@@ -318,7 +367,7 @@ select.ofrTypeSelect
 	background: lightgray;
 	padding: 2px;
 	width: 680px;
-	height: 450px;
+	height: 250px;
 	overflow-y: scroll;
 }
 
