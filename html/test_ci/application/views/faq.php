@@ -22,10 +22,6 @@
 	foreach($data as $qna)
 	{
 ?>
-
-
-
-
 	<div class="faqAnswer" id="<?=$qna['id']; ?>">
 		<div class="faqAnswerHead">
 			<?=$qna['question'];?>

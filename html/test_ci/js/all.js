@@ -1,5 +1,6 @@
 var IMGS = null;
 var YTPLR=null;
+var DB=null;
 function initMaps() {
 	var center=new google.maps.LatLng(-34.397, 150.644);
 	var zoom=10;
@@ -227,9 +228,18 @@ function loadPage(url)
 		history.pushState({}, "title", url);
 };
 
-var KNOWN_PAGES=new Array();
-KNOWN_PAGES["faq"]=function()
+var THIS_PAGE=
 {
+	url: 'blabla',
+	element: null
+};
+var KNOWN_PAGES=new Array();
+KNOWN_PAGES["faq"]=
+{
+	attach: function(){
+		$(THIS_PAGE.element).remove();
+		
+	}
 	//var data=;
 };
 var PAGES_CACHE=new Array();
@@ -357,18 +367,18 @@ function rdy(elem)
 
 	PAGES_CACHE[window.location.pathname]=$("#pbody").html();
 
-	window.addEventListener("popstate", function(e) {
-		loadPage(window.location.pathname);
-	});
+	//window.addEventListener("popstate", function(e) {
+	//	loadPage(window.location.pathname);
+	//});
 	
 	var link=elem.find('a');
 	$.each(link, function(key, val){
 		//console.log(link[key]);
 		$(link[key]).click(function(e)
 		{
-			e.preventDefault();
-			var href=$(this).attr("href");
-			loadPage(href);
+			//e.preventDefault();
+			//var href=$(this).attr("href");
+			//loadPage(href);
 		});
 });
 
@@ -389,10 +399,36 @@ function onYouTubePlayerReady(playerId) {
 	//alert('ld');
 };
 
+function initSQL()
+{
+	DB=SQL.open();
+	var init=$.ajax({url: '/estate2.sql'}).done(function(e){
+		DB.exec(e);
+	});
+	console.log(init);
+}
+
 function addOfferRdy()
 {
 	$('#addVidTxtBoxId').focusin(function(){
-		$(this).removeClass('grayBoldText').val('');
+		if(typeof this.cleared=="undefined")
+		{
+			$(this).val('');
+			$(this).removeClass('grayBoldText');
+			this.cleared = true;
+		}
+		else 
+		{
+			$(this).select();
+		};
+	});
+	$('.ofrBrief>textarea').focusin(function(){
+		if(typeof $(this).cleared=="undefined")
+		{
+			$(this).text('');
+			$(this).removeClass('grayBoldText');
+			$(this).cleared = true;
+		};
 	});
 	$('.addVidControls>form').submit(function(e){
 		e.preventDefault();
@@ -438,9 +474,10 @@ function addOfferRdy()
 			};
 		};
 	});
-	initMaps();
+	//initMaps();
 }
 
 $(document).ready(function(){
 	addOfferRdy();
+	initSQL();
 });

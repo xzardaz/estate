@@ -11,7 +11,7 @@
 						foreach($types as $type) 
 						{
 							echo "
-								<option style='background:url(\"".$type['icon']."\") no-repeat'>
+								<option>
 									 ".$type['name']."
 								</option>";
 						}; ?>
@@ -23,8 +23,8 @@
 			</div>
 		</div>
 		<div class="ofrBrief">
-				<textarea>
-					Type a brief description here...
+				<textarea class="grayBoldText">
+Type a brief description here...
 				</textarea>
 		</div>
 		<div class="ofrProps">
@@ -40,7 +40,7 @@
 					</div>
 					<div class="ofrCurrentProp">
 						<input type="text" id="inAddOfrArea"/>
-						m2
+						m&sup2
 					</div>
 				</div>
 				<div class="ofrAgencyLogo">
