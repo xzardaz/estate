@@ -256,8 +256,15 @@ function faqEdit(){
 		var textVal=elText.html();
 		var txtWidth=elText.width();
 		var txtHeight=elText.height();
-		elHead.html("<input type='text' value='"+headVal+"'></input>");
-		elText.html("<textarea style='width:"+txtWidth+";height:"+txtHeight+"' >"+textVal+"</textarea>");
+		$(elHead).html("<input type='text' value='"+headVal+"'></input>");
+		$(elText).html("<textarea style='width:"+txtWidth+";height:"+txtHeight+"' >"+textVal+"</textarea><br><input type=\"button\" value=\"done\" style=\"width:100%\"></input>");
+		$(elText).find('input').click({txt: $(elText), head: $(elHead)}, function(e){
+			var txt=e.data.txt.find('textarea').val();
+			var head=e.data.head.find('input').val();
+			//do some with the text and the heading
+			e.data.txt.html(txt);
+			e.data.head.html(head);
+		});
 	}
 
 
@@ -357,13 +364,14 @@ function faqDel(){
 		sendQuery('/test_ci/query/faq', params, cb);
 	};
 
-function rdy(elem)
+function adminFaqCache(elem)
 {
-	if(elem==undefined) elem=$("html");
-	//elem.find('.moveUpFAQ').click(faqMvUp);
-	//elem.find('.moveDownFAQ').click(faqMvDown);
-	//elem.find('.removeFAQ').click(faqDel);
-	//elem.find('.editFAQ').click(faqEdit);
+	if(elem==undefined) elem=$("body");
+		console.log(elem.find('a'))
+	$(elem.find('.moveUpFAQ')).click(faqMvUp);
+	$(elem.find('.moveDownFAQ')).click(faqMvDown);
+	$(elem.find('.removeFAQ')).click(faqDel);
+	$(elem.find('.editFAQ')).click(faqEdit);
 
 	PAGES_CACHE[window.location.pathname]=$("#pbody").html();
 
@@ -392,7 +400,7 @@ function rdy(elem)
 	//});
 }
 
-$(document).ready(rdy);
+$(document).ready(adminFaqCache);
 function onYouTubePlayerReady(playerId) {
 	YTPLR = document.getElementById("addVidWrapper");
 	//console.log(YTPLR.loadVideoById)
@@ -479,5 +487,5 @@ function addOfferRdy()
 
 $(document).ready(function(){
 	addOfferRdy();
-	initSQL();
+	//initSQL();
 });
