@@ -342,7 +342,6 @@ function faqMvDown(){
 
 
 function faqDel(){
-		alert("del");
 		//($(this).parent().parent().parent().attr("id"));
 		var mdId=$(this).parent().parent().parent().attr("id");
 		var params=
@@ -367,7 +366,6 @@ function faqDel(){
 function adminFaqCache(elem)
 {
 	if(elem==undefined) elem=$("body");
-		console.log(elem.find('a'))
 	$(elem.find('.moveUpFAQ')).click(faqMvUp);
 	$(elem.find('.moveDownFAQ')).click(faqMvDown);
 	$(elem.find('.removeFAQ')).click(faqDel);
@@ -415,6 +413,55 @@ function initSQL()
 	});
 	console.log(init);
 }
+
+var GoStore = null;
+function initIndexedDB()
+{
+	var request = indexedDB.open("library", 2);
+
+	request.onupgradeneeded = function()
+	{
+		// The database did not previously exist, so create object stores and indexes.
+		var db = request.result;
+		var store = db.createObjectStore("offers", {autoIncrement: true});
+		var titleIndex = store.createIndex("price", "price");
+		var authorIndex = store.createIndex("area", "area");
+		var authorIndex = store.createIndex("frontPhotoId", "frontPhotoId");
+		var authorIndex = store.createIndex("lat", "lat");
+		var authorIndex = store.createIndex("lng", "lng");
+
+		// Populate with initial data.
+		store.put({price: 2222, area: 55, frontPhotoId: 56, lat: 56.7, lng: 68.6});
+	};
+
+	request.onsuccess = function()
+	{
+		DB = request.result;
+	};
+	
+
+}
+
+function ssss(){
+	var tx = DB.transaction("offers", "readonly");
+	var store = tx.objectStore("offers");
+	var index = store.index("price");
+
+	var request = index.get(2222);
+	request.onsuccess = function() {
+		var matching = request.result;
+		if (matching !== undefined)
+		{
+			// A match was found.
+			console.log(matching.price, matching.lat, matching.lng);
+		}
+		else
+		{
+			// No match was found.
+			console.log(null);
+		}
+	};
+};
 
 function addOfferRdy()
 {
@@ -487,5 +534,5 @@ function addOfferRdy()
 
 $(document).ready(function(){
 	addOfferRdy();
-	//initSQL();
+	initIndexedDB();
 });
