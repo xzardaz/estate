@@ -12,7 +12,7 @@ $cookie_str='__utma=106444544.221060058.1399636040.1399636040.1399636040.1; __ut
 $fh=fopen("ids", "r");
 $fm=fopen("mm", "r+");
 
-for($i=200;$i<3223;$i++)
+for($i=24772;$i<75200;$i++)
 //if(true)
 {
 	$pid=fread($fh, 7);
@@ -30,7 +30,7 @@ for($i=200;$i<3223;$i++)
 
 
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-	curl_setopt($ch, CURLOPT_VERBOSE, 1);
+	curl_setopt($ch, CURLOPT_VERBOSE, 0);
 	curl_setopt($ch, CURLOPT_HEADER, 1);
 
 	curl_setopt($ch, CURLOPT_HEADER, 0);
@@ -45,7 +45,7 @@ for($i=200;$i<3223;$i++)
 	
 	
 	//$arrMails=array();
-	preg_match_all('/([_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3}))/', $body, $matches);
+	preg_match_all('/([_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3}))/i', $body, $matches);
 	foreach($matches[0] as $mail)
 	{
 		//$arrMails[]=$mail;
@@ -59,10 +59,10 @@ for($i=200;$i<3223;$i++)
 	//$html =  str_get_html($body);
 
 	//echo "<hr><hr>page $pgNum count is $cc";
-	echo("pr ".$i."<hr>");
+	echo("pr ".$i."\n");
+	//echo("		id: ".$pid."\n");
 	//echo $body;
 	flush();
-	ob_flush();
 
 	//echo $body;
 };

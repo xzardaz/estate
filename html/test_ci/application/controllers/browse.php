@@ -23,6 +23,8 @@ class Browse extends CI_Controller {
 		$jOut=array_key_exists('json', $_POST);
 		if(!$jOut)
 			$out.=$this->load->view("head");
+		if(!$jOut)
+			$out.=$this->load->view("filters");
 		$this->load->model('offer_mdl');
 		$ofrs=$this->offer_mdl->getList();
 		foreach($ofrs as $offer)
