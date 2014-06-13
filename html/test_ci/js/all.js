@@ -405,13 +405,15 @@ function onYouTubePlayerReady(playerId) {
 	//alert('ld');
 };
 
+var stmt;
 function initSQL()
 {
-	DB=SQL.open();
+	DB = new SQL.Database();
 	var init=$.ajax({url: '/estate2.sql'}).done(function(e){
-		DB.exec(e);
+		DB.run(e);
+		//stmt = DB.prepare("SELECT * FROM agencies WHERE 1");
 	});
-	console.log(init);
+	//console.log(init);
 }
 
 var GoStore = null;
@@ -534,5 +536,5 @@ function addOfferRdy()
 
 $(document).ready(function(){
 	addOfferRdy();
-	initIndexedDB();
+	initSQL();
 });
