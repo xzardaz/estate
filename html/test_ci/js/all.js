@@ -534,7 +534,17 @@ function addOfferRdy()
 	//initMaps();
 }
 
+var db;
 $(document).ready(function(){
-	addOfferRdy();
-	initSQL();
+$('#dbfile').change(function() {
+	var f = this.files[0];
+	var r = new FileReader();
+	r.onload = function() {
+	var Uints = new Uint8Array(r.result);
+	db = new SQL.Database(Uints);
+	}
+	r.readAsArrayBuffer(f);
+});
+addOfferRdy();
+initSQL();
 });
