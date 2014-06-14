@@ -55,7 +55,7 @@ var offerEl=function(props)
 '					<div class="ofrCurrentProp">'+props['area']+'m<sup>;2</sup>;</div>',
 '				</div>',
 '				<div class="ofrAgencyLogo">',
-'					<img src="http://img01.imovelweb.com.br//logos/755474_imovelweblogo.jpg" alt="company" height="50" width="150">',
+'					<img src="http://imoti.net/agency/sp_agency/?id='+props['agency']+'" alt="company" height="50" width="150">',
 '				</div>',
 '			</div>',
 '		</div>',
@@ -451,6 +451,14 @@ function initSQL()
 	//console.log(init);
 }
 
+function initNoSQL()
+{
+	DB=new Array();
+	//jQuery.getJSON("/test_ci/query/faq", arr1, function(data){
+		//console.log(data);
+	//});
+}
+
 var GoStore = null;
 function initIndexedDB()
 {
@@ -569,6 +577,64 @@ function addOfferRdy()
 	//initMaps();
 }
 
+var FILTERS=
+{
+	price:
+	{
+		min: 10,
+		max: 100
+	}
+};
+
+function filtersRdy()
+{
+	var slider=$('#fPriceSlider').slider({
+		range: true,
+		min: 0,
+		max: 500000,
+		values: [10000, 100000],
+		change: function(e, s){
+			FILTERS.price.min=s.values[0];
+			FILTERS.price.max=s.values[1];
+			updateFilters();
+			console.log(s.values);
+		}
+	});
+};
+
+function updateFilters()
+{
+	var q="select * from offers where price > "+FILTERS.price.min+" and price < "+FILTERS.price.max+"";
+	console.log(q);
+	var res=DB.exec(q)[0];
+	var mainEl=$('#browseList');
+	mainEl.html('');
+	for(var i=0;i<res.values.length;i++)
+	{
+		var val=res.values[i];
+		var props={agency: 0, price: 0, area: 0, loc: 'hello', image: '', type: '', brief: 'brief description'};
+		props.price=val[1];
+		props.area=val[2];
+		props.loc=val[6];
+		props.image=val[4];
+		props.agency=val[3];
+		console.log(props);
+		var tType;
+		switch(val[5])
+		{
+			case 1: tType='Апартамент'; break;
+			case 2: tType='Магазин'; break;
+			case 3: tType='Гараж'; break;
+			case 4: tType='Парцел'; break;
+			case 5: tType='Къща'; break;
+			default: tType='Имот'; break;
+		};
+		props.type=tType;
+		var elem=new offerEl(props);
+		mainEl.append(elem.el);
+	};
+}
+
 var db;
 var resires;
 $(document).ready(function(){
@@ -582,11 +648,13 @@ $('#priceLower').change(function(){
 	for(var i=0;i<res.values.length;i++)
 	{
 		var val=res.values[i];
-		var props={price: 0, area: 0, loc: 'hello', image: '', type: '', brief: 'brief description'};
+		var props={agency: 0, price: 0, area: 0, loc: 'hello', image: '', type: '', brief: 'brief description'};
 		props.price=val[1];
 		props.area=val[2];
 		props.loc=val[6];
 		props.image=val[4];
+		props.agency=val[3];
+		console.log(props);
 		var tType;
 		switch(val[5])
 		{
@@ -612,6 +680,7 @@ $('#dbfile').change(function() {
 	}
 	r.readAsArrayBuffer(f);
 });
+filtersRdy();
 addOfferRdy();
 initSQL();
 });

@@ -72,8 +72,8 @@ foreach($el as $subel)
 	$addrstr=implode(', ', $typetry);
 	$typestr=$type;
 	$q="insert into \"offers\" (price, area, agency, imgpath, type, address) values ($prstr, $arstr, $agstr, \"http://imoti.net$imgstr\", $typestr, \"$addrstr\");";
-	//echo "$prstr, $arstr, $agstr, $imgstr, $typestr, $addrstr\n";
-	echo $q."\n";
+	echo "$prstr, $arstr, $agstr, $imgstr, $typestr, $addrstr\n";
+	//echo $q."\n";
 };
 flush();
 };

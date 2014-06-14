@@ -113,6 +113,11 @@ class Query extends CI_Controller {
 		//echo "rewrite";
 	}
 
+	public function nosql()
+	{
+		echo file_get_contents();
+	}
+
 	public function mtwo($p1, $p2)
 	{
 		echo "hello $p1, $p2";
