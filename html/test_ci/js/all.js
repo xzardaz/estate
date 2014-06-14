@@ -37,23 +37,22 @@ var offerEl=function(props)
 	var myhtml = ['',
 '<div class="offer">',
 '	<div class="imageWrap">',
-'		<img src="http://www.aceshowbiz.com/images/news/casper-smart-confirms-jennifer-lopez-will-return-to-american-idol.jpg" alt="image" height="180" width="180">',
+'		<img src="'+props['image']+'" alt="image" height="180" width="180">',
 '	</div>',
 '	<div class="ofrAttrs">',
 '		<div class="ofrLoc">',
-'			<div>type(4): location here</div>',
+'			<div>'+props['type']+': '+props['loc']+'</div>',
 '		</div>',
 '		<div class="ofrBrief">',
-'			<p>',
-'			a sl kdfhk ja sdfhk sja asdf afsdfa sdf asdf asdf asd fasdfdfhasdjkfhk ajsdfhwwk asasdf asdf asdf asdfasdf asdfasdf asasdfasd asdfasdf asdfasdfsdf asdfasdf fsadfsad sdfaf asd',
+'			<p>'+props['brief']+'',
 '			</p>',
 '		</div>',
 '		<div class="ofrProps">',
 '			<div class="ofrBottom">',
 '				<div class="ofrBottomProps">',
-'					<div class="ofrCurrentProp"><b>$</b>25000</div>',
+'					<div class="ofrCurrentProp"><b>$</b>'+props['price']+'</div>',
 '					',
-'					<div class="ofrCurrentProp">5m<sup>;2</sup>;</div>',
+'					<div class="ofrCurrentProp">'+props['area']+'m<sup>;2</sup>;</div>',
 '				</div>',
 '				<div class="ofrAgencyLogo">',
 '					<img src="http://img01.imovelweb.com.br//logos/755474_imovelweblogo.jpg" alt="company" height="50" width="150">',
@@ -65,7 +64,8 @@ var offerEl=function(props)
 ''].join(' ');
 	this.el=document.createElement('div');
 	$(this.el).html(myhtml);
-}
+	this.props=props;
+};
 
 //google.maps.event.addDomListener(window, 'load', initiMaps);
 
@@ -570,13 +570,45 @@ function addOfferRdy()
 }
 
 var db;
+var resires;
 $(document).ready(function(){
+$('#priceLower').change(function(){
+	var bound = (parseInt(this.value));
+	var q="select * from offers where price > "+(bound|0)+" limit 10";
+	var res=DB.exec(q)[0];
+	resres=res;
+	var mainEl=$('#browseList');
+	mainEl.html('');
+	for(var i=0;i<res.values.length;i++)
+	{
+		var val=res.values[i];
+		var props={price: 0, area: 0, loc: 'hello', image: '', type: '', brief: 'brief description'};
+		props.price=val[1];
+		props.area=val[2];
+		props.loc=val[6];
+		props.image=val[4];
+		var tType;
+		switch(val[5])
+		{
+			case 1: tType='Апартамент'; break;
+			case 2: tType='Магазин'; break;
+			case 3: tType='Гараж'; break;
+			case 4: tType='Парцел'; break;
+			case 5: tType='Къща'; break;
+			default: tType='Имот'; break;
+		};
+		props.type=tType;
+		var elem=new offerEl(props);
+		mainEl.append(elem.el);
+	};
+	console.log(res);
+});
 $('#dbfile').change(function() {
 	var f = this.files[0];
 	var r = new FileReader();
 	r.onload = function() {
 	var Uints = new Uint8Array(r.result);
-	db = new SQL.Database(Uints);
+	DB = new SQL.Database(Uints);
 	}
 	r.readAsArrayBuffer(f);
 });
