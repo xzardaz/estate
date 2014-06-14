@@ -32,6 +32,41 @@ function initMaps() {
 	});
 }
 
+var offerEl=function(props)
+{
+	var myhtml = ['',
+'<div class="offer">',
+'	<div class="imageWrap">',
+'		<img src="http://www.aceshowbiz.com/images/news/casper-smart-confirms-jennifer-lopez-will-return-to-american-idol.jpg" alt="image" height="180" width="180">',
+'	</div>',
+'	<div class="ofrAttrs">',
+'		<div class="ofrLoc">',
+'			<div>type(4): location here</div>',
+'		</div>',
+'		<div class="ofrBrief">',
+'			<p>',
+'			a sl kdfhk ja sdfhk sja asdf afsdfa sdf asdf asdf asd fasdfdfhasdjkfhk ajsdfhwwk asasdf asdf asdf asdfasdf asdfasdf asasdfasd asdfasdf asdfasdfsdf asdfasdf fsadfsad sdfaf asd',
+'			</p>',
+'		</div>',
+'		<div class="ofrProps">',
+'			<div class="ofrBottom">',
+'				<div class="ofrBottomProps">',
+'					<div class="ofrCurrentProp"><b>$</b>25000</div>',
+'					',
+'					<div class="ofrCurrentProp">5m<sup>;2</sup>;</div>',
+'				</div>',
+'				<div class="ofrAgencyLogo">',
+'					<img src="http://img01.imovelweb.com.br//logos/755474_imovelweblogo.jpg" alt="company" height="50" width="150">',
+'				</div>',
+'			</div>',
+'		</div>',
+'	</div>',
+'</div>',
+''].join(' ');
+	this.el=document.createElement('div');
+	$(this.el).html(myhtml);
+}
+
 //google.maps.event.addDomListener(window, 'load', initiMaps);
 
 	var photoImgEl = function(url, type)
