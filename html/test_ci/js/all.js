@@ -604,8 +604,7 @@ function filtersRdy()
 
 function updateFilters()
 {
-	var q="select * from offers where price > "+FILTERS.price.min+" and price < "+FILTERS.price.max+"";
-	console.log(q);
+	var q="select * from offers where price > "+FILTERS.price.min+" and price < "+FILTERS.price.max+" limit 10";
 	var res=DB.exec(q)[0];
 	var mainEl=$('#browseList');
 	mainEl.html('');
@@ -618,7 +617,6 @@ function updateFilters()
 		props.loc=val[6];
 		props.image=val[4];
 		props.agency=val[3];
-		console.log(props);
 		var tType;
 		switch(val[5])
 		{

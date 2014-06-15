@@ -15,7 +15,7 @@
 	</script>
 	<!-- -->
 	<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-	<script type="text/javascript" src="<?=base_url();?>js/all.js"></script>
+	<script charset="utf-8" type="text/javascript" src="<?=base_url();?>js/all.js"></script>
 	<script type="text/javascript"
       		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxdE883_vL4xH4ApZQrfrAkvJPVYmi_tE&sensor=TRUE">
     	</script>
