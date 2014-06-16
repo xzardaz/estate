@@ -10,10 +10,10 @@
 	</script>
 	<script type="text/javascript" src="<?=base_url();?>js/swfobject.js">
 	</script>
-	<!-- -->
+	<!-- 
 	<script type="text/javascript" src="<?=base_url();?>js/sql.js">
 	</script>
-	<!-- -->
+	-->
 	<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 	<script charset="utf-8" type="text/javascript" src="<?=base_url();?>js/all.js"></script>
 	<script type="text/javascript"

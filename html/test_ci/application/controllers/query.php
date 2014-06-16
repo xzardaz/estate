@@ -115,7 +115,7 @@ class Query extends CI_Controller {
 
 	public function nosql()
 	{
-		echo file_get_contents();
+		echo file_get_contents("dbtest.json");
 	}
 
 	public function mtwo($p1, $p2)

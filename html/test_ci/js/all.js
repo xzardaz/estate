@@ -32,6 +32,23 @@ function initMaps() {
 	});
 }
 
+function loadScript(url, callback)
+{
+    // Adding the script tag to the head as suggested before
+    var head = document.getElementsByTagName('head')[0];
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = url;
+
+    // Then bind the event to the callback function.
+    // There are several events for cross browser compatibility.
+    script.onreadystatechange = callback;
+    script.onload = callback;
+
+    // Fire the loading
+    head.appendChild(script);
+};
+
 var offerEl=function(props)
 {
 	var myhtml = ['',
@@ -443,20 +460,37 @@ function onYouTubePlayerReady(playerId) {
 var stmt;
 function initSQL()
 {
-	DB = new SQL.Database();
+	DBCTRL.DB = new SQL.Database();
 	var init=$.ajax({url: '/estate2.sql'}).done(function(e){
-		DB.run(e);
+		DBCTRL.DB.run(e);
 		//stmt = DB.prepare("SELECT * FROM agencies WHERE 1");
 	});
 	//console.log(init);
 }
 
-function initNoSQL()
+var DBCTRL=
 {
-	DB=new Array();
-	//jQuery.getJSON("/test_ci/query/faq", arr1, function(data){
-		//console.log(data);
-	//});
+	getResults: function(){},
+	init: function(strController)
+	{
+		switch(strController)
+		{
+			case "SQL":
+				loadScript("js/sql.js", initSQL);
+			break;
+			case "NoSQL":
+				initNoSQL(this);
+			break;
+		};
+	},
+	DB: null,
+	controller: "SQL"
+};
+
+function initNoSQL(dbctrl)
+{
+	dbctrl.DB=new Array();
+	jQuery.getJSON("/test_ci/query/nosql", {}).done(function(){alert()}).fail(function(e){console.log(this)});
 }
 
 var GoStore = null;
@@ -583,12 +617,18 @@ var FILTERS=
 	{
 		min: 10,
 		max: 100
-	}
+	},
+	area:
+	{
+		min: 10,
+		max: 100
+	},
+	order: 1
 };
 
 function filtersRdy()
 {
-	var slider=$('#fPriceSlider').slider({
+	var priceSlider=$('#fPriceSlider').slider({
 		range: true,
 		min: 0,
 		max: 500000,
@@ -597,17 +637,53 @@ function filtersRdy()
 			FILTERS.price.min=s.values[0];
 			FILTERS.price.max=s.values[1];
 			updateFilters();
-			console.log(s.values);
+		}
+	});
+
+	var areaSlider=$('#fAreaSlider').slider({
+		range: true,
+		min: 0,
+		max: 500,
+		values: [10, 500],
+		change: function(e, s){
+			FILTERS.area.min=s.values[0];
+			FILTERS.area.max=s.values[1];
+			updateFilters();
 		}
 	});
 };
 
 function updateFilters()
 {
-	var q="select * from offers where price > "+FILTERS.price.min+" and price < "+FILTERS.price.max+" limit 10";
-	var res=DB.exec(q)[0];
 	var mainEl=$('#browseList');
 	mainEl.html('');
+	var fltrsOrder=["",
+"<select id=\"fOrderSelect\">",
+"	<option value=\"0\">Цена</option>",
+"	<option value=\"1\">AppleScript</option>",
+"	<option value=\"2\">Asp</option>",
+"	<option value=\"3\">BASIC</option>",
+"</select>"].join("");
+	var order=document.createElement('div');
+	$(order).html(fltrsOrder);
+	mainEl.append(order);
+	$(order).change(function(e){
+		FILTERS.order = parseInt(e.target.value);
+		updateFilters();
+	});
+
+	var q=["select * from offers where",
+		" price > "+FILTERS.price.min+" and price < "+FILTERS.price.max,
+		" and ",
+		" area > "+FILTERS.area.min+" and area < "+FILTERS.area.max,
+		" limit 10"
+		].join("");
+	console.log(q);
+	var res=DB.exec(q)[0];
+	$("#priceLower").val(FILTERS.price.min);
+	$("#priceHigher").val(FILTERS.price.max);
+	$("#areaLower").val(FILTERS.area.min);
+	$("#areaHigher").val(FILTERS.area.max);
 	for(var i=0;i<res.values.length;i++)
 	{
 		var val=res.values[i];
@@ -674,11 +750,12 @@ $('#dbfile').change(function() {
 	var r = new FileReader();
 	r.onload = function() {
 	var Uints = new Uint8Array(r.result);
-	DB = new SQL.Database(Uints);
+	DBCTRL.DB = new SQL.Database(Uints);
 	}
 	r.readAsArrayBuffer(f);
 });
 filtersRdy();
 addOfferRdy();
-initSQL();
+DBCTRL.init("NoSQL");
+//initNoSQL();
 });
