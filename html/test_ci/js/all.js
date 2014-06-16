@@ -1,14 +1,15 @@
 var IMGS = null;
 var YTPLR=null;
 var DB=null;
-function initMaps() {
+function initMaps(container) {
+	if(typeof(container)=="string") container=document.getElementById(container);
 	var center=new google.maps.LatLng(-34.397, 150.644);
 	var zoom=10;
 	var mapOptions = {
 		center: center, 
 		zoom: zoom
 	};
-	var map = new google.maps.Map(document.getElementById("map-canvas"),
+	var map = new google.maps.Map(document.getElementById(container),
 	mapOptions);
 	var marker=new google.maps.Marker({
 		position: center,
@@ -470,16 +471,102 @@ function initSQL()
 
 var DBCTRL=
 {
-	getResults: function(){},
+	getResults: function(opts){
+		switch(this.controller)
+		{
+			case "SQL":
+				var q=["select * from offers where",
+					" price > "+FILTERS.price.min+" and price < "+FILTERS.price.max,
+					" and ",
+					" area > "+FILTERS.area.min+" and area < "+FILTERS.area.max,
+					" limit 10"
+					].join("");
+				var res=this.DB.exec(q)[0];
+				var retVal = new Array();
+				for(var i=0;i<res.values.length;i++)
+				{
+					var val=res.values[i];
+					var props={agency: val[3], price: val[1], area: val[2], loc: 'hello', image: val[4], type: '', brief: 'brief description'};
+					props.loc=val[6];
+					var tType;
+					switch(val[5])
+					{
+						case 1: tType='Апартамент'; break;
+						case 2: tType='Магазин'; break;
+						case 3: tType='Гараж'; break;
+						case 4: tType='Парцел'; break;
+						case 5: tType='Къща'; break;
+						default: tType='Имот'; break;
+					};
+					props.type=tType;
+					retVal.push(props);
+				};
+				console.log(retVal);
+				return retVal;
+			break;
+			case "NoSQL":
+				var tbl = new Array();
+				function srt(desc,key) {
+					return function(a,b){
+						return desc ? ~~(key ? a[key]<b[key] : a < b) 
+							: ~~(key ? a[key] > b[key] : a > b);
+					};
+				};
+				var len=this.DB.length;
+					var props={agency: 1, price: 1, area: 2, loc: 'hello', image: 4, type: '', brief: 'brief description'};
+				var ofrCount=0;
+				for(var i=0;i<len;i++)
+				{
+					if(
+						FILTERS.price.min > this.DB[i][1]||
+						FILTERS.price.max < this.DB[i][1]||
+						FILTERS.area.min > this.DB[i][2]||
+						FILTERS.area.max < this.DB[i][2]
+					)
+					{
+						continue;
+					}
+					else
+					{
+						ofrCount++;
+						tbl.push({
+							price: this.DB[i][1],
+							area: this.DB[i][2],
+							agency: this.DB[i][3],
+							image: this.DB[i][4],
+							type: this.DB[i][5],
+							loc: this.DB[i][6]+", "+this.DB[i][7],
+							brief: "brief here"
+						});
+					};
+				};
+				var sorted="price";
+				if(FILTERS.order==1) sorted = "area";
+				else if(FILTERS.order==2) sorted = "agency";
+				var page = 0;
+				var perPage = 10;
+				if(opts){
+				if(opts.nopages==true)
+				{
+					page=0;
+					perPage=ofrCount;
+				}};
+				var sliceBegin=page*perPage;
+				return tbl.sort(srt(null, sorted)).slice(sliceBegin, sliceBegin+perPage);
+			break;
+		};
+	},
 	init: function(strController)
 	{
 		switch(strController)
 		{
 			case "SQL":
 				loadScript("js/sql.js", initSQL);
+				this.controller = "SQL";
 			break;
 			case "NoSQL":
-				initNoSQL(this);
+				initNoSQL();
+				this.controller = "NoSQL";
 			break;
 		};
 	},
@@ -487,10 +574,38 @@ var DBCTRL=
 	controller: "SQL"
 };
 
-function initNoSQL(dbctrl)
+function displayResults(results)
 {
-	dbctrl.DB=new Array();
-	jQuery.getJSON("/test_ci/query/nosql", {}).done(function(){alert()}).fail(function(e){console.log(this)});
+	var mainEl=$('#browseList');
+	mainEl.html('');
+	var fltrsOrder=["",
+"<select id=\"fOrderSelect\">",
+"	<option value=\"0\" "+((FILTERS.order==0)?"selected":"")+">Цена</option>",
+"	<option value=\"1\" "+((FILTERS.order==1)?"selected":"")+">Площ</option>",
+"	<option value=\"2\" "+((FILTERS.order==2)?"selected":"")+">Агенция</option>",
+"	<option value=\"3\" "+((FILTERS.order==3)?"selected":"")+">BASIC</option>",
+"</select>"].join("");
+	var order=document.createElement('div');
+	$(order).html(fltrsOrder);
+	mainEl.append(order);
+	$(order).change(function(e){
+		FILTERS.order = parseInt(e.target.value);
+		displayResults(DBCTRL.getResults());
+		//updateFilters();
+	});
+	var len=results.length;
+	for(var i=0;i<len;i++)
+	{
+		var elem=new offerEl(results[i]);
+		mainEl.append(elem.el);
+	};
+};
+
+function initNoSQL()
+{
+	jQuery.getJSON("/test_ci/query/nosql").done(function(e){
+		DBCTRL.DB=e.db;
+	}).fail(function(e){console.log(this)});
 }
 
 var GoStore = null;
@@ -623,11 +738,13 @@ var FILTERS=
 		min: 10,
 		max: 100
 	},
-	order: 1
+	order: 1,
+	page: 0
 };
 
 function filtersRdy()
 {
+	//*/
 	var priceSlider=$('#fPriceSlider').slider({
 		range: true,
 		min: 0,
@@ -636,7 +753,8 @@ function filtersRdy()
 		change: function(e, s){
 			FILTERS.price.min=s.values[0];
 			FILTERS.price.max=s.values[1];
-			updateFilters();
+			displayResults(DBCTRL.getResults());
+			//updateFilters();
 		}
 	});
 
@@ -648,10 +766,56 @@ function filtersRdy()
 		change: function(e, s){
 			FILTERS.area.min=s.values[0];
 			FILTERS.area.max=s.values[1];
-			updateFilters();
+			//DBCTRL.getResults();
+			displayResults(DBCTRL.getResults());
+			//updateFilters();
 		}
 	});
+	//*/	
+
+	$(".ctrlFilter.spinner").spinner({
+		min: 0,
+		max: 1000000,
+		step: 150,
+		change: function(e, s)
+		{
+		//	e.preventDefault();
+			//$(this).val(s.value);
+			FILTERS.price.min=$("#priceLower").val();
+			FILTERS.price.max=$("#priceHigher").val();
+			FILTERS.area.min=$("#areaLower").val();
+			FILTERS.area.max=$("#areaHigher").val();
+			displayResults(DBCTRL.getResults());
+		}
+	});
+
+	$(".frmBrowseTabs").buttonset();
 };
+
+var MAPEL=null;
+var GMAP=null;
+function initSearchMap()
+{
+	MAPEL=document.createElement('canvas');
+	MAPEL.height=680;
+	MAPEL.width=680;
+	$("#browseList").append(MAPEL);
+	//$(MAPEL).hide();
+	var center=new google.maps.LatLng(-34.397, 150.644);
+	var zoom=10;
+	var mapOptions = {
+		center: center, 
+		zoom: zoom
+	};
+	GMAP=new google.maps.Map(MAPEL, mapOptions);
+};
+
+function displayMapResults()
+{
+	if(MAPEL==null) initSearchMap();
+	var results=DBCTRL.getResults({nopages: true});
+	console.log(results);
+}
 
 function updateFilters()
 {

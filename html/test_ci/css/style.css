@@ -140,7 +140,17 @@ nav ul {
 
 
 
+/*************************************************************************/
+/*********************BROWSE_OFFERS***************************************/
 
+#browseList
+{
+	background: red;
+	width: 685px;
+}
+
+/*************************************************************************/
+/*************************************************************************/
 
 
 
@@ -299,6 +309,67 @@ h4
 /*************************************************************************/
 /*************************************************************************/
 
+
+
+
+/*************************************************************************/
+/**********************FORM_CONTROLS**************************************/
+.spinner
+{
+	height: 14px;
+	width: 38px;
+	font-size: 10pt;
+}
+
+.frmRange input
+{
+	font-size: 10pt !important;
+}
+
+.frmRange
+{
+	border-bottom: 2px solid orange;
+	border-left: 1px solid orange;
+	margin-bottom: 10px;
+	margin-left 14px;
+	height: 30px;
+}
+
+.frmRangeLblContainer
+{
+	display: inline-block;
+	width: 5%;
+	font-weight: bold;
+}
+
+.frmRangeLbl
+{
+	display: inline-block;
+	font-weight: bold;
+	color: gray;
+	font-size: 10pt;
+}
+
+.sliderContainer
+{
+	display: inline-block;
+	width: 40%;
+	vertical-align: middle;
+}
+
+.spinerContainer
+{
+	display: inline-block;
+	width: 22%;
+}
+
+.slider
+{
+	height: 14px;
+}
+
+/*************************************************************************/
+/*************************************************************************/
 
 
 

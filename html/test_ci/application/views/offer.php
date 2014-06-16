@@ -1,7 +1,3 @@
-
-	<?php
-		var_dump($offer->area);
-	?>
 <div class="offer">
 	<div class="imageWrap">
 		<img src="<?=$offer->photo;?>" alt="image" width="180" height="180"  />
