@@ -4,8 +4,8 @@
 		sample title
 	</title>
 	<!-- TODO: propper paths -->
-	<link rel="stylesheet" href="<?php echo base_url()."css/style.css"  ?>">  </link>
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" href="<?php echo base_url()."css/style.css"  ?>">  </link>
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js">
 	</script>
 	<script type="text/javascript" src="<?=base_url();?>js/swfobject.js">

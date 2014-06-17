@@ -28,6 +28,9 @@
 		<div id="fAreaSlider"></div>
 	</div>
 </div>
+<div>
+	Location
+</div>
 
 <div class="frmBrowseTabs">
 	 <input type="radio" id="browseTblTab" name="browseTabRadio"><label for="browseTblTab">Table</label>

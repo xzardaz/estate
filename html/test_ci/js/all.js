@@ -796,13 +796,14 @@ var MAPEL=null;
 var GMAP=null;
 function initSearchMap()
 {
-	MAPEL=document.createElement('canvas');
+	MAPEL=document.createElement('div');
 	MAPEL.height=680;
 	MAPEL.width=680;
+	$("#browseList").html("");
 	$("#browseList").append(MAPEL);
-	//$(MAPEL).hide();
-	var center=new google.maps.LatLng(-34.397, 150.644);
-	var zoom=10;
+	$(MAPEL).attr("style", "border: 2px solid green; height: 680px; width: 680px");
+	var center=new google.maps.LatLng(42.692177, 23.327026);
+	var zoom=14;
 	var mapOptions = {
 		center: center, 
 		zoom: zoom

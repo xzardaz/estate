@@ -333,12 +333,15 @@ h4
 	margin-bottom: 10px;
 	margin-left 14px;
 	height: 30px;
+	display: inline-block;
+	width: 48%;
+	padding-left: 4px;
 }
 
 .frmRangeLblContainer
 {
 	display: inline-block;
-	width: 5%;
+	width: 50px;
 	font-weight: bold;
 }
 
@@ -353,14 +356,24 @@ h4
 .sliderContainer
 {
 	display: inline-block;
-	width: 40%;
+	padding-top: 5px;
+	padding-left: 10px;
+	width: 170px;
 	vertical-align: middle;
+}
+
+.ui-slider .ui-slider-handle {
+	cursor: default;
+	height: 1.2em;
+	position: absolute;
+	width: 1.2em;
+	z-index: 2;
 }
 
 .spinerContainer
 {
 	display: inline-block;
-	width: 22%;
+	width: 215px;
 }
 
 .slider
