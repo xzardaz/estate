@@ -29,7 +29,7 @@
 		<nav>
 			<ul>
 				<li><a href="#">Home</a></li>
-				<li  ><a href="#" id="headerSearchIcon">Find</a>
+				<li  ><a href="<?=base_url();?>browse" class="knownPage" id="headerSearchIcon">Find</a>
 
 					<ul>
 						<li><a id="headerFlatIcon" href="/test_ci/browse/flats">Flats</a></li>
@@ -40,7 +40,7 @@
 					</ul>
 				</li>
 				<li><a id="headerArticleIcon" href="#">Articles</a></li>
-				<li><a id="headerFAQIcon" href="<?php echo base_url()."faq"; ?>">F.A.Q.</a></li>
+				<li><a id="headerFAQIcon" href="<?php echo base_url()."faq"; ?>" class="knownPage">F.A.Q.</a></li>
 			</ul>
 		</nav>	
 	</div>

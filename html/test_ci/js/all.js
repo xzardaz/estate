@@ -93,6 +93,15 @@ var offerEl=function(props)
 		this.url=url;
 		this.type=type;
 		this.visible=false;
+
+		this.dscrEl=document.createElement('input');
+		$(this.dscrEl).attr("type", "text").val("image description").focus(function(){
+			if($(this).val()=="image description")
+			{
+				$(this).val("").removeClass("imgAddTextDefDescr");
+			};
+		}).addClass("imgAddTextDefDescr").addClass("imgAddTextDescr");;
+		//$();
 		
 		this.imgEl = new Image();
 		this.imgEl.src = url;
@@ -123,7 +132,8 @@ var offerEl=function(props)
 		
 		this.wrapEl = document.createElement('div');
 		$(this.wrapEl).addClass('ofrBoxImg');
-		this.wrapEl.appendChild(this.indEl);
+		//this.wrapEl.appendChild(this.indEl);
+		this.wrapEl.appendChild(this.dscrEl);
 		this.wrapEl.appendChild(this.delEl);
 		this.wrapEl.appendChild(document.createElement('br'));
 		this.wrapEl.appendChild(this.imgEl);
@@ -158,8 +168,10 @@ var offerEl=function(props)
 
 		this.setInd=function(isInd)
 		{
-			$(this.indEl).attr("class", (isInd?"ofrBoxImgIndex":"ofrBoxImgNotInd")+" ofrBoxImgIndEl");
-			this.indEl.innerHTML=isInd?"Front":"Not front"
+			//$(this.indEl).attr("class", (isInd?"ofrBoxImgIndex":"ofrBoxImgNotInd")+" ofrBoxImgIndEl");
+			//this.indEl.innerHTML=isInd?"Front":"Not front"
+			if(isInd) $(this.wrapEl).addClass("chosenImage")
+			else $(this.wrapEl).removeClass("chosenImage");
 		};
 	};
 
@@ -188,7 +200,7 @@ var offerEl=function(props)
 				dta.data.obj.removeImg(dta.data.id);
 			});
 			//*/
-			$(this.imgs[il].indEl).click({imgar: this, id: il}, function(dta)
+			$(this.imgs[il].imgEl).click({imgar: this, id: il}, function(dta)
 			{
 				dta.data.imgar.chIndex(dta.data.id);
 			});
@@ -296,7 +308,7 @@ KNOWN_PAGES["faq"]=
 	//var data=;
 };
 var PAGES_CACHE=new Array();
-var BASE_URL="/localhost/test_ci/";
+var BASE_URL="/test_ci/";
 
 var GL_SSOCKET;
 
@@ -723,6 +735,7 @@ function addOfferRdy()
 			};
 		};
 	});
+	$("#addOfrMapCanvas").attr("style", "background: url(\"http://maps.googleapis.com/maps/api/staticmap?size=680x480&center=Brooklyn+Bridge,New+York,NY&zoom=13&size=600x300&maptype=roadmap&markers=color:blue|label:S|40.702147,-74.015794&markers=color:green|label:G|40.711614,-74.012318&markers=color:red|label:C|40.718217,-73.998284\"); height: 480px; width: 680px;");
 	//initMaps();
 }
 
@@ -874,9 +887,104 @@ function updateFilters()
 	};
 }
 
+function makeAnchorFromString(string)
+{
+	return string.replace(/[^a-zA-Z0-9]+/g, "-");
+};
+
+var PAGES=
+{
+	"faq":
+	{
+		load: function()
+		{
+			if(this.cache.qnas==null)
+			{
+				return $.getJSON("/test_ci/query/get_faq").done(function(data){
+					var cache=PAGES['faq'].cache;
+					var cntEl=$(document.createElement('div')).attr("id", "faqContents");
+					cache.qnas=data;
+					cache.wrapEl=$(document.createElement('div'))
+						.attr("id", "faqs")
+						.append($(document.createElement('h2')).html("Frequently asked questions:"))
+						.append(document.createElement('br'))
+						.append(document.createElement('br'))
+						.append(cntEl);
+					var qnaLen=data.length;
+					for(var i=0; i<qnaLen;i++)
+					{
+						cntEl.append(
+							$(document.createElement('a'))
+								.attr("href", '#'+makeAnchorFromString(data[i].question))
+								.addClass("faqQuestion", "hello")
+								.html(data[i].question)
+						).append(document.createElement('br'));
+						var qna=$(document.createElement('div'))
+							.addClass("faqAnswer")
+							.attr("id", makeAnchorFromString(data[i].question))
+							.append($(document.createElement('div')).addClass("faqAnswerHead").html(data[i].question))
+							.append($(document.createElement('div')).addClass("faqAnswerContent").html(data[i].answer));
+						cache.wrapEl.append(qna);
+					};
+				});
+			};
+		},
+		display: function()
+		{
+			var pBodyEl=$("#pbody");
+			if(PAGES['faq'].cache.qnas!=null) pBodyEl.html("").append(PAGES['faq'].cache.wrapEl);
+			else this.load().then(this.display);
+			//else $("#pbody").html("").append(this.cache.wrapEl);
+			//$.when(true).then(this.load);
+			//var qnaLen=this.cache.qnas.length;
+		},
+		cache:
+		{
+			qnas: null,
+			wrapEl: null,
+			cntEl: null,
+			cnt: new Array()
+		}
+	},
+	'browse':
+	{
+		load: function()
+		{
+			if(PAGES['browse'].cache.pg==null)
+				$.getJSON("browse?json").done(function(data){
+					PAGES['browse'].cache.pg=data;
+					console.log("data");
+					//console.log(data);
+				}).fail(function(){alert()});
+		},
+		display: function()
+		{
+			if(PAGES['browse'].cache.pg!=null) $("#pbody").html(PAGES['browse'].cache.pg.str);
+			else this.load().then(this.display);
+		},
+		cache:
+		{
+			pg: null
+		}
+	}
+};
 var db;
 var resires;
 $(document).ready(function(){
+$.each(PAGES, function(i, val){
+	//var page=$(this).attr("href").slice(BASE_URL.length);
+	val.load();
+});
+$("a.knownPage").click(function(e){
+	var page=$(this).attr("href").slice(BASE_URL.length);
+	if(typeof PAGES[page]=="object")
+	{
+		e.preventDefault();
+		history.pushState(null, null, $(this).attr("href"));
+		PAGES[page].display();
+		//PAGES[page].display();
+	};
+});
 $('#priceLower').change(function(){
 	var bound = (parseInt(this.value));
 	var q="select * from offers where price > "+(bound|0)+" limit 10";
@@ -919,7 +1027,7 @@ $('#dbfile').change(function() {
 	}
 	r.readAsArrayBuffer(f);
 });
-filtersRdy();
+//filtersRdy();
 addOfferRdy();
 DBCTRL.init("NoSQL");
 //initNoSQL();

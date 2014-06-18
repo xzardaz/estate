@@ -20,11 +20,11 @@ class Browse extends CI_Controller {
 	public function index()
 	{
 		$out="";
-		$jOut=array_key_exists('json', $_POST);
+		$jOut=array_key_exists('json', $_GET)||array_key_exists('json', $_POST);
 		if(!$jOut)
 			$out.=$this->load->view("head");
-		if(!$jOut) $out.=$this->load->view("filters");
-		if(!$jOut) $out.=$this->load->view("beginbrowse");
+		$out.=$this->load->view("filters", NULL, $jOut);
+		$out.=$this->load->view("beginbrowse", NULL, $jOut);
 		$this->load->model('offer_mdl');
 		$ofrs=$this->offer_mdl->getList();
 		foreach($ofrs as $offer)
@@ -32,7 +32,7 @@ class Browse extends CI_Controller {
 			$data=array('offer'=>$offer);
 			$out.=$this->load->view("offer", $data, $jOut);
 		};
-		if(!$jOut) $out.=$this->load->view("endbrowse");
+		$out.=$this->load->view("endbrowse", NULL, $jOut);
 		if(!$jOut) $out.=$this->load->view("foot");
 		if($jOut)
 		{

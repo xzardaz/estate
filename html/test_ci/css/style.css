@@ -155,6 +155,46 @@ nav ul {
 
 
 
+
+
+
+
+
+
+
+
+
+/*************************************************************************/
+/********************OFFER_DETAIL*****************************************/
+
+#ofrDetail>div
+{
+	border-bottom: 1px solid orange;
+}
+
+#ofrViewDescription
+{
+	width: 680px;
+	text-align: justify;
+	font-size: 12pt;
+	text-indent: 12pt;
+	color: gray;
+	border-left: 4px blue solid;
+	padding-left: 10px;
+}
+
+/*************************************************************************/
+/*************************************************************************/
+
+
+
+
+
+
+
+
+
+
 /********************MAPS**************************************************/
 /*************************************************************************/
 
@@ -331,7 +371,7 @@ h4
 	border-bottom: 2px solid orange;
 	border-left: 1px solid orange;
 	margin-bottom: 10px;
-	margin-left 14px;
+	margin-left: 12px;
 	height: 30px;
 	display: inline-block;
 	width: 48%;
@@ -398,8 +438,10 @@ h4
 /*************************************************************************/
 .addVidControls
 {
-	width: 680px;
 	margin-bottom: 1px;
+	width: 90%;
+	height: 26px;
+	display: inline-block;
 }
 
 #addVidTxtBoxId
@@ -415,7 +457,7 @@ h4
 
 #addVidBtnId
 {
-	width: 18%;
+	width: 14%;
 }
 
 .ofrBoxImgIndEl
@@ -442,31 +484,44 @@ select.ofrTypeSelect
 {
 	background: lightgreen;
 	width: 80%;
+	display: inline-block;
 }
 
 #imgBoxContainer_0, .imgBoxContainerCl
 {
-	border-top: 2px solid gray;
-	border-left: 2px solid gray;
-	background: lightgray;
+	/*border-top: 1px solid blue;*/
+	border-left: 4px solid blue;
+	/*background: lightgray*/;
 	padding: 2px;
 	width: 680px;
-	height: 250px;
+	max-height: 450px;
 	overflow-y: scroll;
+}
+
+.imgAddTextDescr
+{
+	width: 85%;
+}
+
+.imgAddTextDefDescr
+{
+	font-weight: bold;
 }
 
 .ofrBoxImg>img
 {
-	height: 120px;
-	width: 160px;
+	height: 100px;
+	width: 140px;
 }
 
 .ofrBoxImg
 {
-	border-bottom: 1px solid;
-	border-right: 1px solid;
-	margin: 2px;
+	border-bottom: 2px orange solid;
+	border-right: 2px orange solid;
+	margin: 8px;
 	display: inline-block;
+	height: 148px;
+	width: 148px;
 }
 
 .ofrBoxImgDel
@@ -476,6 +531,12 @@ select.ofrTypeSelect
 	height: 20px;
 	width: 20px;
 	background: url("/test_ci/imgs/icons/close.png");
+}
+
+.chosenImage
+{
+	border-right-color: green;
+	border-bottom-color: green;
 }
 
 .ofrBoxImgType

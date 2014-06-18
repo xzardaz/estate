@@ -79,6 +79,31 @@ WHERE
 		return $res;
 	}
 
+	public function getOffer($id)
+	{
+		$q='SELECT
+			price,
+			area,
+			rooms,
+			offer.type,
+			offer.brief,
+			agencies.name as agname,
+			agencies.photo as aglogo,
+			photos.path as photo
+		    FROM 
+			(
+				`offer` LEFT JOIN `agencies` 
+					ON
+				`offer`.`agencyId` = `agencies`.`id`
+			)
+			LEFT JOIN photos 
+				ON 
+			photos.id = offer.frontPhotoId
+		    WHERE offer.id='.$id;
+		$res=$this->db->query($q)->result();
+		return $res;
+	}
+
 	public function addOffer($ofrProps)
 	{
 		$q="

@@ -31,7 +31,10 @@ Type a brief description here...
 			<div class="ofrBottom">
 				<div class="ofrBottomProps">
 					<div class="ofrCurrentProp">
-						<b>$</b>
+						<select>
+							<option name="addOfrUSD">$</option>
+							<option name="addOfrEUR">&#8364;</option>
+						</select>
 						<input type="text" id="inAddOfrPrice"/>
 					</div>
 					<div class="ofrCurrentProp">
@@ -54,9 +57,9 @@ Type a brief description here...
 <!--
 -->
 <h4>
-	Photos
+	Photos:
+	<input type='file' id='uplImgsId' multiple/>
 </h4>
-<input type='file' id='uplImgsId' multiple/>
 <div id='imgsin'>
 </div>
 <br/>
@@ -64,19 +67,20 @@ Type a brief description here...
 <h4>
 	Location
 </h4>
-<div id="map-canvas">
+<div id="addOfrMapCanvas">
 </div>
+
 <br/>
 
 <h4>
-	Video
+	Video:
+	<div class="addVidControls">
+		<form action="#">
+			<input type="text"   id="addVidTxtBoxId" value="Paste YouTube url" class="grayBoldText"/>
+			<input type="submit" id="addVidBtnId"    value="Add video"/>
+		</form>
+	</div>
 </h4>
-<div class="addVidControls">
-	<form action="#">
-		<input type="text"   id="addVidTxtBoxId" value="Paste YouTube url" class="grayBoldText"/>
-		<input type="submit" id="addVidBtnId"    value="Add video"/>
-	</form>
-</div>
 <div id="addVidWrapper"/>
 </div>
 <!--

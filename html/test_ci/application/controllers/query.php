@@ -122,6 +122,13 @@ class Query extends CI_Controller {
 	{
 		echo "hello $p1, $p2";
 	}
+	
+	public function get_faq()
+	{
+		$this->load->model('faq_mdl');
+		$faqs=$this->faq_mdl->fetch();
+		echo json_encode($faqs);
+	}
 }
 
 /* End of file welcome.php */
