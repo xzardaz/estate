@@ -177,26 +177,29 @@ var color="#AAAAAA";
 function drawStreeds(dta)
 {
 	var features=dta.features;
+	ctx.strokeStyle = "#AAAAAA";
 	//if(big!=true) big=false
 	for(var i=0;i<features.length;i++)
 	{
+		/*/
 		if(features[i].properties.highway=="primary")
 		{
 			//ctx.strokeStyle = "#AA8800";
-			ctx.strokeStyle = "#AAAAAA";
-			ctx.lineWidth=8;
+			//ctx.strokeStyle = "#AAAAAA";
+			//ctx.lineWidth=8;
 		}
 		else if(features[i].properties.highway=="residential")
 		{
 			//ctx.strokeStyle = "#222222";
-			ctx.strokeStyle = "#AAAAAA";
-			ctx.lineWidth=1;
+			//ctx.strokeStyle = "#AAAAAA";
+			//ctx.lineWidth=1;
 		}
 		else
 		{
-			ctx.strokeStyle = "#AAAAAA";
-			ctx.lineWidth=4;
+			//ctx.strokeStyle = "#AAAAAA";
+			//ctx.lineWidth=4;
 		};
+		//*/
 		if(features[i].geometry.type=="LineString")
 		{
 			//color=getRandomColor();
@@ -232,6 +235,27 @@ function drawBuilding(crds)
 	ctx.closePath();
 	//ctx.stroke();
 	ctx.fill();
+}
+
+var Streets=
+{
+	data: [],
+	drawStreet: function(stId){
+		alert();
+	},
+	add: function(fObj, zl)
+	{
+		if(fObj.geometry.type=="LineString")
+			for(var i=0;i<fObj.geometry.coordinates.length;i++)
+			{
+				data.push([
+					fObj.id,
+					zl,
+					fObj.geometry.coordinates[1],
+					fObj.geometry.coordinates[0]
+				]);
+			}
+	}
 }
 
 
@@ -336,11 +360,13 @@ function drawWaterAll(dta)
 		return (180/Math.PI*Math.atan(0.5*(Math.exp(n)-Math.exp(-n))));
 	}
 
+
+
 	//var ty=1582;
 	//var tx=656;
 	var ty=395;
 	var tx=164;
-	var tz=11;
+	var tz=12;
 
 	var ll=Conv.m2ll(bbox.cx, bbox.cy);
 	var tilex=long2tile(ll.lon, tz);
@@ -348,61 +374,126 @@ function drawWaterAll(dta)
 	tx=tilex;
 	ty=tiley;
 
+	var TILES=
+	{
+		data:[],
+		ret: function(Z, X, Y){return TILES.data[Z][X][Z]},
+		get: function(Z, X, Y)
+		{
+			//Curious method of AND'ing conditions without breaking
+			//cases line if(data[14][12][11]) -- "err.: data[14] is `undefined`"
+			if(typeof TILES.data[Z]=="object")
+			{
+				//console.log("here Z", Z);
+				if(typeof TILES.data[Z][X]=="object")
+				{
+					//console.log("here X", X);
+					if(typeof TILES.data[Z][X][Y]=="object")
+					{
+						//console.log("here Y", Y);
+						return $.when(TILES.ret(Z, X, Y));
+					}
+				}
+			}
+			//else
+			//{
+			console.log("fetch from net");
+			return $.when(
+				$.post
+				(
+					"getUrl.php",
+					{url: "http://tile.openstreetmap.us/vectiles-water-areas/"+Z+"/"+X+"/"+Y+".json"},
+					function(){},
+					"json"
+				),
+				$.post
+				(
+					"getUrl.php",
+					{url: "http://tile.openstreetmap.us/vectiles-land-usages/"+Z+"/"+X+"/"+Y+".json"},
+					function(){},
+					"json"
+				),
+				$.post
+				(
+					"getUrl.php",
+					{url: "http://tile.openstreetmap.us/vectiles-highroad/"+Z+"/"+X+"/"+Y+".json"},
+					function(){},
+					"json"
+				)
+			)
+			.then
+			(function(r1, r2, r3){
+				//console.log("xyz", X, Y, Z);
+				if(typeof TILES.data[Z]=="undefined")
+				{
+					TILES.data[Z]=[];
+				}
+				if(typeof TILES.data[Z][X]=="undefined")
+				{
+					TILES.data[Z][X]=[];
+				}
+				TILES.data[Z][X][Y]=[r1[0], r2[0], r3[0]];
+			});
+			//}
+		}
+	}
+
+	function drawTile(tx, ty, tz)
+	{
+		//console.log(tx, ty, tz);
+		TILES.get(tz, tx, ty)
+		.done(function(r1, r2, r3){
+		var then=performance.now();
+			//console.log(TILES.data[tz][tx][ty]);
+			var ar=TILES.data[tz][tx][ty];
+			//drawBuildingsAll(ar[1]);
+			//drawWaterAll(ar[0]);
+			drawStreeds(ar[2]);
+		var now=performance.now();
+		console.log(now-then, ar[2].features.length, (now-then)/ar[2].features.length);
+		});
+	}
+
+	var then=0;
+	var rendermap=function()
+	{
+		ctx.clearRect(0, 0, cw, ch);
+		var ll=Conv.m2ll(bbox.cx, bbox.cy);
+		var ll2=Conv.m2ll(bbox.cx+bbox.sh/cr, bbox.cy+bbox.sh);
+		var heightDiff=-ll.lat+ll2.lat;
+		var tilex=long2tile(ll.lon, tz);
+		var tiley=lat2tile(ll.lat, tz);
+
+		then=performance.now();
+		$.when(
+		drawTile(tilex, tiley, tz),
+		drawTile(tilex+2, tiley+2, tz),
+	//*/
+		drawTile(tilex, tiley+1, tz),
+		drawTile(tilex, tiley+2, tz),
+		drawTile(tilex+1, tiley, tz),
+		drawTile(tilex+1, tiley+1, tz),
+		drawTile(tilex+1, tiley+2, tz),
+		drawTile(tilex+2, tiley, tz),
+		drawTile(tilex+2, tiley+1, tz),
+		drawTile(tilex+2, tiley+2, tz)
+		)
+		.then
+		(function(){
+		var now=performance.now();
+		console.log("total", now-then);
+		});
+	//*/
+		//console.log(heightDiff);
+	};
+	
+
 	//rotateBy40Ded();
 
 //	tx=long2tile();
-	function drawTile(tx, ty, tz)
-	{
-		console.log(tx, ty, tz);
-		$.when(
-		$.post(
-			"getUrl.php",
-			{url: "http://tile.openstreetmap.us/vectiles-water-areas/"+tz+"/"+tx+"/"+ty+".json"},
-			function(dta){
-				//console.log(dta.features)
-				//ctx.clear();
-				//dataW=dta;
-				//drawWaterAll(dta);
-				//dataL.push(dta);
-			},
-			"json"),
-		//*/
-			$.post(
-			"getUrl.php",
-			{url: "http://tile.openstreetmap.us/vectiles-land-usages/"+tz+"/"+tx+"/"+ty+".json"},
-			function(dta){
-				//console.log(dta.features)
-				//ctx.clear();
-				//dataB=dta;
-				//drawBuildingsAll(dta);
-				//console.log(dta.features[0]);
-				//dataT.push(dta);
-			},
-				"json"),
-			//*/
-			$.post(
-			"getUrl.php",
-			{url: "http://tile.openstreetmap.us/vectiles-highroad/"+tz+"/"+tx+"/"+ty+".json"},
-			function(dta){
-				//console.log(dta.features)
-				console.log("roadRDY");
-				//ctx.clear();
-				//dataW=dta;
-				//drawStreeds(dta.features);
-				//drawWaterAll();
-				//dataR.push(dta);
-			},
-			"json")
-		).done(function(r1, r2, r3){
-			drawBuildingsAll(r2[0]);
-			drawWaterAll(r1[0]);
-			drawStreeds(r3[0]);
-			//console.log(r1);
-		});
-		
-	}
 
 	$(document).ready(function(){
+		rendermap();
 		$("#target").keypress(function(e){
 			e.preventDefault();
 			//ctx.clearRect(0, 0, cw, ch);
