@@ -54,8 +54,18 @@ WHERE
 		//$q.=($c->type)?" offer.type='".$c->type."' ":'';
 	}
 
-	public function getList()
+	public function getList($criteria)
 	{
+		$type="1";
+		if(array_key_exists("type", $criteria))
+		{
+			//switch($criteria["type"])
+			//{
+				
+			//};
+			$type="(offer.type=".$criteria["type"].")";
+		};
+
 		$q='SELECT
 			price,
 			area,
@@ -74,7 +84,9 @@ WHERE
 			LEFT JOIN photos 
 				ON 
 			photos.id = offer.frontPhotoId
-		    WHERE 1';
+		    WHERE 
+			'.$type.' AND
+			1';
 		$res=$this->db->query($q)->result();
 		return $res;
 	}

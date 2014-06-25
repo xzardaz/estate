@@ -1,0 +1,1927 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<osm version="0.6" generator="Osmosis SNAPSHOT-r26564">
+  <bound box="42.69533,23.31341,42.70669,23.33572" origin="Osmosis SNAPSHOT-r26564"/>
+  <node id="109357391" version="8" timestamp="2011-01-24T21:38:28Z" uid="94353" user="Fips" changeset="7078469" lat="42.6980396" lon="23.3288789"/>
+  <node id="148590935" version="9" timestamp="2011-01-24T21:58:32Z" uid="94353" user="Fips" changeset="7078684" lat="42.699831" lon="23.3295768"/>
+  <node id="148590936" version="4" timestamp="2011-01-24T21:58:38Z" uid="94353" user="Fips" changeset="7078684" lat="42.700611" lon="23.3294122"/>
+  <node id="148590938" version="4" timestamp="2008-01-11T14:14:28Z" uid="18541" user="Гено Рупски" changeset="607080" lat="42.7028699" lon="23.329081"/>
+  <node id="148590940" version="4" timestamp="2008-01-11T14:14:28Z" uid="18541" user="Гено Рупски" changeset="607080" lat="42.703764" lon="23.3289122"/>
+  <node id="148591742" version="6" timestamp="2007-12-06T08:22:33Z" uid="18541" user="Гено Рупски" changeset="105159" lat="42.6997647" lon="23.3343042"/>
+  <node id="148592427" version="10" timestamp="2011-01-24T21:19:27Z" uid="94353" user="Fips" changeset="7078242" lat="42.6994687" lon="23.3256571"/>
+  <node id="148592429" version="10" timestamp="2008-01-11T14:08:59Z" uid="18541" user="Гено Рупски" changeset="607080" lat="42.7010257" lon="23.3330449"/>
+  <node id="148593128" version="5" timestamp="2008-01-11T14:09:01Z" uid="18541" user="Гено Рупски" changeset="607080" lat="42.7017936" lon="23.330287"/>
+  <node id="148593129" version="9" timestamp="2011-01-24T21:58:27Z" uid="94353" user="Fips" changeset="7078684" lat="42.7004166" lon="23.3311955"/>
+  <node id="148593130" version="11" timestamp="2011-01-24T21:58:45Z" uid="94353" user="Fips" changeset="7078684" lat="42.6997262" lon="23.331649"/>
+  <node id="148593283" version="7" timestamp="2011-01-24T21:38:13Z" uid="94353" user="Fips" changeset="7078469" lat="42.6989942" lon="23.3320696"/>
+  <node id="148593582" version="6" timestamp="2011-01-24T21:58:45Z" uid="94353" user="Fips" changeset="7078684" lat="42.7000015" lon="23.3300997"/>
+  <node id="148593810" version="8" timestamp="2011-01-24T21:58:41Z" uid="94353" user="Fips" changeset="7078684" lat="42.6993366" lon="23.3305709"/>
+  <node id="148593812" version="6" timestamp="2011-01-24T21:38:23Z" uid="94353" user="Fips" changeset="7078469" lat="42.698623" lon="23.3310432"/>
+  <node id="148594306" version="7" timestamp="2007-12-06T08:23:08Z" uid="18541" user="Гено Рупски" changeset="105159" lat="42.7005343" lon="23.3341153"/>
+  <node id="148594846" version="13" timestamp="2011-01-24T21:38:27Z" uid="94353" user="Fips" changeset="7078469" lat="42.6984725" lon="23.3331884"/>
+  <node id="148595309" version="7" timestamp="2009-09-26T20:04:42Z" uid="176554" user="INFINITY" changeset="2645262" lat="42.6993352" lon="23.3331378"/>
+  <node id="148595311" version="10" timestamp="2011-01-24T21:58:45Z" uid="94353" user="Fips" changeset="7078684" lat="42.7000627" lon="23.3325703"/>
+  <node id="148595312" version="8" timestamp="2011-01-24T21:58:27Z" uid="94353" user="Fips" changeset="7078684" lat="42.700753" lon="23.3321086"/>
+  <node id="148595313" version="6" timestamp="2009-09-26T20:04:43Z" uid="176554" user="INFINITY" changeset="2645262" lat="42.7021638" lon="23.3312216"/>
+  <node id="148596561" version="6" timestamp="2008-03-08T14:46:49Z" uid="8421" user="Константин Коцев" changeset="284580" lat="42.7014773" lon="23.3355715"/>
+  <node id="148597129" version="3" timestamp="2008-01-11T14:09:03Z" uid="18541" user="Гено Рупски" changeset="607080" lat="42.7003203" lon="23.3335227"/>
+  <node id="148597521" version="5" timestamp="2008-01-11T14:09:03Z" uid="18541" user="Гено Рупски" changeset="607080" lat="42.701729" lon="23.3325684"/>
+  <node id="148598311" version="4" timestamp="2009-09-26T20:04:43Z" uid="176554" user="INFINITY" changeset="2645262" lat="42.7014366" lon="23.3317142"/>
+  <node id="148598312" version="3" timestamp="2008-01-11T14:09:02Z" uid="18541" user="Гено Рупски" changeset="607080" lat="42.7010726" lon="23.3307671"/>
+  <node id="148871485" version="8" timestamp="2011-01-24T19:32:42Z" uid="94353" user="Fips" changeset="7076844" lat="42.7078522" lon="23.3299169"/>
+  <node id="148871834" version="6" timestamp="2011-01-24T21:38:20Z" uid="94353" user="Fips" changeset="7078469" lat="42.6981884" lon="23.3302596"/>
+  <node id="148872382" version="4" timestamp="2011-01-24T21:58:47Z" uid="94353" user="Fips" changeset="7078684" lat="42.6980791" lon="23.3204196"/>
+  <node id="148873112" version="6" timestamp="2007-12-03T06:55:02Z" uid="18541" user="Гено Рупски" changeset="61877" lat="42.7069832" lon="23.3247354"/>
+  <node id="148873189" version="4" timestamp="2007-12-03T06:53:25Z" uid="18541" user="Гено Рупски" changeset="61877" lat="42.7051982" lon="23.3253706"/>
+  <node id="148873204" version="8" timestamp="2012-01-24T08:47:52Z" uid="590510" user="gadgev" changeset="10482336" lat="42.7062806" lon="23.3249591"/>
+  <node id="148873257" version="9" timestamp="2011-01-24T20:20:57Z" uid="94353" user="Fips" changeset="7077443" lat="42.7068513" lon="23.3282903"/>
+  <node id="148873258" version="6" timestamp="2011-01-24T19:32:46Z" uid="94353" user="Fips" changeset="7076844" lat="42.7074265" lon="23.331788"/>
+  <node id="148873345" version="4" timestamp="2011-01-24T19:33:52Z" uid="94353" user="Fips" changeset="7076844" lat="42.7067893" lon="23.3322642"/>
+  <node id="148873346" version="7" timestamp="2011-01-24T19:32:43Z" uid="94353" user="Fips" changeset="7076844" lat="42.7061467" lon="23.3284058"/>
+  <node id="148873363" version="5" timestamp="2012-01-24T08:47:52Z" uid="590510" user="gadgev" changeset="10482336" lat="42.7055434" lon="23.3252013"/>
+  <node id="148873608" version="3" timestamp="2011-01-24T20:20:04Z" uid="94353" user="Fips" changeset="7077443" lat="42.7072634" lon="23.3264241"/>
+  <node id="148873610" version="4" timestamp="2011-01-24T20:19:33Z" uid="94353" user="Fips" changeset="7077443" lat="42.7065433" lon="23.3266113"/>
+  <node id="148873611" version="3" timestamp="2012-01-24T08:47:52Z" uid="590510" user="gadgev" changeset="10482336" lat="42.705847" lon="23.3267978"/>
+  <node id="148873612" version="2" timestamp="2008-01-27T11:01:42Z" uid="8421" user="Константин Коцев" changeset="698803" lat="42.7047955" lon="23.3271076"/>
+  <node id="148873813" version="4" timestamp="2011-01-24T19:32:40Z" uid="94353" user="Fips" changeset="7076844" lat="42.7071648" lon="23.3301174"/>
+  <node id="148873814" version="3" timestamp="2011-01-24T19:32:59Z" uid="94353" user="Fips" changeset="7076844" lat="42.7064575" lon="23.3303198"/>
+  <node id="148873815" version="3" timestamp="2011-01-24T19:33:59Z" uid="94353" user="Fips" changeset="7076844" lat="42.7057451" lon="23.3305635"/>
+  <node id="148873816" version="7" timestamp="2011-01-24T20:20:04Z" uid="94353" user="Fips" changeset="7077443" lat="42.7049622" lon="23.3307997"/>
+  <node id="148873855" version="3" timestamp="2011-01-24T19:32:54Z" uid="94353" user="Fips" changeset="7076844" lat="42.7054015" lon="23.3285485"/>
+  <node id="148873939" version="4" timestamp="2011-01-24T19:33:56Z" uid="94353" user="Fips" changeset="7076844" lat="42.7060715" lon="23.3324396"/>
+  <node id="148874314" version="10" timestamp="2011-01-24T20:19:46Z" uid="94353" user="Fips" changeset="7077443" lat="42.7054235" lon="23.3330071"/>
+  <node id="148874523" version="4" timestamp="2008-03-08T14:36:22Z" uid="8421" user="Константин Коцев" changeset="284580" lat="42.7039499" lon="23.333254"/>
+  <node id="148874805" version="1" timestamp="2007-12-03T06:58:13Z" uid="18541" user="Гено Рупски" changeset="61877" lat="42.7042458" lon="23.3294132"/>
+  <node id="148874977" version="3" timestamp="2008-03-08T14:37:02Z" uid="8421" user="Константин Коцев" changeset="284580" lat="42.7039499" lon="23.333091"/>
+  <node id="148874978" version="2" timestamp="2007-12-03T06:59:04Z" uid="18541" user="Гено Рупски" changeset="61877" lat="42.7029654" lon="23.3334043"/>
+  <node id="148875664" version="3" timestamp="2011-01-24T20:20:37Z" uid="94353" user="Fips" changeset="7077443" lat="42.7055963" lon="23.3333759"/>
+  <node id="150466725" version="10" timestamp="2012-03-31T17:50:56Z" uid="544370" user="atari_matari" changeset="11169384" lat="42.6961977" lon="23.320691"/>
+  <node id="152180875" version="5" timestamp="2008-01-11T14:08:58Z" uid="18541" user="Гено Рупски" changeset="607080" lat="42.7013274" lon="23.3338799"/>
+  <node id="152181497" version="4" timestamp="2008-01-11T14:08:58Z" uid="18541" user="Гено Рупски" changeset="607080" lat="42.70134" lon="23.3340087"/>
+  <node id="152182151" version="9" timestamp="2011-01-24T21:58:40Z" uid="94353" user="Fips" changeset="7078684" lat="42.6973245" lon="23.3300207"/>
+  <node id="152182908" version="10" timestamp="2011-01-24T21:38:23Z" uid="94353" user="Fips" changeset="7078469" lat="42.6978878" lon="23.3349313"/>
+  <node id="152185384" version="10" timestamp="2012-03-31T17:50:56Z" uid="544370" user="atari_matari" changeset="11169384" lat="42.6954021" lon="23.3331377"/>
+  <node id="152185386" version="5" timestamp="2011-01-27T16:57:43Z" uid="94353" user="Fips" changeset="7105348" lat="42.6955142" lon="23.3333324"/>
+  <node id="152185389" version="6" timestamp="2012-03-31T17:50:56Z" uid="544370" user="atari_matari" changeset="11169384" lat="42.6958816" lon="23.3334137"/>
+  <node id="152188852" version="7" timestamp="2011-01-24T21:38:29Z" uid="94353" user="Fips" changeset="7078469" lat="42.6983689" lon="23.3322259"/>
+  <node id="152190700" version="7" timestamp="2011-01-24T21:49:02Z" uid="94353" user="Fips" changeset="7078578" lat="42.6975758" lon="23.3323325"/>
+  <node id="152191203" version="3" timestamp="2011-01-24T21:38:28Z" uid="94353" user="Fips" changeset="7078469" lat="42.6987595" lon="23.3321384"/>
+  <node id="152197905" version="4" timestamp="2011-01-24T21:49:07Z" uid="94353" user="Fips" changeset="7078578" lat="42.6963275" lon="23.333336"/>
+  <node id="152197910" version="6" timestamp="2011-01-24T21:49:06Z" uid="94353" user="Fips" changeset="7078578" lat="42.6976822" lon="23.3333419"/>
+  <node id="152199928" version="7" timestamp="2011-01-24T21:58:46Z" uid="94353" user="Fips" changeset="7078684" lat="42.6968154" lon="23.3311549"/>
+  <node id="152203355" version="3" timestamp="2011-01-24T21:48:56Z" uid="94353" user="Fips" changeset="7078578" lat="42.6974816" lon="23.3313038"/>
+  <node id="152203356" version="6" timestamp="2011-01-24T21:38:26Z" uid="94353" user="Fips" changeset="7078469" lat="42.6982689" lon="23.3311101"/>
+  <node id="152209709" version="4" timestamp="2008-01-11T14:09:01Z" uid="18541" user="Гено Рупски" changeset="607080" lat="42.702464" lon="23.3320705"/>
+  <node id="152607607" version="1" timestamp="2007-12-06T12:35:43Z" uid="17831" user="djadala" changeset="133875" lat="42.7016905" lon="23.3384585"/>
+  <node id="152607609" version="1" timestamp="2007-12-06T12:35:43Z" uid="17831" user="djadala" changeset="133875" lat="42.701804" lon="23.3387418"/>
+  <node id="152607612" version="2" timestamp="2011-01-21T23:28:41Z" uid="94353" user="Fips" changeset="7045853" lat="42.7020014" lon="23.3389882"/>
+  <node id="152618236" version="9" timestamp="2012-03-31T19:56:58Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.694733" lon="23.3222032"/>
+  <node id="204756405" version="5" timestamp="2011-01-24T21:58:30Z" uid="94353" user="Fips" changeset="7078684" lat="42.7014821" lon="23.3292913"/>
+  <node id="204756410" version="6" timestamp="2011-06-02T20:00:57Z" uid="460730" user="usmiv4o" changeset="8323857" lat="42.701243" lon="23.3228208"/>
+  <node id="204756414" version="7" timestamp="2011-01-23T21:27:08Z" uid="94353" user="Fips" changeset="7067566" lat="42.7022054" lon="23.3167497">
+    <tag k="highway" v="traffic_signals"/>
+  </node>
+  <node id="204756426" version="7" timestamp="2012-03-31T19:57:00Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.7016408" lon="23.3202872"/>
+  <node id="204756428" version="8" timestamp="2011-01-24T21:58:29Z" uid="94353" user="Fips" changeset="7078684" lat="42.7009725" lon="23.3242096"/>
+  <node id="206186449" version="2" timestamp="2011-01-24T21:48:46Z" uid="94353" user="Fips" changeset="7078578" lat="42.6980263" lon="23.336274"/>
+  <node id="207574134" version="4" timestamp="2008-10-14T19:40:09Z" uid="65847" user="LKK" changeset="339169" lat="42.6891599" lon="23.3165514"/>
+  <node id="207574135" version="4" timestamp="2008-10-14T16:55:34Z" uid="65847" user="LKK" changeset="325656" lat="42.6899207" lon="23.3167829"/>
+  <node id="207574137" version="3" timestamp="2008-10-10T09:37:23Z" uid="65847" user="LKK" changeset="209907" lat="42.6906433" lon="23.3170022"/>
+  <node id="207574138" version="3" timestamp="2008-10-10T09:37:23Z" uid="65847" user="LKK" changeset="209907" lat="42.6918955" lon="23.3173822"/>
+  <node id="207574140" version="2" timestamp="2008-01-06T21:19:25Z" uid="23283" user="Veselin" changeset="560451" lat="42.6970598" lon="23.3189968"/>
+  <node id="207588277" version="4" timestamp="2011-01-23T22:27:06Z" uid="94353" user="Fips" changeset="7068144" lat="42.6884848" lon="23.3162905"/>
+  <node id="207598421" version="6" timestamp="2009-04-11T11:57:21Z" uid="8421" user="Константин Коцев" changeset="414137" lat="42.6930062" lon="23.3177192"/>
+  <node id="207598670" version="6" timestamp="2012-03-31T11:35:26Z" uid="182953" user="REAKTOR" changeset="11163667" lat="42.6942813" lon="23.3180747"/>
+  <node id="207598675" version="10" timestamp="2012-03-31T19:57:01Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.6936559" lon="23.322783"/>
+  <node id="207598676" version="7" timestamp="2011-01-23T18:20:22Z" uid="94353" user="Fips" changeset="7065157" lat="42.6944153" lon="23.3236452"/>
+  <node id="207599032" version="5" timestamp="2008-10-17T20:46:50Z" uid="8421" user="Константин Коцев" changeset="394986" lat="42.6967696" lon="23.3253054"/>
+  <node id="207599327" version="8" timestamp="2012-03-31T17:50:57Z" uid="544370" user="atari_matari" changeset="11169384" lat="42.6964599" lon="23.3227454"/>
+  <node id="207599686" version="7" timestamp="2012-03-31T17:50:57Z" uid="544370" user="atari_matari" changeset="11169384" lat="42.6965997" lon="23.3219445">
+    <tag k="barrier" v="bollard"/>
+  </node>
+  <node id="213216239" version="2" timestamp="2011-01-24T21:58:25Z" uid="94353" user="Fips" changeset="7078684" lat="42.6961075" lon="23.3309263"/>
+  <node id="214838572" version="1" timestamp="2008-01-10T08:56:19Z" uid="18541" user="Гено Рупски" changeset="591393" lat="42.7041254" lon="23.3296601">
+    <tag k="created_by" v="JOSM"/>
+  </node>
+  <node id="214838579" version="3" timestamp="2009-09-26T20:04:43Z" uid="176554" user="INFINITY" changeset="2645262" lat="42.7030495" lon="23.3306217"/>
+  <node id="214838586" version="3" timestamp="2009-09-26T20:04:43Z" uid="176554" user="INFINITY" changeset="2645262" lat="42.7040848" lon="23.330679"/>
+  <node id="214838591" version="1" timestamp="2008-01-10T08:56:19Z" uid="18541" user="Гено Рупски" changeset="591393" lat="42.7031344" lon="23.3316164">
+    <tag k="created_by" v="JOSM"/>
+  </node>
+  <node id="214838598" version="2" timestamp="2008-01-11T14:08:59Z" uid="18541" user="Гено Рупски" changeset="607080" lat="42.7040107" lon="23.3316229">
+    <tag k="created_by" v="JOSM"/>
+  </node>
+  <node id="214838603" version="2" timestamp="2008-01-11T14:08:59Z" uid="18541" user="Гено Рупски" changeset="607080" lat="42.7029177" lon="23.3295385">
+    <tag k="created_by" v="JOSM"/>
+  </node>
+  <node id="214838606" version="1" timestamp="2008-01-10T08:56:20Z" uid="18541" user="Гено Рупски" changeset="591393" lat="42.7034275" lon="23.3332498">
+    <tag k="created_by" v="JOSM"/>
+  </node>
+  <node id="214875326" version="7" timestamp="2011-06-02T20:00:57Z" uid="460730" user="usmiv4o" changeset="8323857" lat="42.7038947" lon="23.3222959"/>
+  <node id="214875329" version="3" timestamp="2008-01-24T22:07:12Z" uid="8421" user="Константин Коцев" changeset="689234" lat="42.7036604" lon="23.3235892">
+    <tag k="created_by" v="JOSM"/>
+  </node>
+  <node id="214875335" version="3" timestamp="2011-01-24T21:19:20Z" uid="94353" user="Fips" changeset="7078242" lat="42.703364" lon="23.3254297"/>
+  <node id="214875345" version="2" timestamp="2008-01-11T14:08:58Z" uid="18541" user="Гено Рупски" changeset="607080" lat="42.703443" lon="23.3261367">
+    <tag k="created_by" v="JOSM"/>
+  </node>
+  <node id="214875349" version="2" timestamp="2008-01-11T14:08:58Z" uid="18541" user="Гено Рупски" changeset="607080" lat="42.7035447" lon="23.3270167">
+    <tag k="created_by" v="JOSM"/>
+  </node>
+  <node id="214875358" version="2" timestamp="2008-01-11T14:08:58Z" uid="18541" user="Гено Рупски" changeset="607080" lat="42.7027627" lon="23.3280528">
+    <tag k="created_by" v="JOSM"/>
+  </node>
+  <node id="214875364" version="2" timestamp="2008-01-11T14:08:59Z" uid="18541" user="Гено Рупски" changeset="607080" lat="42.70267" lon="23.3271645">
+    <tag k="created_by" v="JOSM"/>
+  </node>
+  <node id="214875374" version="2" timestamp="2008-01-11T14:08:58Z" uid="18541" user="Гено Рупски" changeset="607080" lat="42.7025644" lon="23.3261523">
+    <tag k="created_by" v="JOSM"/>
+  </node>
+  <node id="214875380" version="3" timestamp="2011-01-24T21:19:26Z" uid="94353" user="Fips" changeset="7078242" lat="42.7024683" lon="23.3252066"/>
+  <node id="214875389" version="4" timestamp="2008-04-12T09:27:53Z" uid="8421" user="Константин Коцев" changeset="118579" lat="42.7025998" lon="23.3243688"/>
+  <node id="214875391" version="3" timestamp="2008-01-24T22:06:49Z" uid="8421" user="Константин Коцев" changeset="689234" lat="42.7027837" lon="23.3233231">
+    <tag k="created_by" v="JOSM"/>
+  </node>
+  <node id="214875397" version="4" timestamp="2011-06-02T20:00:57Z" uid="460730" user="usmiv4o" changeset="8323857" lat="42.7030369" lon="23.3220459"/>
+  <node id="214875403" version="6" timestamp="2011-01-23T21:27:15Z" uid="94353" user="Fips" changeset="7067566" lat="42.7032845" lon="23.3208047"/>
+  <node id="214875410" version="5" timestamp="2008-01-24T21:30:27Z" uid="8421" user="Константин Коцев" changeset="689234" lat="42.7033747" lon="23.3197645">
+    <tag k="created_by" v="JOSM"/>
+  </node>
+  <node id="214875415" version="7" timestamp="2011-01-23T21:27:35Z" uid="94353" user="Fips" changeset="7067566" lat="42.7035725" lon="23.3186607"/>
+  <node id="214875421" version="3" timestamp="2011-01-23T21:27:18Z" uid="94353" user="Fips" changeset="7067566" lat="42.7038424" lon="23.3172522"/>
+  <node id="214875426" version="4" timestamp="2011-01-23T21:27:32Z" uid="94353" user="Fips" changeset="7067566" lat="42.7040335" lon="23.3159988"/>
+  <node id="214875433" version="4" timestamp="2011-01-23T21:27:34Z" uid="94353" user="Fips" changeset="7067566" lat="42.7041723" lon="23.3150975"/>
+  <node id="214875441" version="3" timestamp="2011-01-23T21:27:11Z" uid="94353" user="Fips" changeset="7067566" lat="42.7043151" lon="23.3141924"/>
+  <node id="214875446" version="4" timestamp="2011-01-23T21:27:32Z" uid="94353" user="Fips" changeset="7067566" lat="42.7044701" lon="23.3132691"/>
+  <node id="214875454" version="4" timestamp="2010-06-26T17:25:00Z" uid="310143" user="cecobel" changeset="5082683" lat="42.7045761" lon="23.312474"/>
+  <node id="214875460" version="8" timestamp="2008-05-31T20:06:24Z" uid="41176" user="Veso" changeset="565064" lat="42.7047387" lon="23.3115208">
+    <tag k="created_by" v="JOSM"/>
+  </node>
+  <node id="214875571" version="7" timestamp="2011-01-23T21:27:34Z" uid="94353" user="Fips" changeset="7067566" lat="42.7001918" lon="23.3161216">
+    <tag k="highway" v="traffic_signals"/>
+  </node>
+  <node id="215151291" version="2" timestamp="2011-01-24T21:58:30Z" uid="94353" user="Fips" changeset="7078684" lat="42.7005091" lon="23.3283767"/>
+  <node id="215151299" version="4" timestamp="2011-01-24T21:58:44Z" uid="94353" user="Fips" changeset="7078684" lat="42.7004409" lon="23.3274974"/>
+  <node id="215151305" version="2" timestamp="2011-01-24T21:58:49Z" uid="94353" user="Fips" changeset="7078684" lat="42.7003563" lon="23.3264938"/>
+  <node id="215151312" version="4" timestamp="2011-01-24T21:58:44Z" uid="94353" user="Fips" changeset="7078684" lat="42.7002676" lon="23.3255231"/>
+  <node id="215151313" version="8" timestamp="2011-01-24T21:58:37Z" uid="94353" user="Fips" changeset="7078684" lat="42.7001296" lon="23.3243512"/>
+  <node id="215151319" version="8" timestamp="2011-01-24T21:19:09Z" uid="94353" user="Fips" changeset="7078242" lat="42.7000241" lon="23.3232283"/>
+  <node id="215151325" version="10" timestamp="2011-01-24T21:19:14Z" uid="94353" user="Fips" changeset="7078242" lat="42.7001742" lon="23.3224865">
+    <tag k="highway" v="traffic_signals"/>
+  </node>
+  <node id="215477145" version="11" timestamp="2011-01-24T21:19:19Z" uid="94353" user="Fips" changeset="7078242" lat="42.6996339" lon="23.324454"/>
+  <node id="215477147" version="8" timestamp="2011-01-24T21:19:30Z" uid="94353" user="Fips" changeset="7078242" lat="42.6994546" lon="23.3254286"/>
+  <node id="215477148" version="8" timestamp="2011-01-24T21:19:36Z" uid="94353" user="Fips" changeset="7078242" lat="42.6990565" lon="23.3257446"/>
+  <node id="215477149" version="10" timestamp="2011-01-24T21:38:26Z" uid="94353" user="Fips" changeset="7078469" lat="42.6977652" lon="23.3259453">
+    <tag k="highway" v="traffic_signals"/>
+  </node>
+  <node id="215478298" version="5" timestamp="2008-01-10T15:11:13Z" uid="18541" user="Гено Рупски" changeset="592812" lat="42.7018048" lon="23.3241035"/>
+  <node id="215480682" version="6" timestamp="2011-01-24T21:19:20Z" uid="94353" user="Fips" changeset="7078242" lat="42.6986741" lon="23.3246377"/>
+  <node id="215481912" version="8" timestamp="2011-01-24T21:38:30Z" uid="94353" user="Fips" changeset="7078469" lat="42.697635" lon="23.324834"/>
+  <node id="215484653" version="4" timestamp="2011-01-24T21:19:20Z" uid="94353" user="Fips" changeset="7078242" lat="42.7044993" lon="23.3256701"/>
+  <node id="215485247" version="7" timestamp="2011-01-24T21:58:49Z" uid="94353" user="Fips" changeset="7078684" lat="42.7010845" lon="23.3253589"/>
+  <node id="215489487" version="8" timestamp="2011-01-24T21:38:23Z" uid="94353" user="Fips" changeset="7078469" lat="42.6978459" lon="23.3269161">
+    <tag k="highway" v="traffic_signals"/>
+  </node>
+  <node id="215491238" version="3" timestamp="2011-01-24T21:19:12Z" uid="94353" user="Fips" changeset="7078242" lat="42.6994223" lon="23.326651"/>
+  <node id="215491240" version="4" timestamp="2011-01-24T21:19:09Z" uid="94353" user="Fips" changeset="7078242" lat="42.6995577" lon="23.3266467"/>
+  <node id="215491242" version="4" timestamp="2011-01-24T21:58:37Z" uid="94353" user="Fips" changeset="7078684" lat="42.7011866" lon="23.326349"/>
+  <node id="215493005" version="1" timestamp="2008-01-10T15:15:40Z" uid="18541" user="Гено Рупски" changeset="592812" lat="42.7043783" lon="23.3269101"/>
+  <node id="215496676" version="3" timestamp="2011-01-24T21:58:27Z" uid="94353" user="Fips" changeset="7078684" lat="42.7013002" lon="23.3273554"/>
+  <node id="215496677" version="3" timestamp="2011-01-24T21:58:44Z" uid="94353" user="Fips" changeset="7078684" lat="42.6996381" lon="23.3276601"/>
+  <node id="215496679" version="4" timestamp="2011-01-24T21:38:14Z" uid="94353" user="Fips" changeset="7078469" lat="42.6979378" lon="23.3279467"/>
+  <node id="215497690" version="2" timestamp="2011-01-24T21:58:50Z" uid="94353" user="Fips" changeset="7078684" lat="42.699739" lon="23.3285484"/>
+  <node id="215497691" version="2" timestamp="2011-01-24T21:58:41Z" uid="94353" user="Fips" changeset="7078684" lat="42.7013908" lon="23.3282159"/>
+  <node id="215498582" version="2" timestamp="2011-01-24T21:19:27Z" uid="94353" user="Fips" changeset="7078242" lat="42.6987663" lon="23.3258085"/>
+  <node id="215499336" version="3" timestamp="2011-01-24T21:19:35Z" uid="94353" user="Fips" changeset="7078242" lat="42.6990555" lon="23.3226665"/>
+  <node id="215506373" version="5" timestamp="2008-10-17T20:59:03Z" uid="8421" user="Константин Коцев" changeset="394986" lat="42.6970781" lon="23.3264273"/>
+  <node id="215649167" version="6" timestamp="2012-03-31T19:57:01Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.6940134" lon="23.3273736"/>
+  <node id="215649174" version="3" timestamp="2012-03-31T19:57:01Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.6945915" lon="23.3279808"/>
+  <node id="215649182" version="4" timestamp="2012-03-31T19:57:01Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.6954753" lon="23.328543"/>
+  <node id="215658645" version="2" timestamp="2008-10-13T22:45:03Z" uid="65847" user="LKK" changeset="315519" lat="42.6952929" lon="23.3268053">
+    <tag k="created_by" v="JOSM"/>
+  </node>
+  <node id="215658653" version="7" timestamp="2008-10-17T20:48:46Z" uid="8421" user="Константин Коцев" changeset="394986" lat="42.6947543" lon="23.3261884"/>
+  <node id="215670472" version="4" timestamp="2011-01-23T18:20:26Z" uid="94353" user="Fips" changeset="7065157" lat="42.6957552" lon="23.3210731"/>
+  <node id="215670478" version="8" timestamp="2011-01-23T18:39:00Z" uid="94353" user="Fips" changeset="7065407" lat="42.6960585" lon="23.319234"/>
+  <node id="215670487" version="6" timestamp="2012-03-31T19:57:01Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.6961534" lon="23.3186266"/>
+  <node id="215670494" version="6" timestamp="2012-03-31T19:57:01Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.6962769" lon="23.3175074"/>
+  <node id="215670511" version="4" timestamp="2012-03-31T19:57:02Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.6969128" lon="23.3139593"/>
+  <node id="215670519" version="3" timestamp="2011-01-23T21:27:18Z" uid="94353" user="Fips" changeset="7067566" lat="42.6970336" lon="23.3131021"/>
+  <node id="242141679" version="6" timestamp="2012-03-31T19:57:02Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.6979875" lon="23.3133377"/>
+  <node id="242143335" version="5" timestamp="2011-01-23T21:27:30Z" uid="94353" user="Fips" changeset="7067566" lat="42.6983371" lon="23.314014"/>
+  <node id="242144668" version="3" timestamp="2011-01-23T21:27:32Z" uid="94353" user="Fips" changeset="7067566" lat="42.6972343" lon="23.3153041"/>
+  <node id="242144801" version="2" timestamp="2011-01-23T21:27:35Z" uid="94353" user="Fips" changeset="7067566" lat="42.6981003" lon="23.3154977"/>
+  <node id="243064620" version="4" timestamp="2011-12-20T15:07:01Z" uid="112109" user="philepile" changeset="10164269" lat="42.695518" lon="23.3103733"/>
+  <node id="243068497" version="4" timestamp="2011-01-23T21:27:25Z" uid="94353" user="Fips" changeset="7067566" lat="42.700701" lon="23.3131656"/>
+  <node id="243068527" version="8" timestamp="2011-12-19T13:11:38Z" uid="112109" user="philepile" changeset="10155422" lat="42.7008484" lon="23.3122512"/>
+  <node id="243069961" version="6" timestamp="2012-03-31T17:50:57Z" uid="544370" user="atari_matari" changeset="11169384" lat="42.7000103" lon="23.3172462"/>
+  <node id="243073089" version="4" timestamp="2011-01-23T21:27:28Z" uid="94353" user="Fips" changeset="7067566" lat="42.7017875" lon="23.3193634"/>
+  <node id="243073141" version="5" timestamp="2011-01-23T21:27:07Z" uid="94353" user="Fips" changeset="7067566" lat="42.7018356" lon="23.3190848"/>
+  <node id="243073142" version="9" timestamp="2011-05-26T10:25:34Z" uid="460730" user="usmiv4o" changeset="8252026" lat="42.7025164" lon="23.3193929"/>
+  <node id="243073143" version="2" timestamp="2011-01-23T21:27:04Z" uid="94353" user="Fips" changeset="7067566" lat="42.7033413" lon="23.3204357"/>
+  <node id="243073854" version="3" timestamp="2011-01-23T21:27:07Z" uid="94353" user="Fips" changeset="7067566" lat="42.7019718" lon="23.3181664"/>
+  <node id="243073930" version="3" timestamp="2011-01-24T20:20:42Z" uid="94353" user="Fips" changeset="7077443" lat="42.7050555" lon="23.3190863"/>
+  <node id="243074005" version="2" timestamp="2011-01-24T20:20:37Z" uid="94353" user="Fips" changeset="7077443" lat="42.7049871" lon="23.3201172"/>
+  <node id="243074006" version="7" timestamp="2011-06-02T20:00:56Z" uid="460730" user="usmiv4o" changeset="8323857" lat="42.700797" lon="23.3188758"/>
+  <node id="243074007" version="11" timestamp="2012-03-31T19:57:02Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.6997929" lon="23.318553"/>
+  <node id="243074045" version="4" timestamp="2011-01-23T21:27:24Z" uid="94353" user="Fips" changeset="7067566" lat="42.7036788" lon="23.3209243"/>
+  <node id="243074066" version="5" timestamp="2012-03-31T19:57:02Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.7027377" lon="23.3206453"/>
+  <node id="243074067" version="4" timestamp="2011-01-24T21:19:09Z" uid="94353" user="Fips" changeset="7078242" lat="42.7006097" lon="23.319998"/>
+  <node id="243074205" version="3" timestamp="2011-01-24T20:20:05Z" uid="94353" user="Fips" changeset="7077443" lat="42.7048967" lon="23.3213098"/>
+  <node id="243074460" version="3" timestamp="2011-06-02T20:00:57Z" uid="460730" user="usmiv4o" changeset="8323857" lat="42.7014364" lon="23.3215513"/>
+  <node id="243074461" version="4" timestamp="2011-01-24T21:19:11Z" uid="94353" user="Fips" changeset="7078242" lat="42.7003875" lon="23.3212585"/>
+  <node id="243074462" version="6" timestamp="2012-03-31T19:57:02Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.699469" lon="23.3209854"/>
+  <node id="243074492" version="4" timestamp="2011-01-23T21:27:30Z" uid="94353" user="Fips" changeset="7067566" lat="42.7044673" lon="23.3224864"/>
+  <node id="243074711" version="2" timestamp="2011-01-23T21:27:24Z" uid="94353" user="Fips" changeset="7067566" lat="42.7008955" lon="23.3163417"/>
+  <node id="243074742" version="3" timestamp="2011-01-23T21:27:19Z" uid="94353" user="Fips" changeset="7067566" lat="42.7013092" lon="23.3179652"/>
+  <node id="243074743" version="2" timestamp="2011-01-23T21:27:03Z" uid="94353" user="Fips" changeset="7067566" lat="42.7015671" lon="23.3165543"/>
+  <node id="243074763" version="3" timestamp="2011-01-23T21:27:09Z" uid="94353" user="Fips" changeset="7067566" lat="42.700683" lon="23.3177616"/>
+  <node id="243074795" version="6" timestamp="2011-01-23T21:27:24Z" uid="94353" user="Fips" changeset="7067566" lat="42.7006488" lon="23.3182291"/>
+  <node id="243074850" version="5" timestamp="2011-01-23T21:27:15Z" uid="94353" user="Fips" changeset="7067566" lat="42.7032844" lon="23.3170766"/>
+  <node id="243074862" version="7" timestamp="2011-01-23T21:26:59Z" uid="94353" user="Fips" changeset="7067566" lat="42.7027566" lon="23.3169054"/>
+  <node id="243074937" version="3" timestamp="2011-01-23T21:27:15Z" uid="94353" user="Fips" changeset="7067566" lat="42.7030281" lon="23.3184958"/>
+  <node id="243074944" version="4" timestamp="2011-01-23T21:27:30Z" uid="94353" user="Fips" changeset="7067566" lat="42.7025084" lon="23.3183307"/>
+  <node id="243075085" version="4" timestamp="2011-01-23T21:27:35Z" uid="94353" user="Fips" changeset="7067566" lat="42.7041656" lon="23.3188235"/>
+  <node id="243075086" version="3" timestamp="2011-01-23T21:27:11Z" uid="94353" user="Fips" changeset="7067566" lat="42.7043977" lon="23.3174273"/>
+  <node id="243136990" version="2" timestamp="2008-01-25T06:59:42Z" uid="8421" user="Константин Коцев" changeset="690643" lat="42.702326" lon="23.315639"/>
+  <node id="243136991" version="4" timestamp="2011-01-23T21:27:23Z" uid="94353" user="Fips" changeset="7067566" lat="42.7003826" lon="23.3149816"/>
+  <node id="243137769" version="4" timestamp="2011-01-23T21:27:06Z" uid="94353" user="Fips" changeset="7067566" lat="42.7025247" lon="23.3146342"/>
+  <node id="243137770" version="3" timestamp="2012-03-31T19:57:02Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.7005449" lon="23.3140776"/>
+  <node id="243138010" version="4" timestamp="2011-01-23T21:27:19Z" uid="94353" user="Fips" changeset="7067566" lat="42.7026697" lon="23.3137171"/>
+  <node id="243139232" version="4" timestamp="2011-01-23T21:26:59Z" uid="94353" user="Fips" changeset="7067566" lat="42.7053799" lon="23.314502"/>
+  <node id="243139285" version="2" timestamp="2012-03-31T19:57:03Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.7053031" lon="23.3155188"/>
+  <node id="243139328" version="3" timestamp="2008-02-23T14:41:26Z" uid="8421" user="Константин Коцев" changeset="184174" lat="42.7052397" lon="23.3163564"/>
+  <node id="243179593" version="1" timestamp="2008-01-25T09:49:51Z" uid="8421" user="Константин Коцев" changeset="691037" lat="42.703495" lon="23.3154034"/>
+  <node id="243179594" version="1" timestamp="2008-01-25T09:49:51Z" uid="8421" user="Константин Коцев" changeset="691037" lat="42.7029904" lon="23.3152575"/>
+  <node id="243179635" version="5" timestamp="2011-01-23T21:27:33Z" uid="94353" user="Fips" changeset="7067566" lat="42.7034835" lon="23.3158791"/>
+  <node id="243179646" version="2" timestamp="2011-01-23T21:27:35Z" uid="94353" user="Fips" changeset="7067566" lat="42.7029518" lon="23.3156935"/>
+  <node id="243179933" version="2" timestamp="2011-01-23T21:27:11Z" uid="94353" user="Fips" changeset="7067566" lat="42.7039298" lon="23.3150418"/>
+  <node id="243179934" version="2" timestamp="2008-01-25T09:53:32Z" uid="8421" user="Константин Коцев" changeset="691037" lat="42.7037032" lon="23.316236"/>
+  <node id="243179935" version="2" timestamp="2011-01-23T21:27:08Z" uid="94353" user="Fips" changeset="7067566" lat="42.7039881" lon="23.3162884"/>
+  <node id="243179948" version="1" timestamp="2008-01-25T09:53:09Z" uid="8421" user="Константин Коцев" changeset="691037" lat="42.7037347" lon="23.3160214"/>
+  <node id="245962660" version="3" timestamp="2011-12-21T10:34:08Z" uid="112109" user="philepile" changeset="10170295" lat="42.6961022" lon="23.3119061"/>
+  <node id="245962941" version="4" timestamp="2011-01-23T21:27:15Z" uid="94353" user="Fips" changeset="7067566" lat="42.6973993" lon="23.3140799"/>
+  <node id="245963074" version="2" timestamp="2011-04-06T07:22:43Z" uid="9327" user="AHT0H" changeset="7781983" lat="42.6961985" lon="23.3125533"/>
+  <node id="245963825" version="2" timestamp="2008-10-30T11:34:17Z" uid="28427" user="skunk" changeset="633423" lat="42.6947994" lon="23.3110095"/>
+  <node id="245963826" version="3" timestamp="2011-12-21T10:34:09Z" uid="112109" user="philepile" changeset="10170295" lat="42.6955261" lon="23.312433"/>
+  <node id="245963828" version="5" timestamp="2012-03-31T19:57:03Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.696695" lon="23.3153049"/>
+  <node id="245964514" version="3" timestamp="2011-12-20T15:07:01Z" uid="112109" user="philepile" changeset="10164269" lat="42.6939932" lon="23.3094289"/>
+  <node id="245964590" version="3" timestamp="2011-12-21T10:34:09Z" uid="112109" user="philepile" changeset="10170295" lat="42.6946928" lon="23.3132317"/>
+  <node id="245964710" version="3" timestamp="2011-12-21T10:34:09Z" uid="112109" user="philepile" changeset="10170295" lat="42.6951258" lon="23.3140665"/>
+  <node id="245964711" version="2" timestamp="2008-10-30T11:34:15Z" uid="28427" user="skunk" changeset="633423" lat="42.6958529" lon="23.313078"/>
+  <node id="245964741" version="3" timestamp="2011-01-23T21:58:24Z" uid="94353" user="Fips" changeset="7067899" lat="42.6953359" lon="23.3144917"/>
+  <node id="245964787" version="3" timestamp="2008-10-30T11:34:15Z" uid="28427" user="skunk" changeset="633423" lat="42.6961813" lon="23.3137602"/>
+  <node id="245965303" version="2" timestamp="2008-10-30T11:34:16Z" uid="28427" user="skunk" changeset="633423" lat="42.6944082" lon="23.3102542"/>
+  <node id="247889306" version="2" timestamp="2011-01-24T20:34:49Z" uid="94353" user="Fips" changeset="7077654" lat="42.706698" lon="23.3347469"/>
+  <node id="247889307" version="3" timestamp="2011-01-24T20:34:45Z" uid="94353" user="Fips" changeset="7077654" lat="42.7068479" lon="23.3348263"/>
+  <node id="248872671" version="2" timestamp="2011-01-24T00:08:40Z" uid="94353" user="Fips" changeset="7068842" lat="42.7065784" lon="23.3178969"/>
+  <node id="248872677" version="1" timestamp="2008-02-23T11:21:53Z" uid="8421" user="Константин Коцев" changeset="183329" lat="42.7074006" lon="23.3129492"/>
+  <node id="248872678" version="2" timestamp="2008-02-23T14:40:38Z" uid="8421" user="Константин Коцев" changeset="184174" lat="42.7067409" lon="23.3159101"/>
+  <node id="248872679" version="4" timestamp="2011-01-24T20:19:34Z" uid="94353" user="Fips" changeset="7077443" lat="42.7063245" lon="23.3206048"/>
+  <node id="248897927" version="2" timestamp="2011-01-24T20:20:04Z" uid="94353" user="Fips" changeset="7077443" lat="42.7077829" lon="23.3205961"/>
+  <node id="248897929" version="5" timestamp="2008-02-23T14:18:12Z" uid="8421" user="Константин Коцев" changeset="184174" lat="42.7080906" lon="23.316898"/>
+  <node id="248898038" version="2" timestamp="2011-01-24T00:08:47Z" uid="94353" user="Fips" changeset="7068842" lat="42.7093181" lon="23.3195399"/>
+  <node id="248898039" version="2" timestamp="2009-08-12T09:08:23Z" uid="156678" user="senico" changeset="2115920" lat="42.7096617" lon="23.3159045"/>
+  <node id="248898646" version="1" timestamp="2008-02-23T14:17:20Z" uid="8421" user="Константин Коцев" changeset="184174" lat="42.7118306" lon="23.3176533"/>
+  <node id="248898647" version="1" timestamp="2008-02-23T14:17:20Z" uid="8421" user="Константин Коцев" changeset="184174" lat="42.7095286" lon="23.3171898"/>
+  <node id="248898648" version="2" timestamp="2008-02-23T14:18:09Z" uid="8421" user="Константин Коцев" changeset="184174" lat="42.7066652" lon="23.316589"/>
+  <node id="248898649" version="3" timestamp="2011-04-06T08:14:58Z" uid="9327" user="AHT0H" changeset="7782319" lat="42.7056709" lon="23.3164105"/>
+  <node id="248899138" version="2" timestamp="2009-08-12T09:07:53Z" uid="156678" user="senico" changeset="2115920" lat="42.7069811" lon="23.3148184"/>
+  <node id="248899139" version="2" timestamp="2009-08-12T09:08:22Z" uid="156678" user="senico" changeset="2115920" lat="42.7084546" lon="23.3154154"/>
+  <node id="248899140" version="2" timestamp="2009-08-12T10:23:21Z" uid="156678" user="senico" changeset="2116595" lat="42.7121774" lon="23.3169238"/>
+  <node id="248899242" version="2" timestamp="2009-08-12T10:23:20Z" uid="156678" user="senico" changeset="2116595" lat="42.7058011" lon="23.3143403"/>
+  <node id="248899403" version="2" timestamp="2011-01-24T20:19:57Z" uid="94353" user="Fips" changeset="7077443" lat="42.7064233" lon="23.3193332"/>
+  <node id="248899404" version="3" timestamp="2011-01-24T20:20:24Z" uid="94353" user="Fips" changeset="7077443" lat="42.7078901" lon="23.3194673"/>
+  <node id="248899434" version="2" timestamp="2011-01-24T20:19:57Z" uid="94353" user="Fips" changeset="7077443" lat="42.7054939" lon="23.319288"/>
+  <node id="248901192" version="2" timestamp="2011-01-24T20:20:11Z" uid="94353" user="Fips" changeset="7077443" lat="42.7054097" lon="23.3206129"/>
+  <node id="248902336" version="2" timestamp="2011-01-24T20:20:04Z" uid="94353" user="Fips" changeset="7077443" lat="42.7065278" lon="23.321897"/>
+  <node id="248902648" version="3" timestamp="2012-01-22T13:26:48Z" uid="590510" user="gadgev" changeset="10464478" lat="42.7052818" lon="23.3221381"/>
+  <node id="248903319" version="2" timestamp="2011-01-24T20:21:03Z" uid="94353" user="Fips" changeset="7077443" lat="42.706603" lon="23.3224404"/>
+  <node id="248903320" version="2" timestamp="2011-01-24T20:20:13Z" uid="94353" user="Fips" changeset="7077443" lat="42.7052248" lon="23.3228002"/>
+  <node id="248903388" version="4" timestamp="2011-01-24T20:20:42Z" uid="94353" user="Fips" changeset="7077443" lat="42.7067378" lon="23.323138"/>
+  <node id="248904800" version="2" timestamp="2008-02-23T14:37:46Z" uid="8421" user="Константин Коцев" changeset="184174" lat="42.7065958" lon="23.3172156"/>
+  <node id="248904801" version="2" timestamp="2011-01-24T20:19:39Z" uid="94353" user="Fips" changeset="7077443" lat="42.7080905" lon="23.3174238"/>
+  <node id="248904993" version="2" timestamp="2011-01-24T20:19:56Z" uid="94353" user="Fips" changeset="7077443" lat="42.7065063" lon="23.3185166"/>
+  <node id="248904994" version="2" timestamp="2011-01-24T20:20:39Z" uid="94353" user="Fips" changeset="7077443" lat="42.7079568" lon="23.3187797"/>
+  <node id="248905032" version="2" timestamp="2011-04-06T08:14:58Z" uid="9327" user="AHT0H" changeset="7782319" lat="42.7057218" lon="23.31562"/>
+  <node id="248905094" version="2" timestamp="2009-08-12T09:01:57Z" uid="156678" user="senico" changeset="2115920" lat="42.7064014" lon="23.3145835"/>
+  <node id="248905138" version="2" timestamp="2009-08-12T09:07:53Z" uid="156678" user="senico" changeset="2115920" lat="42.7077869" lon="23.3151449"/>
+  <node id="248905156" version="1" timestamp="2008-02-23T14:44:03Z" uid="8421" user="Константин Коцев" changeset="184174" lat="42.707422" lon="23.3167427"/>
+  <node id="248905463" version="2" timestamp="2009-08-12T10:23:20Z" uid="156678" user="senico" changeset="2116595" lat="42.7090926" lon="23.3156739"/>
+  <node id="248905513" version="2" timestamp="2009-08-12T09:08:23Z" uid="156678" user="senico" changeset="2115920" lat="42.7108261" lon="23.3163763"/>
+  <node id="248905514" version="1" timestamp="2008-02-23T14:47:33Z" uid="8421" user="Константин Коцев" changeset="184174" lat="42.710722" lon="23.3174378"/>
+  <node id="248905955" version="2" timestamp="2009-08-12T10:23:20Z" uid="156678" user="senico" changeset="2116595" lat="42.7113807" lon="23.316601"/>
+  <node id="248905957" version="3" timestamp="2008-02-23T14:49:53Z" uid="8421" user="Константин Коцев" changeset="184174" lat="42.7112013" lon="23.3175323"/>
+  <node id="248906369" version="2" timestamp="2009-08-12T10:23:20Z" uid="156678" user="senico" changeset="2116595" lat="42.7099194" lon="23.3160089"/>
+  <node id="248906373" version="2" timestamp="2009-08-12T10:23:20Z" uid="156678" user="senico" changeset="2116595" lat="42.7102639" lon="23.3161485"/>
+  <node id="249313747" version="8" timestamp="2012-03-31T19:57:03Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.6972907" lon="23.3178311"/>
+  <node id="249313955" version="1" timestamp="2008-02-25T20:56:03Z" uid="8421" user="Константин Коцев" changeset="203261" lat="42.6969653" lon="23.3160805"/>
+  <node id="249313956" version="1" timestamp="2008-02-25T20:56:03Z" uid="8421" user="Константин Коцев" changeset="203261" lat="42.69694" lon="23.3152994"/>
+  <node id="249313990" version="3" timestamp="2008-10-10T09:01:10Z" uid="65847" user="LKK" changeset="209907" lat="42.6969628" lon="23.3196026"/>
+  <node id="249314832" version="1" timestamp="2008-02-25T20:58:57Z" uid="8421" user="Константин Коцев" changeset="203261" lat="42.696409" lon="23.3194436"/>
+  <node id="249315084" version="1" timestamp="2008-02-25T21:00:32Z" uid="8421" user="Константин Коцев" changeset="203261" lat="42.6954123" lon="23.3182076"/>
+  <node id="249315085" version="1" timestamp="2008-02-25T21:00:32Z" uid="8421" user="Константин Коцев" changeset="203261" lat="42.6956267" lon="23.3168858"/>
+  <node id="249315172" version="2" timestamp="2008-02-25T21:01:51Z" uid="8421" user="Константин Коцев" changeset="203261" lat="42.6954943" lon="23.3177441"/>
+  <node id="249315174" version="3" timestamp="2012-03-31T19:57:03Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.695598" lon="23.3172946"/>
+  <node id="249315379" version="3" timestamp="2008-10-10T09:37:23Z" uid="65847" user="LKK" changeset="209907" lat="42.6936434" lon="23.3179126"/>
+  <node id="251139390" version="1" timestamp="2008-03-08T14:32:20Z" uid="8421" user="Константин Коцев" changeset="284580" lat="42.6993264" lon="23.3347561"/>
+  <node id="251139391" version="2" timestamp="2008-03-08T14:33:08Z" uid="8421" user="Константин Коцев" changeset="284580" lat="42.7000833" lon="23.3424036"/>
+  <node id="251139429" version="1" timestamp="2008-03-08T14:33:58Z" uid="8421" user="Константин Коцев" changeset="284580" lat="42.7002978" lon="23.3386871"/>
+  <node id="251139430" version="1" timestamp="2008-03-08T14:33:58Z" uid="8421" user="Константин Коцев" changeset="284580" lat="42.6998941" lon="23.334387"/>
+  <node id="251139722" version="1" timestamp="2008-03-08T14:36:15Z" uid="8421" user="Константин Коцев" changeset="284580" lat="42.7037733" lon="23.3348076"/>
+  <node id="251139723" version="1" timestamp="2008-03-08T14:36:15Z" uid="8421" user="Константин Коцев" changeset="284580" lat="42.703912" lon="23.3344471"/>
+  <node id="251139826" version="1" timestamp="2008-03-08T14:37:28Z" uid="8421" user="Константин Коцев" changeset="284580" lat="42.7031678" lon="23.3334772"/>
+  <node id="251139827" version="2" timestamp="2008-03-08T14:37:33Z" uid="8421" user="Константин Коцев" changeset="284580" lat="42.7032876" lon="23.3342154"/>
+  <node id="251139828" version="2" timestamp="2011-01-21T23:28:44Z" uid="94353" user="Fips" changeset="7045853" lat="42.7040022" lon="23.3351227"/>
+  <node id="251139869" version="3" timestamp="2008-03-08T14:39:46Z" uid="8421" user="Константин Коцев" changeset="284580" lat="42.703193" lon="23.3350908"/>
+  <node id="251139899" version="1" timestamp="2008-03-08T14:38:32Z" uid="8421" user="Константин Коцев" changeset="284580" lat="42.7021838" lon="23.333769"/>
+  <node id="251139927" version="1" timestamp="2008-03-08T14:39:15Z" uid="8421" user="Константин Коцев" changeset="284580" lat="42.7029281" lon="23.3347561"/>
+  <node id="251139928" version="2" timestamp="2008-03-08T14:40:26Z" uid="8421" user="Константин Коцев" changeset="284580" lat="42.7025244" lon="23.3354084"/>
+  <node id="251139929" version="1" timestamp="2008-03-08T14:39:15Z" uid="8421" user="Константин Коцев" changeset="284580" lat="42.7000329" lon="23.3357861"/>
+  <node id="251140416" version="2" timestamp="2008-03-08T14:40:57Z" uid="8421" user="Константин Коцев" changeset="284580" lat="42.7015467" lon="23.3342411"/>
+  <node id="251140417" version="2" timestamp="2011-01-21T23:28:42Z" uid="94353" user="Fips" changeset="7045853" lat="42.7033399" lon="23.336393"/>
+  <node id="251140469" version="1" timestamp="2008-03-08T14:41:35Z" uid="8421" user="Константин Коцев" changeset="284580" lat="42.7031615" lon="23.3361465"/>
+  <node id="251140744" version="1" timestamp="2008-03-08T14:44:38Z" uid="8421" user="Константин Коцев" changeset="284580" lat="42.7016035" lon="23.3372538"/>
+  <node id="251140745" version="1" timestamp="2008-03-08T14:44:38Z" uid="8421" user="Константин Коцев" changeset="284580" lat="42.7001905" lon="23.3374168"/>
+  <node id="251140748" version="2" timestamp="2008-03-08T14:45:33Z" uid="8421" user="Константин Коцев" changeset="284580" lat="42.7001149" lon="23.3365843"/>
+  <node id="251140810" version="4" timestamp="2008-03-08T14:45:54Z" uid="8421" user="Константин Коцев" changeset="284580" lat="42.7015404" lon="23.3364298"/>
+  <node id="251140946" version="1" timestamp="2008-03-08T14:46:17Z" uid="8421" user="Константин Коцев" changeset="284580" lat="42.7014143" lon="23.3348162"/>
+  <node id="251140964" version="1" timestamp="2008-03-08T14:46:30Z" uid="8421" user="Константин Коцев" changeset="284580" lat="42.6999761" lon="23.3351852"/>
+  <node id="251141111" version="1" timestamp="2008-03-08T14:47:31Z" uid="8421" user="Константин Коцев" changeset="284580" lat="42.6994841" lon="23.3362839"/>
+  <node id="251141216" version="1" timestamp="2008-03-08T14:49:03Z" uid="8421" user="Константин Коцев" changeset="284580" lat="42.6997238" lon="23.33867"/>
+  <node id="251141281" version="1" timestamp="2008-03-08T14:50:28Z" uid="8421" user="Константин Коцев" changeset="284580" lat="42.6999067" lon="23.3405067"/>
+  <node id="251141647" version="1" timestamp="2008-03-08T14:56:52Z" uid="8421" user="Константин Коцев" changeset="284580" lat="42.7016476" lon="23.3379147"/>
+  <node id="252711636" version="1" timestamp="2008-03-18T12:30:31Z" uid="28078" user="softa" changeset="348530" lat="42.697755" lon="23.3198479"/>
+  <node id="255649318" version="6" timestamp="2012-03-17T17:10:41Z" uid="487261" user="pitagorid" changeset="11010167" lat="42.6948543" lon="23.3325354"/>
+  <node id="255649322" version="5" timestamp="2011-01-27T16:57:44Z" uid="94353" user="Fips" changeset="7105348" lat="42.6957063" lon="23.3334426"/>
+  <node id="257010875" version="5" timestamp="2011-01-27T16:57:43Z" uid="94353" user="Fips" changeset="7105348" lat="42.6967537" lon="23.32811"/>
+  <node id="257010898" version="2" timestamp="2011-01-24T21:38:23Z" uid="94353" user="Fips" changeset="7078469" lat="42.6972606" lon="23.328093"/>
+  <node id="257016255" version="1" timestamp="2008-04-12T09:28:18Z" uid="8421" user="Константин Коцев" changeset="118579" lat="42.7019564" lon="23.3230813"/>
+  <node id="257016315" version="3" timestamp="2011-06-02T20:00:56Z" uid="460730" user="usmiv4o" changeset="8323857" lat="42.7025059" lon="23.3218761"/>
+  <node id="257016339" version="3" timestamp="2011-01-23T21:27:06Z" uid="94353" user="Fips" changeset="7067566" lat="42.7028249" lon="23.3202163"/>
+  <node id="267388363" version="3" timestamp="2010-04-08T14:16:30Z" uid="261079" user="IvanVelev" changeset="4364141" lat="42.7065509" lon="23.3125519"/>
+  <node id="267388664" version="4" timestamp="2011-12-20T15:06:59Z" uid="112109" user="philepile" changeset="10164269" lat="42.6939421" lon="23.3093509"/>
+  <node id="267762083" version="4" timestamp="2011-01-23T21:27:19Z" uid="94353" user="Fips" changeset="7067566" lat="42.6982772" lon="23.3143727"/>
+  <node id="292217084" version="3" timestamp="2008-10-14T16:18:09Z" uid="65847" user="LKK" changeset="325656" lat="42.6958529" lon="23.3274921">
+    <tag k="created_by" v="JOSM"/>
+  </node>
+  <node id="303492196" version="2" timestamp="2008-10-10T09:37:22Z" uid="65847" user="LKK" changeset="209907" lat="42.6911333" lon="23.3171509"/>
+  <node id="303493609" version="2" timestamp="2008-10-10T09:37:22Z" uid="65847" user="LKK" changeset="209907" lat="42.6924577" lon="23.3175528"/>
+  <node id="303498140" version="3" timestamp="2011-01-23T22:27:01Z" uid="94353" user="Fips" changeset="7068144" lat="42.6887598" lon="23.3163904"/>
+  <node id="303498141" version="4" timestamp="2012-03-31T11:35:31Z" uid="182953" user="REAKTOR" changeset="11163667" lat="42.6878742" lon="23.3160789"/>
+  <node id="303719284" version="3" timestamp="2008-10-17T20:59:03Z" uid="8421" user="Константин Коцев" changeset="394986" lat="42.697058" lon="23.3265493"/>
+  <node id="303989707" version="4" timestamp="2011-01-27T16:45:25Z" uid="94353" user="Fips" changeset="7105245" lat="42.69664" lon="23.3301569"/>
+  <node id="303989714" version="3" timestamp="2011-01-24T21:58:45Z" uid="94353" user="Fips" changeset="7078684" lat="42.6962177" lon="23.3300471"/>
+  <node id="303989719" version="3" timestamp="2011-01-27T16:45:25Z" uid="94353" user="Fips" changeset="7105245" lat="42.69557" lon="23.3296358"/>
+  <node id="303989724" version="3" timestamp="2011-01-27T16:57:43Z" uid="94353" user="Fips" changeset="7105348" lat="42.6952119" lon="23.3307261"/>
+  <node id="303989785" version="4" timestamp="2012-03-31T17:50:58Z" uid="544370" user="atari_matari" changeset="11169384" lat="42.6960015" lon="23.3318154"/>
+  <node id="303989789" version="3" timestamp="2011-01-27T16:45:25Z" uid="94353" user="Fips" changeset="7105245" lat="42.6960831" lon="23.3320679"/>
+  <node id="303989794" version="3" timestamp="2011-01-27T16:45:26Z" uid="94353" user="Fips" changeset="7105245" lat="42.6961744" lon="23.3323236"/>
+  <node id="303989807" version="4" timestamp="2012-03-31T17:50:58Z" uid="544370" user="atari_matari" changeset="11169384" lat="42.6962034" lon="23.3325431"/>
+  <node id="303989822" version="4" timestamp="2011-01-24T21:49:05Z" uid="94353" user="Fips" changeset="7078578" lat="42.6960235" lon="23.3333128"/>
+  <node id="303989853" version="4" timestamp="2011-01-24T21:48:50Z" uid="94353" user="Fips" changeset="7078578" lat="42.6967032" lon="23.3335369"/>
+  <node id="303989858" version="3" timestamp="2011-01-24T21:48:51Z" uid="94353" user="Fips" changeset="7078578" lat="42.6967712" lon="23.3324656"/>
+  <node id="304936640" version="2" timestamp="2011-01-23T21:27:32Z" uid="94353" user="Fips" changeset="7067566" lat="42.698444" lon="23.31348"/>
+  <node id="304936643" version="2" timestamp="2011-01-23T21:27:11Z" uid="94353" user="Fips" changeset="7067566" lat="42.6974877" lon="23.3131997"/>
+  <node id="305506483" version="2" timestamp="2011-01-27T16:57:43Z" uid="94353" user="Fips" changeset="7105348" lat="42.6949195" lon="23.3322386"/>
+  <node id="308744850" version="1" timestamp="2008-10-30T11:34:05Z" uid="28427" user="skunk" changeset="633423" lat="42.6952011" lon="23.313699"/>
+  <node id="332052263" version="2" timestamp="2012-03-31T19:57:08Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.6959729" lon="23.3254213"/>
+  <node id="401665079" version="2" timestamp="2011-01-24T21:19:13Z" uid="94353" user="Fips" changeset="7078242" lat="42.6999741" lon="23.3234894"/>
+  <node id="462111622" version="1" timestamp="2009-08-12T07:50:08Z" uid="156678" user="senico" changeset="2115446" lat="42.7118498" lon="23.316791"/>
+  <node id="462132117" version="1" timestamp="2009-08-12T09:07:53Z" uid="156678" user="senico" changeset="2115920" lat="42.7072175" lon="23.3137653"/>
+  <node id="721039939" version="1" timestamp="2010-05-04T15:31:24Z" uid="41176" user="Veso" changeset="4605164" lat="42.7038498" lon="23.3348948"/>
+  <node id="1117288033" version="2" timestamp="2012-03-31T19:56:54Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.6936755" lon="23.3228236"/>
+  <node id="1117288393" version="1" timestamp="2011-01-23T18:20:11Z" uid="94353" user="Fips" changeset="7065157" lat="42.6936819" lon="23.3228369"/>
+  <node id="1117288486" version="1" timestamp="2011-01-23T18:20:12Z" uid="94353" user="Fips" changeset="7065157" lat="42.6936892" lon="23.3228519"/>
+  <node id="1117331169" version="2" timestamp="2012-03-31T19:56:54Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.6950813" lon="23.3189564"/>
+  <node id="1117331178" version="1" timestamp="2011-01-23T18:38:34Z" uid="94353" user="Fips" changeset="7065407" lat="42.6950224" lon="23.3182883"/>
+  <node id="1117331182" version="1" timestamp="2011-01-23T18:38:34Z" uid="94353" user="Fips" changeset="7065407" lat="42.6949853" lon="23.3182772"/>
+  <node id="1117331276" version="1" timestamp="2011-01-23T18:38:36Z" uid="94353" user="Fips" changeset="7065407" lat="42.6950036" lon="23.3182827"/>
+  <node id="1117331284" version="1" timestamp="2011-01-23T18:38:36Z" uid="94353" user="Fips" changeset="7065407" lat="42.6949691" lon="23.3182726"/>
+  <node id="1117331305" version="2" timestamp="2012-03-31T19:56:54Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.6950689" lon="23.3189529"/>
+  <node id="1117636104" version="1" timestamp="2011-01-23T21:26:27Z" uid="94353" user="Fips" changeset="7067566" lat="42.6980216" lon="23.3133484"/>
+  <node id="1117636186" version="3" timestamp="2012-03-31T17:50:56Z" uid="544370" user="atari_matari" changeset="11169384" lat="42.6999902" lon="23.3172637"/>
+  <node id="1117636223" version="1" timestamp="2011-01-23T21:26:29Z" uid="94353" user="Fips" changeset="7067566" lat="42.6980306" lon="23.313351"/>
+  <node id="1117636243" version="1" timestamp="2011-01-23T21:26:29Z" uid="94353" user="Fips" changeset="7067566" lat="42.6972494" lon="23.3151798"/>
+  <node id="1117636334" version="1" timestamp="2011-01-23T21:26:31Z" uid="94353" user="Fips" changeset="7067566" lat="42.6999957" lon="23.3173614"/>
+  <node id="1117636336" version="2" timestamp="2011-12-19T13:11:39Z" uid="112109" user="philepile" changeset="10155422" lat="42.7008273" lon="23.312401"/>
+  <node id="1117636337" version="1" timestamp="2011-01-23T21:26:31Z" uid="94353" user="Fips" changeset="7067566" lat="42.6967197" lon="23.3151941"/>
+  <node id="1117636347" version="2" timestamp="2011-01-23T22:54:01Z" uid="94353" user="Fips" changeset="7068367" lat="42.7002158" lon="23.3160034">
+    <tag k="highway" v="traffic_signals"/>
+  </node>
+  <node id="1117636402" version="1" timestamp="2011-01-23T21:26:33Z" uid="94353" user="Fips" changeset="7067566" lat="42.6973869" lon="23.3140772"/>
+  <node id="1117636423" version="1" timestamp="2011-01-23T21:26:33Z" uid="94353" user="Fips" changeset="7067566" lat="42.6981155" lon="23.3154087"/>
+  <node id="1117636442" version="1" timestamp="2011-01-23T21:26:34Z" uid="94353" user="Fips" changeset="7067566" lat="42.7000002" lon="23.3173044"/>
+  <node id="1117636450" version="1" timestamp="2011-01-23T21:26:34Z" uid="94353" user="Fips" changeset="7067566" lat="42.6981343" lon="23.3152734"/>
+  <node id="1117636472" version="1" timestamp="2011-01-23T21:26:35Z" uid="94353" user="Fips" changeset="7067566" lat="42.700402" lon="23.3149882"/>
+  <node id="1117636475" version="1" timestamp="2011-01-23T21:26:35Z" uid="94353" user="Fips" changeset="7067566" lat="42.7007423" lon="23.318331"/>
+  <node id="1117636544" version="1" timestamp="2011-01-23T21:26:36Z" uid="94353" user="Fips" changeset="7067566" lat="42.6982857" lon="23.3136489"/>
+  <node id="1117636550" version="2" timestamp="2012-03-31T19:56:55Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.7005267" lon="23.314072"/>
+  <node id="1117636573" version="1" timestamp="2011-01-23T21:26:36Z" uid="94353" user="Fips" changeset="7067566" lat="42.7007242" lon="23.3131734"/>
+  <node id="1117636575" version="1" timestamp="2011-01-23T21:26:37Z" uid="94353" user="Fips" changeset="7067566" lat="42.7008003" lon="23.3184162"/>
+  <node id="1117636580" version="1" timestamp="2011-01-23T21:26:37Z" uid="94353" user="Fips" changeset="7067566" lat="42.6972448" lon="23.3152178"/>
+  <node id="1117636603" version="1" timestamp="2011-01-23T21:26:37Z" uid="94353" user="Fips" changeset="7067566" lat="42.6978879" lon="23.3133106"/>
+  <node id="1117636616" version="1" timestamp="2011-01-23T21:26:38Z" uid="94353" user="Fips" changeset="7067566" lat="42.6980362" lon="23.3133935"/>
+  <node id="1117636619" version="1" timestamp="2011-01-23T21:26:38Z" uid="94353" user="Fips" changeset="7067566" lat="42.697273" lon="23.3149747"/>
+  <node id="1117636634" version="2" timestamp="2011-05-26T10:30:49Z" uid="460730" user="usmiv4o" changeset="8252026" lat="42.6999923" lon="23.3173484"/>
+  <node id="1117636641" version="1" timestamp="2011-01-23T21:26:38Z" uid="94353" user="Fips" changeset="7067566" lat="42.696664" lon="23.3151955"/>
+  <node id="1117636663" version="1" timestamp="2011-01-23T21:26:39Z" uid="94353" user="Fips" changeset="7067566" lat="42.7002058" lon="23.3160538"/>
+  <node id="1117636671" version="2" timestamp="2011-05-26T10:30:49Z" uid="460730" user="usmiv4o" changeset="8252026" lat="42.7006506" lon="23.3180248"/>
+  <node id="1117636676" version="1" timestamp="2011-01-23T21:26:39Z" uid="94353" user="Fips" changeset="7067566" lat="42.6978998" lon="23.3133139"/>
+  <node id="1117636703" version="1" timestamp="2011-01-23T21:26:39Z" uid="94353" user="Fips" changeset="7067566" lat="42.6983332" lon="23.3137943"/>
+  <node id="1117636733" version="1" timestamp="2011-01-23T21:26:40Z" uid="94353" user="Fips" changeset="7067566" lat="42.6974501" lon="23.313731"/>
+  <node id="1117636743" version="1" timestamp="2011-01-23T21:26:40Z" uid="94353" user="Fips" changeset="7067566" lat="42.703307" lon="23.3169395"/>
+  <node id="1117636753" version="2" timestamp="2011-05-26T10:30:49Z" uid="460730" user="usmiv4o" changeset="8252026" lat="42.7008556" lon="23.318546"/>
+  <node id="1117636770" version="1" timestamp="2011-01-23T21:26:41Z" uid="94353" user="Fips" changeset="7067566" lat="42.7027766" lon="23.3167813"/>
+  <node id="1117636781" version="1" timestamp="2011-01-23T21:26:41Z" uid="94353" user="Fips" changeset="7067566" lat="42.700241" lon="23.3158701"/>
+  <node id="1117636783" version="1" timestamp="2011-01-23T21:26:41Z" uid="94353" user="Fips" changeset="7067566" lat="42.6982881" lon="23.3143758"/>
+  <node id="1117636806" version="1" timestamp="2011-01-23T21:26:41Z" uid="94353" user="Fips" changeset="7067566" lat="42.700831" lon="23.3187046"/>
+  <node id="1117636815" version="1" timestamp="2011-01-23T21:26:41Z" uid="94353" user="Fips" changeset="7067566" lat="42.6983205" lon="23.3137212"/>
+  <node id="1117636863" version="1" timestamp="2011-01-23T21:26:42Z" uid="94353" user="Fips" changeset="7067566" lat="42.7000842" lon="23.3175505"/>
+  <node id="1117636873" version="1" timestamp="2011-01-23T21:26:42Z" uid="94353" user="Fips" changeset="7067566" lat="42.6981075" lon="23.3154555"/>
+  <node id="1117636889" version="1" timestamp="2011-01-23T21:26:43Z" uid="94353" user="Fips" changeset="7067566" lat="42.7001998" lon="23.3160846"/>
+  <node id="1117636894" version="1" timestamp="2011-01-23T21:26:43Z" uid="94353" user="Fips" changeset="7067566" lat="42.7003674" lon="23.3149771"/>
+  <node id="1117636896" version="1" timestamp="2011-01-23T21:26:43Z" uid="94353" user="Fips" changeset="7067566" lat="42.6974855" lon="23.3136427"/>
+  <node id="1117636897" version="1" timestamp="2011-01-23T21:26:43Z" uid="94353" user="Fips" changeset="7067566" lat="42.7038664" lon="23.3171113"/>
+  <node id="1117636899" version="1" timestamp="2011-01-23T21:26:43Z" uid="94353" user="Fips" changeset="7067566" lat="42.6972631" lon="23.3150676"/>
+  <node id="1117636927" version="2" timestamp="2011-05-26T10:30:49Z" uid="460730" user="usmiv4o" changeset="8252026" lat="42.7001254" lon="23.3174365"/>
+  <node id="1117636931" version="1" timestamp="2011-01-23T21:26:44Z" uid="94353" user="Fips" changeset="7067566" lat="42.700568" lon="23.314085"/>
+  <node id="1117636955" version="1" timestamp="2011-01-23T21:26:44Z" uid="94353" user="Fips" changeset="7067566" lat="42.7000154" lon="23.3174557"/>
+  <node id="1117636969" version="2" timestamp="2011-05-26T10:30:49Z" uid="460730" user="usmiv4o" changeset="8252026" lat="42.7000601" lon="23.3173433"/>
+  <node id="1117636972" version="1" timestamp="2011-01-23T21:26:44Z" uid="94353" user="Fips" changeset="7067566" lat="42.7000096" lon="23.3171175"/>
+  <node id="1117636974" version="2" timestamp="2011-05-26T10:30:49Z" uid="460730" user="usmiv4o" changeset="8252026" lat="42.7008737" lon="23.3184363"/>
+  <node id="1117636976" version="1" timestamp="2011-01-23T21:26:44Z" uid="94353" user="Fips" changeset="7067566" lat="42.6980095" lon="23.3133449"/>
+  <node id="1117637010" version="1" timestamp="2011-01-23T21:26:45Z" uid="94353" user="Fips" changeset="7067566" lat="42.697535" lon="23.3135803"/>
+  <node id="1117637019" version="1" timestamp="2011-01-23T21:26:45Z" uid="94353" user="Fips" changeset="7067566" lat="42.6983579" lon="23.3139138"/>
+  <node id="1117637036" version="1" timestamp="2011-01-23T21:26:46Z" uid="94353" user="Fips" changeset="7067566" lat="42.698346" lon="23.3139077"/>
+  <node id="1117637047" version="2" timestamp="2011-05-26T10:30:49Z" uid="460730" user="usmiv4o" changeset="8252026" lat="42.7008668" lon="23.3183513"/>
+  <node id="1117637060" version="1" timestamp="2011-01-23T21:26:46Z" uid="94353" user="Fips" changeset="7067566" lat="42.6979193" lon="23.3133192"/>
+  <node id="1117637064" version="1" timestamp="2011-01-23T21:26:46Z" uid="94353" user="Fips" changeset="7067566" lat="42.7008325" lon="23.3186245"/>
+  <node id="1117637066" version="2" timestamp="2011-05-26T10:30:49Z" uid="460730" user="usmiv4o" changeset="8252026" lat="42.7007717" lon="23.3181647"/>
+  <node id="1117637075" version="1" timestamp="2011-01-23T21:26:46Z" uid="94353" user="Fips" changeset="7067566" lat="42.6981228" lon="23.3153652"/>
+  <node id="1117637095" version="1" timestamp="2011-01-23T21:26:47Z" uid="94353" user="Fips" changeset="7067566" lat="42.7008247" lon="23.3185126"/>
+  <node id="1117637101" version="2" timestamp="2011-05-26T10:30:49Z" uid="460730" user="usmiv4o" changeset="8252026" lat="42.70002" lon="23.3172607"/>
+  <node id="1117637116" version="1" timestamp="2011-01-23T21:26:47Z" uid="94353" user="Fips" changeset="7067566" lat="42.697241" lon="23.3152496"/>
+  <node id="1117637122" version="2" timestamp="2011-05-26T10:30:49Z" uid="460730" user="usmiv4o" changeset="8252026" lat="42.7008413" lon="23.3182892"/>
+  <node id="1117701995" version="2" timestamp="2012-03-31T19:56:55Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.694888" lon="23.3171008"/>
+  <node id="1117702102" version="2" timestamp="2012-03-31T19:56:55Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.6948701" lon="23.3170959"/>
+  <node id="1117702171" version="1" timestamp="2011-01-23T21:58:01Z" uid="94353" user="Fips" changeset="7067899" lat="42.6957013" lon="23.3152042"/>
+  <node id="1117938141" version="1" timestamp="2011-01-24T00:08:12Z" uid="94353" user="Fips" changeset="7068842" lat="42.7065889" lon="23.3177825"/>
+  <node id="1119250212" version="1" timestamp="2011-01-24T20:34:25Z" uid="94353" user="Fips" changeset="7077654" lat="42.7067927" lon="23.3348103"/>
+  <node id="1119250257" version="1" timestamp="2011-01-24T20:34:25Z" uid="94353" user="Fips" changeset="7077654" lat="42.7067443" lon="23.334788"/>
+  <node id="1119319168" version="1" timestamp="2011-01-24T21:18:42Z" uid="94353" user="Fips" changeset="7078242" lat="42.6996068" lon="23.3244592"/>
+  <node id="1119319232" version="1" timestamp="2011-01-24T21:18:44Z" uid="94353" user="Fips" changeset="7078242" lat="42.6994744" lon="23.3257797"/>
+  <node id="1119319274" version="1" timestamp="2011-01-24T21:18:45Z" uid="94353" user="Fips" changeset="7078242" lat="42.7004018" lon="23.3212641"/>
+  <node id="1119319312" version="1" timestamp="2011-01-24T21:18:46Z" uid="94353" user="Fips" changeset="7078242" lat="42.7000305" lon="23.323319"/>
+  <node id="1119319317" version="4" timestamp="2011-06-02T20:00:57Z" uid="460730" user="usmiv4o" changeset="8323857" lat="42.7007886" lon="23.318872"/>
+  <node id="1119319357" version="1" timestamp="2011-01-24T21:18:47Z" uid="94353" user="Fips" changeset="7078242" lat="42.6999299" lon="23.3236488"/>
+  <node id="1119319409" version="1" timestamp="2011-01-24T21:18:48Z" uid="94353" user="Fips" changeset="7078242" lat="42.6998917" lon="23.3237766"/>
+  <node id="1119319503" version="1" timestamp="2011-01-24T21:18:50Z" uid="94353" user="Fips" changeset="7078242" lat="42.6980315" lon="23.3268866"/>
+  <node id="1119319507" version="1" timestamp="2011-01-24T21:18:50Z" uid="94353" user="Fips" changeset="7078242" lat="42.6980014" lon="23.32794"/>
+  <node id="1119319520" version="1" timestamp="2011-01-24T21:18:50Z" uid="94353" user="Fips" changeset="7078242" lat="42.699367" lon="23.3256762"/>
+  <node id="1119319568" version="1" timestamp="2011-01-24T21:18:51Z" uid="94353" user="Fips" changeset="7078242" lat="42.7003753" lon="23.3212555"/>
+  <node id="1119319575" version="1" timestamp="2011-01-24T21:18:52Z" uid="94353" user="Fips" changeset="7078242" lat="42.6987638" lon="23.3257758"/>
+  <node id="1119319584" version="1" timestamp="2011-01-24T21:18:52Z" uid="94353" user="Fips" changeset="7078242" lat="42.6994222" lon="23.3250473"/>
+  <node id="1119319621" version="1" timestamp="2011-01-24T21:18:53Z" uid="94353" user="Fips" changeset="7078242" lat="42.6995421" lon="23.3264595"/>
+  <node id="1119319655" version="1" timestamp="2011-01-24T21:18:54Z" uid="94353" user="Fips" changeset="7078242" lat="42.6996502" lon="23.3244513"/>
+  <node id="1119319670" version="2" timestamp="2012-03-31T19:56:55Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.7005975" lon="23.3199944"/>
+  <node id="1119319704" version="1" timestamp="2011-01-24T21:18:55Z" uid="94353" user="Fips" changeset="7078242" lat="42.7006217" lon="23.3200027"/>
+  <node id="1119319706" version="1" timestamp="2011-01-24T21:18:55Z" uid="94353" user="Fips" changeset="7078242" lat="42.6978965" lon="23.3259268"/>
+  <node id="1119346461" version="1" timestamp="2011-01-24T21:38:01Z" uid="94353" user="Fips" changeset="7078469" lat="42.6983218" lon="23.3302352"/>
+  <node id="1119346462" version="1" timestamp="2011-01-24T21:38:03Z" uid="94353" user="Fips" changeset="7078469" lat="42.6979266" lon="23.3269031"/>
+  <node id="1119346470" version="1" timestamp="2011-01-24T21:38:03Z" uid="94353" user="Fips" changeset="7078469" lat="42.6982604" lon="23.3302465"/>
+  <node id="1119346475" version="1" timestamp="2011-01-24T21:38:03Z" uid="94353" user="Fips" changeset="7078469" lat="42.697836" lon="23.3259353"/>
+  <node id="1119346497" version="1" timestamp="2011-01-24T21:38:04Z" uid="94353" user="Fips" changeset="7078469" lat="42.6985453" lon="23.3331761"/>
+  <node id="1119346498" version="1" timestamp="2011-01-24T21:38:04Z" uid="94353" user="Fips" changeset="7078469" lat="42.6982998" lon="23.3302392"/>
+  <node id="1119346509" version="1" timestamp="2011-01-24T21:38:05Z" uid="94353" user="Fips" changeset="7078469" lat="42.6981016" lon="23.3288641"/>
+  <node id="1119346530" version="1" timestamp="2011-01-24T21:38:05Z" uid="94353" user="Fips" changeset="7078469" lat="42.6980333" lon="23.3279331"/>
+  <node id="1119346556" version="1" timestamp="2011-01-24T21:38:06Z" uid="94353" user="Fips" changeset="7078469" lat="42.6985083" lon="23.3331824"/>
+  <node id="1119346559" version="1" timestamp="2011-01-24T21:38:06Z" uid="94353" user="Fips" changeset="7078469" lat="42.6977042" lon="23.324821"/>
+  <node id="1119346577" version="1" timestamp="2011-01-24T21:38:07Z" uid="94353" user="Fips" changeset="7078469" lat="42.6984073" lon="23.3322173"/>
+  <node id="1119346584" version="1" timestamp="2011-01-24T21:38:07Z" uid="94353" user="Fips" changeset="7078469" lat="42.6984916" lon="23.3321984"/>
+  <node id="1119346601" version="1" timestamp="2011-01-24T21:38:08Z" uid="94353" user="Fips" changeset="7078469" lat="42.6984447" lon="23.3322089"/>
+  <node id="1119346604" version="1" timestamp="2011-01-24T21:38:08Z" uid="94353" user="Fips" changeset="7078469" lat="42.6985826" lon="23.3331699"/>
+  <node id="1119346605" version="1" timestamp="2011-01-24T21:38:08Z" uid="94353" user="Fips" changeset="7078469" lat="42.6982207" lon="23.3302537"/>
+  <node id="1119346626" version="1" timestamp="2011-01-24T21:38:08Z" uid="94353" user="Fips" changeset="7078469" lat="42.6979709" lon="23.3279432"/>
+  <node id="1119346629" version="1" timestamp="2011-01-24T21:38:08Z" uid="94353" user="Fips" changeset="7078469" lat="42.6981382" lon="23.3288554"/>
+  <node id="1119346634" version="1" timestamp="2011-01-24T21:38:08Z" uid="94353" user="Fips" changeset="7078469" lat="42.6980644" lon="23.328873"/>
+  <node id="1119354841" version="1" timestamp="2011-01-24T21:48:32Z" uid="94353" user="Fips" changeset="7078578" lat="42.6965734" lon="23.3335187"/>
+  <node id="1119354875" version="1" timestamp="2011-01-24T21:48:34Z" uid="94353" user="Fips" changeset="7078578" lat="42.6962196" lon="23.3332711"/>
+  <node id="1119354900" version="1" timestamp="2011-01-24T21:48:35Z" uid="94353" user="Fips" changeset="7078578" lat="42.6980301" lon="23.3360982"/>
+  <node id="1119354958" version="1" timestamp="2011-01-24T21:48:38Z" uid="94353" user="Fips" changeset="7078578" lat="42.6961292" lon="23.3332826"/>
+  <node id="1123548772" version="1" timestamp="2011-01-27T16:45:23Z" uid="94353" user="Fips" changeset="7105245" lat="42.6960098" lon="23.3315319"/>
+  <node id="1123548774" version="1" timestamp="2011-01-27T16:45:23Z" uid="94353" user="Fips" changeset="7105245" lat="42.6965115" lon="23.3292011"/>
+  <node id="1123548784" version="1" timestamp="2011-01-27T16:45:23Z" uid="94353" user="Fips" changeset="7105245" lat="42.6964888" lon="23.3292665"/>
+  <node id="1309479848" version="2" timestamp="2012-03-31T19:56:56Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.6999925" lon="23.3173732"/>
+  <node id="1547030922" version="3" timestamp="2012-03-31T19:56:58Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.6990313" lon="23.3145729"/>
+  <node id="1547030923" version="1" timestamp="2011-12-15T10:56:00Z" uid="112109" user="philepile" changeset="10123124" lat="42.6991075" lon="23.3145917"/>
+  <node id="1547030926" version="3" timestamp="2012-03-31T19:56:58Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.699207" lon="23.3136321"/>
+  <node id="1547030927" version="3" timestamp="2012-03-31T19:56:59Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.6992979" lon="23.3136579"/>
+  <node id="1547727136" version="2" timestamp="2012-03-31T19:56:59Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.6981748" lon="23.3192717"/>
+  <node id="1547727137" version="2" timestamp="2012-03-31T19:56:59Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.6982557" lon="23.3192886"/>
+  <node id="1547727138" version="2" timestamp="2012-03-31T19:57:00Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.6983764" lon="23.3181586"/>
+  <node id="1547727139" version="1" timestamp="2011-12-15T18:41:20Z" uid="112109" user="philepile" changeset="10126097" lat="42.6984551" lon="23.3181765"/>
+  <node id="1556937456" version="1" timestamp="2011-12-21T10:34:07Z" uid="112109" user="philepile" changeset="10170295" lat="42.6962482" lon="23.3122659"/>
+  <node id="1556937461" version="1" timestamp="2011-12-21T10:34:07Z" uid="112109" user="philepile" changeset="10170295" lat="42.6961886" lon="23.3117782"/>
+  <node id="1556937470" version="1" timestamp="2011-12-21T10:34:07Z" uid="112109" user="philepile" changeset="10170295" lat="42.6961161" lon="23.3120036"/>
+  <node id="1601095551" version="1" timestamp="2012-01-22T13:26:46Z" uid="590510" user="gadgev" changeset="10464478" lat="42.7073365" lon="23.3217811"/>
+  <node id="1601095579" version="1" timestamp="2012-01-22T13:26:46Z" uid="590510" user="gadgev" changeset="10464478" lat="42.7071944" lon="23.3205996"/>
+  <node id="1678441506" version="1" timestamp="2012-03-17T17:10:16Z" uid="487261" user="pitagorid" changeset="11010167" lat="42.6949381" lon="23.332162"/>
+  <node id="1699935901" version="1" timestamp="2012-03-31T17:49:40Z" uid="544370" user="atari_matari" changeset="11169384" lat="42.6953158" lon="23.3329354"/>
+  <node id="1699936094" version="1" timestamp="2012-03-31T17:49:44Z" uid="544370" user="atari_matari" changeset="11169384" lat="42.6961094" lon="23.3331594"/>
+  <node id="1699936132" version="1" timestamp="2012-03-31T17:49:45Z" uid="544370" user="atari_matari" changeset="11169384" lat="42.6961788" lon="23.3328933"/>
+  <node id="1699936205" version="1" timestamp="2012-03-31T17:49:46Z" uid="544370" user="atari_matari" changeset="11169384" lat="42.6964971" lon="23.3259655"/>
+  <node id="1699937874" version="1" timestamp="2012-03-31T17:50:21Z" uid="544370" user="atari_matari" changeset="11169384" lat="42.6989992" lon="23.3162171"/>
+  <node id="1699937878" version="1" timestamp="2012-03-31T17:50:21Z" uid="544370" user="atari_matari" changeset="11169384" lat="42.6990587" lon="23.3161174"/>
+  <node id="1700085193" version="1" timestamp="2012-03-31T19:55:19Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.6935466" lon="23.3268762"/>
+  <node id="1700085194" version="1" timestamp="2012-03-31T19:55:19Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.693719" lon="23.3229136"/>
+  <node id="1700085235" version="1" timestamp="2012-03-31T19:55:21Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.6940045" lon="23.3232364"/>
+  <node id="1700085316" version="1" timestamp="2012-03-31T19:55:23Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.6945999" lon="23.3234072"/>
+  <node id="1700085349" version="1" timestamp="2012-03-31T19:55:24Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.6952493" lon="23.323737"/>
+  <node id="1700085362" version="1" timestamp="2012-03-31T19:55:24Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.6954559" lon="23.3225125"/>
+  <node id="1700085364" version="1" timestamp="2012-03-31T19:55:25Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.6955154" lon="23.3190818"/>
+  <node id="1700085369" version="1" timestamp="2012-03-31T19:55:25Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.6955508" lon="23.3249824"/>
+  <node id="1700085373" version="1" timestamp="2012-03-31T19:55:25Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.6956455" lon="23.3213856"/>
+  <node id="1700085378" version="1" timestamp="2012-03-31T19:55:25Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.6957777" lon="23.3191535"/>
+  <node id="1700085381" version="1" timestamp="2012-03-31T19:55:25Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.6958165" lon="23.3205984"/>
+  <node id="1700085386" version="1" timestamp="2012-03-31T19:55:25Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.6962355" lon="23.323942"/>
+  <node id="1700085400" version="1" timestamp="2012-03-31T19:55:25Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.6963041" lon="23.3257643"/>
+  <node id="1700085402" version="1" timestamp="2012-03-31T19:55:25Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.6964826" lon="23.3259484"/>
+  <node id="1700085404" version="1" timestamp="2012-03-31T19:55:25Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.6964949" lon="23.316538"/>
+  <node id="1700085406" version="1" timestamp="2012-03-31T19:55:25Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.6965701" lon="23.3240876"/>
+  <node id="1700085408" version="1" timestamp="2012-03-31T19:55:25Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.6967804" lon="23.3249882"/>
+  <node id="1700085415" version="1" timestamp="2012-03-31T19:55:25Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.6974459" lon="23.316799"/>
+  <node id="1700085423" version="1" timestamp="2012-03-31T19:55:26Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.6985656" lon="23.3171139"/>
+  <node id="1700085425" version="1" timestamp="2012-03-31T19:55:26Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.6995897" lon="23.3197616"/>
+  <node id="1700085427" version="1" timestamp="2012-03-31T19:55:26Z" uid="182953" user="REAKTOR" changeset="11170596" lat="42.6999579" lon="23.3174357"/>
+  <way id="15067169" version="8" timestamp="2008-02-07T07:30:22Z" uid="18541" user="Гено Рупски" changeset="61614">
+    <nd ref="148591742"/>
+    <nd ref="148595309"/>
+    <nd ref="148593283"/>
+    <tag k="created_by" v="Potlatch 0.7"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Стара планина"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="15067251" version="16" timestamp="2011-01-24T22:05:02Z" uid="94353" user="Fips" changeset="7078752">
+    <nd ref="215151319"/>
+    <nd ref="401665079"/>
+    <nd ref="1119319357"/>
+    <nd ref="1119319409"/>
+    <nd ref="215477145"/>
+    <nd ref="1119319584"/>
+    <nd ref="215477147"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Искър"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="15067337" version="5" timestamp="2008-01-10T08:56:25Z" uid="18541" user="Гено Рупски" changeset="591393">
+    <nd ref="214838603"/>
+    <nd ref="148593128"/>
+    <nd ref="148598312"/>
+    <nd ref="148593129"/>
+    <nd ref="148593130"/>
+    <tag k="created_by" v="Potlatch 0.5d"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. 11-ти август"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="15067390" version="2" timestamp="2007-12-06T08:23:51Z" uid="18541" user="Гено Рупски" changeset="105159">
+    <nd ref="148593283"/>
+    <nd ref="148593130"/>
+    <tag k="created_by" v="Potlatch 0.5d"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. 11-ти август"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="15067415" version="2" timestamp="2007-12-06T08:22:45Z" uid="18541" user="Гено Рупски" changeset="105159">
+    <nd ref="148593582"/>
+    <nd ref="148593810"/>
+    <nd ref="148593812"/>
+    <tag k="created_by" v="Potlatch 0.5d"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Париж"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="15067434" version="6" timestamp="2007-12-06T08:23:08Z" uid="18541" user="Гено Рупски" changeset="105159">
+    <nd ref="148593810"/>
+    <nd ref="148593130"/>
+    <nd ref="148595311"/>
+    <nd ref="148597129"/>
+    <nd ref="148594306"/>
+    <tag k="created_by" v="Potlatch 0.5d"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Росица"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="15067490" version="13" timestamp="2011-01-24T21:49:04Z" uid="94353" user="Fips" changeset="7078578">
+    <nd ref="303989822"/>
+    <nd ref="1119354958"/>
+    <nd ref="1119354875"/>
+    <nd ref="152197905"/>
+    <nd ref="1119354841"/>
+    <nd ref="303989853"/>
+    <nd ref="152197910"/>
+    <nd ref="148594846"/>
+    <nd ref="1119346556"/>
+    <nd ref="1119346497"/>
+    <nd ref="1119346604"/>
+    <nd ref="148595309"/>
+    <nd ref="148595311"/>
+    <nd ref="148595312"/>
+    <nd ref="148598311"/>
+    <nd ref="148595313"/>
+    <nd ref="214838579"/>
+    <nd ref="214838586"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Дунав"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="15067574" version="17" timestamp="2008-03-08T14:56:52Z" uid="8421" user="Константин Коцев" changeset="284580">
+    <nd ref="148592429"/>
+    <nd ref="152180875"/>
+    <nd ref="152181497"/>
+    <nd ref="251140946"/>
+    <nd ref="148596561"/>
+    <nd ref="251140810"/>
+    <nd ref="251140744"/>
+    <nd ref="251141647"/>
+    <nd ref="152607607"/>
+    <nd ref="152607609"/>
+    <nd ref="152607612"/>
+    <tag k="created_by" v="Potlatch 0.7b"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Искър"/>
+    <tag k="oneway" v="no"/>
+  </way>
+  <way id="15067623" version="2" timestamp="2007-12-06T08:24:07Z" uid="18541" user="Гено Рупски" changeset="105159">
+    <nd ref="148592429"/>
+    <nd ref="148597129"/>
+    <tag k="created_by" v="Potlatch 0.5d"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Чумерна"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="15067632" version="3" timestamp="2007-12-06T08:24:15Z" uid="18541" user="Гено Рупски" changeset="105159">
+    <nd ref="148592429"/>
+    <nd ref="148597521"/>
+    <tag k="created_by" v="Potlatch 0.5d"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Чумерна"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="15090447" version="7" timestamp="2010-06-01T07:35:19Z" uid="41176" user="Veso" changeset="4872362">
+    <nd ref="148873189"/>
+    <nd ref="148873363"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Веслец"/>
+  </way>
+  <way id="15090449" version="3" timestamp="2007-12-03T06:55:21Z" uid="18541" user="Гено Рупски" changeset="61877">
+    <nd ref="148873204"/>
+    <nd ref="148873610"/>
+    <nd ref="148873257"/>
+    <nd ref="148873813"/>
+    <nd ref="148873258"/>
+    <tag k="created_by" v="Potlatch 0.5d"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Родопи"/>
+  </way>
+  <way id="15090452" version="2" timestamp="2007-12-03T06:55:21Z" uid="18541" user="Гено Рупски" changeset="61877">
+    <nd ref="148873345"/>
+    <nd ref="148873814"/>
+    <nd ref="148873346"/>
+    <tag k="created_by" v="Potlatch 0.5d"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Тимок"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="15090454" version="4" timestamp="2009-09-26T20:32:56Z" uid="176554" user="INFINITY" changeset="2645667">
+    <nd ref="148873346"/>
+    <nd ref="148873611"/>
+    <nd ref="148873363"/>
+    <tag k="highway" v="residential"/>
+  </way>
+  <way id="15090456" version="2" timestamp="2007-12-03T06:55:53Z" uid="18541" user="Гено Рупски" changeset="61877">
+    <nd ref="148871485"/>
+    <nd ref="148873813"/>
+    <nd ref="148873814"/>
+    <nd ref="148873815"/>
+    <nd ref="148873816"/>
+    <tag k="created_by" v="Potlatch 0.5d"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Дунав"/>
+  </way>
+  <way id="15090458" version="3" timestamp="2009-08-11T09:15:13Z" uid="9327" user="AHT0H" changeset="2105666">
+    <nd ref="148873855"/>
+    <nd ref="148873815"/>
+    <nd ref="148873939"/>
+    <tag k="created_by" v="Potlatch 0.9c"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Панагюрище"/>
+  </way>
+  <way id="15361522" version="8" timestamp="2011-01-24T21:48:43Z" uid="94353" user="Fips" changeset="7078578">
+    <nd ref="152182151"/>
+    <nd ref="152203355"/>
+    <nd ref="152190700"/>
+    <nd ref="152197910"/>
+    <nd ref="152182908"/>
+    <nd ref="1119354900"/>
+    <nd ref="206186449"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="Врабча"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="15361987" version="4" timestamp="2008-10-14T16:34:34Z" uid="65847" user="LKK" changeset="325656">
+    <nd ref="303989858"/>
+    <nd ref="303989807"/>
+    <tag k="created_by" v="Potlatch 0.6a"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. 11-ти август"/>
+  </way>
+  <way id="15362123" version="4" timestamp="2008-10-14T16:25:29Z" uid="65847" user="LKK" changeset="325656">
+    <nd ref="152188852"/>
+    <nd ref="152190700"/>
+    <nd ref="303989858"/>
+    <tag k="created_by" v="Potlatch 0.6a"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. 11-ти август"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="15362166" version="2" timestamp="2011-01-24T21:38:30Z" uid="94353" user="Fips" changeset="7078469">
+    <nd ref="152188852"/>
+    <nd ref="1119346577"/>
+    <nd ref="1119346601"/>
+    <nd ref="1119346584"/>
+    <nd ref="152191203"/>
+    <tag k="highway" v="residential"/>
+  </way>
+  <way id="15362903" version="12" timestamp="2011-01-27T16:45:25Z" uid="94353" user="Fips" changeset="7105245">
+    <nd ref="303989858"/>
+    <nd ref="152199928"/>
+    <nd ref="303989707"/>
+    <nd ref="1123548774"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Московска"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="15363176" version="2" timestamp="2007-12-06T08:22:03Z" uid="18541" user="Гено Рупски" changeset="105159">
+    <nd ref="152199928"/>
+    <nd ref="152203355"/>
+    <nd ref="152203356"/>
+    <tag k="created_by" v="Potlatch 0.5d"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Париж"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="15363715" version="3" timestamp="2008-01-10T08:56:24Z" uid="18541" user="Гено Рупски" changeset="591393">
+    <nd ref="214838598"/>
+    <nd ref="214838591"/>
+    <nd ref="152209709"/>
+    <nd ref="148597521"/>
+    <tag k="created_by" v="Potlatch 0.5d"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Чумерна"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="20139649" version="5" timestamp="2012-03-31T17:50:56Z" uid="544370" user="atari_matari" changeset="11169384">
+    <nd ref="303989719"/>
+    <nd ref="303989724"/>
+    <nd ref="1678441506"/>
+    <nd ref="305506483"/>
+    <nd ref="255649318"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Шипка"/>
+  </way>
+  <way id="20266804" version="2" timestamp="2008-10-14T16:25:31Z" uid="65847" user="LKK" changeset="325656">
+    <nd ref="303989853"/>
+    <nd ref="303989858"/>
+    <tag k="created_by" v="Potlatch 0.6a"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Московска"/>
+  </way>
+  <way id="20275701" version="2" timestamp="2008-03-08T14:37:02Z" uid="8421" user="Константин Коцев" changeset="284580">
+    <nd ref="148874805"/>
+    <nd ref="214838572"/>
+    <nd ref="214838586"/>
+    <nd ref="214838598"/>
+    <nd ref="148874977"/>
+    <tag k="created_by" v="Potlatch 0.7b"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Ангиста"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="20275702" version="15" timestamp="2008-02-07T07:26:54Z" uid="18541" user="Гено Рупски" changeset="61614">
+    <nd ref="214838606"/>
+    <nd ref="214838591"/>
+    <nd ref="214838579"/>
+    <nd ref="214838603"/>
+    <nd ref="148590938"/>
+    <tag k="created_by" v="Potlatch 0.7"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Св. Св. Кирил и Методий"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="20277453" version="5" timestamp="2008-01-24T22:07:12Z" uid="8421" user="Константин Коцев" changeset="689234">
+    <nd ref="214875326"/>
+    <nd ref="214875329"/>
+    <nd ref="214875335"/>
+    <nd ref="214875345"/>
+    <nd ref="214875349"/>
+    <nd ref="148590940"/>
+    <tag k="created_by" v="Potlatch 0.6c"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Поп Богомил"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="20277457" version="19" timestamp="2011-01-23T21:27:29Z" uid="94353" user="Fips" changeset="7067566">
+    <nd ref="204756414"/>
+    <nd ref="243073854"/>
+    <nd ref="243073141"/>
+    <nd ref="243073089"/>
+    <nd ref="204756426"/>
+    <nd ref="243074460"/>
+    <nd ref="204756410"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Цар Симеон"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="20309506" version="14" timestamp="2011-01-24T22:05:03Z" uid="94353" user="Fips" changeset="7078752">
+    <nd ref="215151319"/>
+    <nd ref="215151325"/>
+    <nd ref="243074461"/>
+    <nd ref="243074067"/>
+    <nd ref="243074006"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Екзарх Йосиф"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="20309901" version="9" timestamp="2011-01-24T21:19:14Z" uid="94353" user="Fips" changeset="7078242">
+    <nd ref="214875389"/>
+    <nd ref="215478298"/>
+    <nd ref="204756428"/>
+    <nd ref="215151313"/>
+    <nd ref="1119319655"/>
+    <nd ref="215477145"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Сердика"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="20309914" version="3" timestamp="2011-01-24T21:38:28Z" uid="94353" user="Fips" changeset="7078469">
+    <nd ref="215480682"/>
+    <nd ref="1119346559"/>
+    <nd ref="215481912"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Сердика"/>
+  </way>
+  <way id="20309928" version="3" timestamp="2011-01-24T21:19:02Z" uid="94353" user="Fips" changeset="7078242">
+    <nd ref="215480682"/>
+    <nd ref="1119319168"/>
+    <nd ref="215477145"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Сердика"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="20310063" version="4" timestamp="2011-01-24T21:19:23Z" uid="94353" user="Fips" changeset="7078242">
+    <nd ref="215484653"/>
+    <nd ref="214875335"/>
+    <nd ref="214875380"/>
+    <nd ref="215485247"/>
+    <nd ref="215151312"/>
+    <nd ref="148592427"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Веслец"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="20310067" version="7" timestamp="2011-01-24T22:04:58Z" uid="94353" user="Fips" changeset="7078752">
+    <nd ref="148592427"/>
+    <nd ref="1119319520"/>
+    <nd ref="215477148"/>
+    <nd ref="215498582"/>
+    <nd ref="1119319706"/>
+    <nd ref="1119346475"/>
+    <nd ref="215477149"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Веслец"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="20310203" version="6" timestamp="2011-01-24T21:19:25Z" uid="94353" user="Fips" changeset="7078242">
+    <nd ref="215491240"/>
+    <nd ref="1119319621"/>
+    <nd ref="1119319232"/>
+    <nd ref="148592427"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Искър"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="20310292" version="4" timestamp="2011-01-24T21:38:14Z" uid="94353" user="Fips" changeset="7078469">
+    <nd ref="215489487"/>
+    <nd ref="1119346462"/>
+    <nd ref="1119319503"/>
+    <nd ref="215491238"/>
+    <nd ref="215491240"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Бачо Киро"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="20310469" version="4" timestamp="2011-01-24T21:38:24Z" uid="94353" user="Fips" changeset="7078469">
+    <nd ref="215493005"/>
+    <nd ref="214875349"/>
+    <nd ref="214875364"/>
+    <nd ref="215496676"/>
+    <nd ref="215151299"/>
+    <nd ref="215496677"/>
+    <nd ref="1119346530"/>
+    <nd ref="1119319507"/>
+    <nd ref="1119346626"/>
+    <nd ref="215496679"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Будапеща"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="20310580" version="1" timestamp="2008-01-10T15:18:58Z" uid="18541" user="Гено Рупски" changeset="592812">
+    <nd ref="215480682"/>
+    <nd ref="215499336"/>
+    <tag k="created_by" v="Potlatch 0.6a"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Триадица"/>
+  </way>
+  <way id="20310591" version="2" timestamp="2011-01-24T21:19:21Z" uid="94353" user="Fips" changeset="7078242">
+    <nd ref="215498582"/>
+    <nd ref="1119319575"/>
+    <nd ref="215480682"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Триадица"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="20310768" version="9" timestamp="2011-01-27T16:45:26Z" uid="94353" user="Fips" changeset="7105245">
+    <nd ref="1123548774"/>
+    <nd ref="109357391"/>
+    <nd ref="1119346634"/>
+    <nd ref="1119346509"/>
+    <nd ref="1119346629"/>
+    <nd ref="215497690"/>
+    <nd ref="215151291"/>
+    <nd ref="215497691"/>
+    <nd ref="214875358"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="улица Георги Бенковски"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="20310808" version="16" timestamp="2011-01-27T16:45:24Z" uid="94353" user="Fips" changeset="7105245">
+    <nd ref="1123548774"/>
+    <nd ref="257010875"/>
+    <nd ref="303719284"/>
+    <nd ref="215506373"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Московска"/>
+  </way>
+  <way id="20316168" version="5" timestamp="2008-10-13T22:45:20Z" uid="65847" user="LKK" changeset="315519">
+    <nd ref="215658653"/>
+    <nd ref="215658645"/>
+    <nd ref="292217084"/>
+    <tag k="created_by" v="Potlatch 0.10b"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Дякон Игнатий"/>
+  </way>
+  <way id="20316759" version="5" timestamp="2011-01-23T21:27:15Z" uid="94353" user="Fips" changeset="7067566">
+    <nd ref="245962941"/>
+    <nd ref="1117636402"/>
+    <nd ref="215670511"/>
+    <tag k="highway" v="residential"/>
+  </way>
+  <way id="22662644" version="14" timestamp="2011-06-02T20:03:06Z" uid="460730" user="usmiv4o" changeset="8323857">
+    <nd ref="243073930"/>
+    <nd ref="243075085"/>
+    <nd ref="214875415"/>
+    <nd ref="243074937"/>
+    <nd ref="243074944"/>
+    <nd ref="243073854"/>
+    <nd ref="243074742"/>
+    <nd ref="243074763"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="Братя Миладинови"/>
+    <tag k="oneway" v="-1"/>
+  </way>
+  <way id="22662664" version="6" timestamp="2008-01-24T21:58:50Z" uid="8421" user="Константин Коцев" changeset="689234">
+    <nd ref="243074005"/>
+    <nd ref="214875410"/>
+    <nd ref="243073142"/>
+    <tag k="created_by" v="Potlatch 0.6c"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="Цар Самуил"/>
+  </way>
+  <way id="22662695" version="5" timestamp="2009-04-05T05:49:55Z" uid="28427" user="skunk" changeset="204256">
+    <nd ref="243074205"/>
+    <nd ref="243074045"/>
+    <tag k="created_by" v="Potlatch 0.10e"/>
+    <tag k="name:en" v="Street Knyaz Boris I"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="улица Княз Борис I"/>
+  </way>
+  <way id="22662774" version="8" timestamp="2011-05-26T10:20:27Z" uid="460730" user="usmiv4o" changeset="8252026">
+    <nd ref="243074492"/>
+    <nd ref="214875326"/>
+    <nd ref="214875397"/>
+    <nd ref="257016315"/>
+    <nd ref="243074460"/>
+    <nd ref="1119319274"/>
+    <nd ref="243074461"/>
+    <nd ref="1119319568"/>
+    <nd ref="243074462"/>
+    <nd ref="148872382"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="Вашингтон"/>
+    <tag k="oneway" v="-1"/>
+  </way>
+  <way id="22662811" version="10" timestamp="2011-01-23T21:27:12Z" uid="94353" user="Fips" changeset="7067566">
+    <nd ref="1117636671"/>
+    <nd ref="243074763"/>
+    <nd ref="243074711"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="Чипровци"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="22662814" version="5" timestamp="2008-01-24T21:51:48Z" uid="8421" user="Константин Коцев" changeset="689234">
+    <nd ref="243074742"/>
+    <nd ref="243074743"/>
+    <tag k="created_by" v="Potlatch 0.6c"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="Балкан"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="22662823" version="10" timestamp="2011-01-23T21:27:14Z" uid="94353" user="Fips" changeset="7067566">
+    <nd ref="243074937"/>
+    <nd ref="243074850"/>
+    <nd ref="1117636743"/>
+    <nd ref="243179635"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="Пордим"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="22662824" version="12" timestamp="2011-01-23T21:27:35Z" uid="94353" user="Fips" changeset="7067566">
+    <nd ref="243074944"/>
+    <nd ref="243074862"/>
+    <nd ref="1117636770"/>
+    <nd ref="243179646"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="Иларион Макриополски"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="22662840" version="3" timestamp="2008-01-24T21:53:13Z" uid="8421" user="Константин Коцев" changeset="689234">
+    <nd ref="243075085"/>
+    <nd ref="243075086"/>
+    <tag k="created_by" v="Potlatch 0.6c"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="Гривица"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="22664820" version="14" timestamp="2011-12-15T10:56:12Z" uid="112109" user="philepile" changeset="10123124">
+    <nd ref="1547030923"/>
+    <nd ref="1117636894"/>
+    <nd ref="243136991"/>
+    <nd ref="1117636472"/>
+    <nd ref="243136990"/>
+    <nd ref="243179646"/>
+    <nd ref="243179635"/>
+    <nd ref="243179948"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="Софроний Врачански"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="22664825" version="13" timestamp="2008-02-23T14:40:42Z" uid="8421" user="Константин Коцев" changeset="184174">
+    <nd ref="248872678"/>
+    <nd ref="248905032"/>
+    <tag k="created_by" v="Potlatch 0.7b"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="Антим I"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="22672556" version="3" timestamp="2008-01-25T09:51:14Z" uid="8421" user="Константин Коцев" changeset="691037">
+    <nd ref="243179593"/>
+    <nd ref="243179594"/>
+    <tag k="created_by" v="Potlatch 0.6c"/>
+    <tag k="highway" v="residential"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="22672562" version="3" timestamp="2008-01-25T09:51:22Z" uid="8421" user="Константин Коцев" changeset="691037">
+    <nd ref="243179635"/>
+    <nd ref="243179593"/>
+    <tag k="created_by" v="Potlatch 0.6c"/>
+    <tag k="highway" v="residential"/>
+  </way>
+  <way id="22672563" version="4" timestamp="2008-01-25T09:51:24Z" uid="8421" user="Константин Коцев" changeset="691037">
+    <nd ref="243179646"/>
+    <nd ref="243179594"/>
+    <tag k="created_by" v="Potlatch 0.6c"/>
+    <tag k="highway" v="residential"/>
+  </way>
+  <way id="22672583" version="3" timestamp="2008-01-25T09:53:32Z" uid="8421" user="Константин Коцев" changeset="691037">
+    <nd ref="243179933"/>
+    <nd ref="243179948"/>
+    <nd ref="243179934"/>
+    <nd ref="243179935"/>
+    <tag k="created_by" v="Potlatch 0.6c"/>
+    <tag k="highway" v="residential"/>
+  </way>
+  <way id="22672584" version="4" timestamp="2008-02-23T14:41:26Z" uid="8421" user="Константин Коцев" changeset="184174">
+    <nd ref="214875426"/>
+    <nd ref="243139328"/>
+    <tag k="created_by" v="Potlatch 0.7b"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="Софроний Врачански"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="22878415" version="1" timestamp="2008-02-05T20:39:37Z" uid="8421" user="Константин Коцев" changeset="48310">
+    <nd ref="215670511"/>
+    <nd ref="215670519"/>
+    <tag k="created_by" v="Potlatch 0.7"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Позитано"/>
+  </way>
+  <way id="22878479" version="11" timestamp="2011-12-21T10:34:12Z" uid="112109" user="philepile" changeset="10170295">
+    <nd ref="267388664"/>
+    <nd ref="245964514"/>
+    <nd ref="245965303"/>
+    <nd ref="245963825"/>
+    <nd ref="245963826"/>
+    <nd ref="245964711"/>
+    <nd ref="245964787"/>
+    <nd ref="1117636641"/>
+    <nd ref="245963828"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="Дамян Груев"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="22878513" version="7" timestamp="2011-12-21T10:34:13Z" uid="112109" user="philepile" changeset="10170295">
+    <nd ref="1117702171"/>
+    <nd ref="245964741"/>
+    <nd ref="245964710"/>
+    <nd ref="245964590"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="Владайска"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="22878526" version="2" timestamp="2008-10-30T11:34:19Z" uid="28427" user="skunk" changeset="633423">
+    <nd ref="245964710"/>
+    <nd ref="308744850"/>
+    <nd ref="245964711"/>
+    <tag k="created_by" v="Potlatch 0.7"/>
+    <tag k="highway" v="residential"/>
+  </way>
+  <way id="22878527" version="3" timestamp="2008-04-12T09:24:35Z" uid="8421" user="Константин Коцев" changeset="118579">
+    <nd ref="245964741"/>
+    <nd ref="245964787"/>
+    <tag k="created_by" v="Potlatch 0.8a"/>
+    <tag k="highway" v="residential"/>
+  </way>
+  <way id="22893208" version="2" timestamp="2011-01-23T21:27:06Z" uid="94353" user="Fips" changeset="7067566">
+    <nd ref="243068527"/>
+    <nd ref="1117636336"/>
+    <nd ref="243068497"/>
+    <nd ref="243137770"/>
+    <nd ref="243136991"/>
+    <nd ref="1117636781"/>
+    <nd ref="1117636347"/>
+    <nd ref="1117636663"/>
+    <nd ref="1117636889"/>
+    <nd ref="214875571"/>
+    <nd ref="1117636972"/>
+    <nd ref="243069961"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Пиротска"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="22893213" version="3" timestamp="2011-01-23T21:27:30Z" uid="94353" user="Fips" changeset="7067566">
+    <nd ref="214875421"/>
+    <nd ref="1117636897"/>
+    <nd ref="243179935"/>
+    <nd ref="214875426"/>
+    <nd ref="214875433"/>
+    <nd ref="214875441"/>
+    <nd ref="214875446"/>
+    <nd ref="214875454"/>
+    <nd ref="214875460"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Св. Св. Кирил и Методий"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="22893214" version="1" timestamp="2008-02-07T07:26:47Z" uid="18541" user="Гено Рупски" changeset="61614">
+    <nd ref="214875391"/>
+    <nd ref="214875397"/>
+    <nd ref="214875403"/>
+    <nd ref="243073143"/>
+    <nd ref="214875410"/>
+    <nd ref="214875415"/>
+    <nd ref="214875421"/>
+    <tag k="created_by" v="Potlatch 0.7"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Св. Св. Кирил и Методий"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="22893215" version="1" timestamp="2008-02-07T07:26:53Z" uid="18541" user="Гено Рупски" changeset="61614">
+    <nd ref="148590938"/>
+    <nd ref="214875358"/>
+    <nd ref="214875364"/>
+    <nd ref="214875374"/>
+    <nd ref="214875380"/>
+    <nd ref="214875389"/>
+    <nd ref="214875391"/>
+    <tag k="created_by" v="Potlatch 0.7"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Св. Св. Кирил и Методий"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="22893216" version="1" timestamp="2008-02-07T07:26:59Z" uid="18541" user="Гено Рупски" changeset="61614">
+    <nd ref="204756405"/>
+    <nd ref="148593128"/>
+    <nd ref="148595313"/>
+    <nd ref="152209709"/>
+    <nd ref="148874978"/>
+    <tag k="created_by" v="Potlatch 0.7"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Цар Симеон"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="22893219" version="1" timestamp="2008-02-07T07:27:15Z" uid="18541" user="Гено Рупски" changeset="61614">
+    <nd ref="148590935"/>
+    <nd ref="148593582"/>
+    <nd ref="148593129"/>
+    <nd ref="148595312"/>
+    <nd ref="148592429"/>
+    <tag k="created_by" v="Potlatch 0.7"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Искър"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="22893228" version="2" timestamp="2011-01-24T21:38:29Z" uid="94353" user="Fips" changeset="7078469">
+    <nd ref="148593812"/>
+    <nd ref="1119346461"/>
+    <nd ref="1119346498"/>
+    <nd ref="1119346470"/>
+    <nd ref="1119346605"/>
+    <nd ref="148871834"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Стара планина"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="22992939" version="4" timestamp="2011-01-24T20:34:49Z" uid="94353" user="Fips" changeset="7077654">
+    <nd ref="247889307"/>
+    <nd ref="1119250212"/>
+    <nd ref="1119250257"/>
+    <nd ref="247889306"/>
+    <nd ref="148875664"/>
+    <nd ref="148874314"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Владайска река"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="23064858" version="7" timestamp="2008-02-23T14:49:29Z" uid="8421" user="Константин Коцев" changeset="184174">
+    <nd ref="248898646"/>
+    <nd ref="248905957"/>
+    <nd ref="248905514"/>
+    <nd ref="248898647"/>
+    <nd ref="248897929"/>
+    <nd ref="248905156"/>
+    <nd ref="248898648"/>
+    <nd ref="248898649"/>
+    <tag k="created_by" v="Potlatch 0.7b"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="Софроний Врачански"/>
+  </way>
+  <way id="23064916" version="10" timestamp="2009-08-12T10:23:21Z" uid="156678" user="senico" changeset="2116595">
+    <nd ref="248899242"/>
+    <nd ref="248905094"/>
+    <nd ref="248899138"/>
+    <nd ref="248905138"/>
+    <nd ref="248899139"/>
+    <nd ref="248905463"/>
+    <nd ref="248898039"/>
+    <nd ref="248906369"/>
+    <nd ref="248906373"/>
+    <nd ref="248905513"/>
+    <nd ref="248905955"/>
+    <nd ref="462111622"/>
+    <nd ref="248899140"/>
+    <tag k="created_by" v="Potlatch 0.7b"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="Странджа"/>
+  </way>
+  <way id="23064953" version="5" timestamp="2008-02-23T14:26:11Z" uid="8421" user="Константин Коцев" changeset="184174">
+    <nd ref="248899434"/>
+    <nd ref="248899403"/>
+    <nd ref="248899404"/>
+    <nd ref="248898038"/>
+    <tag k="created_by" v="Potlatch 0.7b"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="Братя Миладинови"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="23065030" version="5" timestamp="2012-01-22T13:26:48Z" uid="590510" user="gadgev" changeset="10464478">
+    <nd ref="248897927"/>
+    <nd ref="1601095579"/>
+    <nd ref="248872679"/>
+    <nd ref="248901192"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="Цар Цамуил"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="23065103" version="10" timestamp="2012-01-24T08:47:53Z" uid="590510" user="gadgev" changeset="10482336">
+    <nd ref="248902648"/>
+    <nd ref="248902336"/>
+    <tag k="name:en" v="Street Knyaz Boris I"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="улица Княз Борис I"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="23065125" version="4" timestamp="2012-02-03T10:44:13Z" uid="590510" user="gadgev" changeset="10575039">
+    <nd ref="248902336"/>
+    <nd ref="1601095551"/>
+    <tag k="name:en" v="Street Knyaz Boris I"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="улица Княз Борис I"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="23065408" version="3" timestamp="2012-01-24T08:47:53Z" uid="590510" user="gadgev" changeset="10482336">
+    <nd ref="248903319"/>
+    <nd ref="248903320"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="Цветан Минков"/>
+    <tag k="oneway" v="-1"/>
+  </way>
+  <way id="23065561" version="3" timestamp="2008-02-23T14:39:59Z" uid="8421" user="Константин Коцев" changeset="184174">
+    <nd ref="248904800"/>
+    <nd ref="248904801"/>
+    <tag k="created_by" v="Potlatch 0.7b"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="Кресна"/>
+  </way>
+  <way id="23065582" version="1" timestamp="2008-02-23T14:39:33Z" uid="8421" user="Константин Коцев" changeset="184174">
+    <nd ref="248904993"/>
+    <nd ref="248904994"/>
+    <tag k="created_by" v="Potlatch 0.7b"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="Кръстец"/>
+  </way>
+  <way id="23095303" version="1" timestamp="2008-02-25T20:56:03Z" uid="8421" user="Константин Коцев" changeset="203261">
+    <nd ref="249313955"/>
+    <nd ref="249313956"/>
+    <tag k="created_by" v="Potlatch 0.7b"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="М. Тошев"/>
+  </way>
+  <way id="23095380" version="4" timestamp="2008-10-11T11:19:26Z" uid="65847" user="LKK" changeset="247438">
+    <nd ref="249314832"/>
+    <nd ref="150466725"/>
+    <tag k="created_by" v="Potlatch 0.7b"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="Св. София"/>
+  </way>
+  <way id="23095394" version="4" timestamp="2008-02-25T21:01:33Z" uid="8421" user="Константин Коцев" changeset="203261">
+    <nd ref="249315084"/>
+    <nd ref="249315172"/>
+    <nd ref="249315174"/>
+    <nd ref="249315085"/>
+    <tag k="created_by" v="Potlatch 0.7b"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="Три уши"/>
+  </way>
+  <way id="23217057" version="6" timestamp="2008-03-08T14:50:28Z" uid="8421" user="Константин Коцев" changeset="284580">
+    <nd ref="251139390"/>
+    <nd ref="251141111"/>
+    <nd ref="251141216"/>
+    <nd ref="251141281"/>
+    <nd ref="251139391"/>
+    <tag k="created_by" v="Potlatch 0.7b"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="Чаталджа"/>
+  </way>
+  <way id="23217070" version="9" timestamp="2008-03-08T14:46:30Z" uid="8421" user="Константин Коцев" changeset="284580">
+    <nd ref="251139429"/>
+    <nd ref="251140745"/>
+    <nd ref="251140748"/>
+    <nd ref="251139929"/>
+    <nd ref="251140964"/>
+    <nd ref="251139430"/>
+    <tag k="created_by" v="Potlatch 0.7b"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Стара планина"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="23217093" version="4" timestamp="2008-03-08T14:36:36Z" uid="8421" user="Константин Коцев" changeset="284580">
+    <nd ref="251139722"/>
+    <nd ref="251139723"/>
+    <nd ref="148874523"/>
+    <tag k="created_by" v="Potlatch 0.7b"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Ангиста"/>
+  </way>
+  <way id="23217114" version="3" timestamp="2010-05-04T15:31:25Z" uid="41176" user="Veso" changeset="4605164">
+    <nd ref="251139826"/>
+    <nd ref="251139827"/>
+    <nd ref="251139722"/>
+    <nd ref="721039939"/>
+    <nd ref="251139828"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="Кешан"/>
+  </way>
+  <way id="23217120" version="6" timestamp="2008-03-08T14:39:46Z" uid="8421" user="Константин Коцев" changeset="284580">
+    <nd ref="251139869"/>
+    <nd ref="251139927"/>
+    <nd ref="251139899"/>
+    <tag k="created_by" v="Potlatch 0.7b"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Екзарх Йосиф"/>
+  </way>
+  <way id="23217129" version="2" timestamp="2008-03-08T14:39:33Z" uid="8421" user="Константин Коцев" changeset="284580">
+    <nd ref="251139827"/>
+    <nd ref="251139927"/>
+    <nd ref="251139928"/>
+    <nd ref="148596561"/>
+    <nd ref="251139929"/>
+    <tag k="created_by" v="Potlatch 0.7b"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="Христо Ковачев"/>
+  </way>
+  <way id="23217155" version="5" timestamp="2008-03-08T14:41:35Z" uid="8421" user="Константин Коцев" changeset="284580">
+    <nd ref="251140416"/>
+    <nd ref="251139928"/>
+    <nd ref="251140469"/>
+    <nd ref="251140417"/>
+    <tag k="created_by" v="Potlatch 0.7b"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="Бели Искър"/>
+  </way>
+  <way id="23217233" version="2" timestamp="2008-03-08T14:46:41Z" uid="8421" user="Константин Коцев" changeset="284580">
+    <nd ref="251140946"/>
+    <nd ref="251140964"/>
+    <tag k="created_by" v="Potlatch 0.7b"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="Черномен"/>
+  </way>
+  <way id="23601151" version="12" timestamp="2011-01-27T16:45:25Z" uid="94353" user="Fips" changeset="7105245">
+    <nd ref="303989785"/>
+    <nd ref="1123548772"/>
+    <nd ref="213216239"/>
+    <nd ref="303989714"/>
+    <nd ref="1123548784"/>
+    <nd ref="1123548774"/>
+    <tag k="highway" v="residential"/>
+  </way>
+  <way id="23601154" version="13" timestamp="2012-03-31T17:50:52Z" uid="544370" user="atari_matari" changeset="11169384">
+    <nd ref="303989785"/>
+    <nd ref="303989789"/>
+    <nd ref="303989794"/>
+    <nd ref="303989807"/>
+    <nd ref="1699936132"/>
+    <nd ref="1699936094"/>
+    <nd ref="303989822"/>
+    <nd ref="152185389"/>
+    <nd ref="255649322"/>
+    <nd ref="152185386"/>
+    <nd ref="152185384"/>
+    <nd ref="1699935901"/>
+    <tag k="highway" v="residential"/>
+    <tag k="foot" v="yes"/>
+  </way>
+  <way id="23731335" version="6" timestamp="2011-01-24T21:38:20Z" uid="94353" user="Fips" changeset="7078469">
+    <nd ref="215496679"/>
+    <nd ref="257010898"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Будапеща"/>
+  </way>
+  <way id="23731929" version="2" timestamp="2008-04-12T09:28:40Z" uid="8421" user="Константин Коцев" changeset="118579">
+    <nd ref="257016255"/>
+    <nd ref="215478298"/>
+    <tag k="created_by" v="Potlatch 0.8a"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="Струма"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="23732000" version="5" timestamp="2008-04-12T09:30:31Z" uid="8421" user="Константин Коцев" changeset="118579">
+    <nd ref="243074066"/>
+    <nd ref="257016315"/>
+    <tag k="created_by" v="Potlatch 0.8a"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="Лозенград"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="23732014" version="3" timestamp="2008-04-12T09:30:04Z" uid="8421" user="Константин Коцев" changeset="118579">
+    <nd ref="243074066"/>
+    <nd ref="257016339"/>
+    <tag k="created_by" v="Potlatch 0.8a"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="Лозенград"/>
+  </way>
+  <way id="24597058" version="8" timestamp="2011-12-21T10:34:14Z" uid="112109" user="philepile" changeset="10170295">
+    <nd ref="215670511"/>
+    <nd ref="245963074"/>
+    <nd ref="1556937456"/>
+    <nd ref="1556937470"/>
+    <nd ref="245962660"/>
+    <nd ref="1556937461"/>
+    <nd ref="243064620"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="Отец Паисий"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="24598388" version="6" timestamp="2011-01-24T20:20:17Z" uid="94353" user="Fips" changeset="7077443">
+    <nd ref="248872677"/>
+    <nd ref="462132117"/>
+    <nd ref="248899138"/>
+    <nd ref="248872678"/>
+    <nd ref="248898648"/>
+    <nd ref="248904800"/>
+    <nd ref="1117938141"/>
+    <nd ref="248872671"/>
+    <nd ref="248904993"/>
+    <nd ref="248899403"/>
+    <nd ref="248872679"/>
+    <nd ref="248902336"/>
+    <nd ref="248903319"/>
+    <nd ref="248903388"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Козлодуй"/>
+  </way>
+  <way id="24632366" version="4" timestamp="2011-12-15T10:56:11Z" uid="112109" user="philepile" changeset="10123124">
+    <nd ref="267762083"/>
+    <nd ref="1117636783"/>
+    <nd ref="1547030922"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="Софроний Врачански"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="26539182" version="2" timestamp="2011-01-23T21:27:09Z" uid="94353" user="Fips" changeset="7067566">
+    <nd ref="243068497"/>
+    <nd ref="1117636573"/>
+    <nd ref="243138010"/>
+    <nd ref="214875441"/>
+    <nd ref="243139232"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="Отец Паисий"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="26989311" version="2" timestamp="2011-01-24T21:19:19Z" uid="94353" user="Fips" changeset="7078242">
+    <nd ref="215151291"/>
+    <nd ref="215151299"/>
+    <nd ref="215151305"/>
+    <nd ref="215151312"/>
+    <nd ref="215151313"/>
+    <nd ref="1119319312"/>
+    <nd ref="215151319"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Екзарх Йосиф"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="34356141" version="1" timestamp="2009-05-11T22:31:28Z" uid="53885" user="prof66" changeset="1158852">
+    <nd ref="148597521"/>
+    <nd ref="148598311"/>
+    <nd ref="148598312"/>
+    <nd ref="148590936"/>
+    <tag k="created_by" v="Potlatch 0.7"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Екзарх Йосиф"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="58811331" version="1" timestamp="2010-05-10T18:58:06Z" uid="94353" user="Fips" changeset="4662297">
+    <nd ref="215670478"/>
+    <nd ref="249313990"/>
+    <nd ref="252711636"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Лавеле"/>
+  </way>
+  <way id="60789297" version="2" timestamp="2010-06-01T07:35:10Z" uid="41176" user="Veso" changeset="4872362">
+    <nd ref="148873608"/>
+    <nd ref="148873610"/>
+    <nd ref="148873611"/>
+    <nd ref="148873612"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Будапеща"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="60789310" version="1" timestamp="2010-06-01T07:35:15Z" uid="41176" user="Veso" changeset="4872362">
+    <nd ref="148873363"/>
+    <nd ref="148873204"/>
+    <nd ref="148873112"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Веслец"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="81267115" version="2" timestamp="2011-01-24T21:19:09Z" uid="94353" user="Fips" changeset="7078242">
+    <nd ref="148592427"/>
+    <nd ref="215477147"/>
+    <tag k="railway" v="tram"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Искър"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="96456956" version="1" timestamp="2011-01-23T21:26:48Z" uid="94353" user="Fips" changeset="7067566">
+    <nd ref="243069961"/>
+    <nd ref="1117636442"/>
+    <nd ref="1117636334"/>
+    <nd ref="1117636634"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="бул. Стефан Стамболов"/>
+  </way>
+  <way id="96456960" version="1" timestamp="2011-01-23T21:26:49Z" uid="94353" user="Fips" changeset="7067566">
+    <nd ref="243074006"/>
+    <nd ref="1117636806"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Екзарх Йосиф"/>
+  </way>
+  <way id="96456961" version="3" timestamp="2011-05-26T10:30:49Z" uid="460730" user="usmiv4o" changeset="8252026">
+    <nd ref="1117636806"/>
+    <nd ref="1117636753"/>
+    <nd ref="1117636974"/>
+    <nd ref="1117637047"/>
+    <nd ref="1117637122"/>
+    <nd ref="1117637066"/>
+    <nd ref="1117636671"/>
+    <nd ref="1117636927"/>
+    <nd ref="1117636969"/>
+    <nd ref="1117637101"/>
+    <nd ref="243069961"/>
+    <tag k="highway" v="residential"/>
+    <tag k="cycleway" v="no"/>
+    <tag k="name" v="бул. Стефан Стамболов"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="bicycle" v="yes"/>
+  </way>
+  <way id="96456963" version="2" timestamp="2011-05-26T10:12:10Z" uid="460730" user="usmiv4o" changeset="8252026">
+    <nd ref="1117636634"/>
+    <nd ref="1117636955"/>
+    <nd ref="1117636863"/>
+    <nd ref="243074795"/>
+    <nd ref="1117636475"/>
+    <nd ref="1117636575"/>
+    <nd ref="1117637095"/>
+    <nd ref="1117637064"/>
+    <nd ref="1117636806"/>
+    <tag k="highway" v="residential"/>
+    <tag k="cycleway" v="no"/>
+    <tag k="name" v="бул. Стефан Стамболов"/>
+    <tag k="oneway" v="yes"/>
+    <tag k="bicycle" v="yes"/>
+  </way>
+  <way id="96456964" version="1" timestamp="2011-01-23T21:26:50Z" uid="94353" user="Fips" changeset="7067566">
+    <nd ref="242143335"/>
+    <nd ref="1117637019"/>
+    <nd ref="304936640"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="пл. Възраждане"/>
+  </way>
+  <way id="96456970" version="1" timestamp="2011-01-23T21:26:52Z" uid="94353" user="Fips" changeset="7067566">
+    <nd ref="242144668"/>
+    <nd ref="1117637116"/>
+    <nd ref="1117636580"/>
+    <nd ref="1117636243"/>
+    <nd ref="1117636899"/>
+    <nd ref="1117636619"/>
+    <nd ref="245962941"/>
+    <nd ref="1117636733"/>
+    <nd ref="1117636896"/>
+    <nd ref="1117637010"/>
+    <nd ref="1117636676"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="пл. Възраждане"/>
+  </way>
+  <way id="96640831" version="1" timestamp="2011-01-24T21:18:57Z" uid="94353" user="Fips" changeset="7078242">
+    <nd ref="215491240"/>
+    <nd ref="215151305"/>
+    <nd ref="215491242"/>
+    <nd ref="214875374"/>
+    <nd ref="214875345"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Бачо Киро"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="96640834" version="1" timestamp="2011-01-24T21:18:59Z" uid="94353" user="Fips" changeset="7078242">
+    <nd ref="215491240"/>
+    <nd ref="215496677"/>
+    <nd ref="215497690"/>
+    <nd ref="148590935"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Искър"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="141322626" version="1" timestamp="2011-12-15T10:56:03Z" uid="112109" user="philepile" changeset="10123124">
+    <nd ref="1547030926"/>
+    <nd ref="304936640"/>
+    <nd ref="1117636223"/>
+    <nd ref="1117636104"/>
+    <nd ref="1117636976"/>
+    <nd ref="242141679"/>
+    <nd ref="1117637060"/>
+    <nd ref="1117636676"/>
+    <nd ref="1117636603"/>
+    <nd ref="304936643"/>
+    <nd ref="215670519"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="Антим I"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="141400169" version="1" timestamp="2011-12-15T18:41:20Z" uid="112109" user="philepile" changeset="10126097">
+    <nd ref="1547727136"/>
+    <nd ref="207574140"/>
+    <nd ref="215670487"/>
+    <nd ref="1117331178"/>
+    <nd ref="1117331276"/>
+    <nd ref="1117331182"/>
+    <nd ref="1117331284"/>
+    <nd ref="207598670"/>
+    <nd ref="249315379"/>
+    <nd ref="207598421"/>
+    <nd ref="303493609"/>
+    <nd ref="207574138"/>
+    <nd ref="303492196"/>
+    <nd ref="207574137"/>
+    <nd ref="207574135"/>
+    <nd ref="207574134"/>
+    <nd ref="303498140"/>
+    <nd ref="207588277"/>
+    <nd ref="303498141"/>
+    <tag k="name:en" v="Street Knyaz Boris I"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="улица Княз Борис I"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="141400171" version="1" timestamp="2011-12-15T18:41:21Z" uid="112109" user="philepile" changeset="10126097">
+    <nd ref="1547727138"/>
+    <nd ref="249313747"/>
+    <nd ref="215670494"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="Цар Самуил"/>
+    <tag k="oneway" v="-1"/>
+  </way>
+  <way id="157740205" version="1" timestamp="2012-03-31T17:50:23Z" uid="544370" user="atari_matari" changeset="11169384">
+    <nd ref="267388363"/>
+    <nd ref="248905094"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="Враня"/>
+  </way>
+  <way id="157740235" version="1" timestamp="2012-03-31T17:50:27Z" uid="544370" user="atari_matari" changeset="11169384">
+    <nd ref="243074006"/>
+    <nd ref="1119319317"/>
+    <nd ref="243074007"/>
+    <nd ref="1547727139"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="Цар Самуил"/>
+    <tag k="oneway" v="-1"/>
+  </way>
+  <way id="157740240" version="1" timestamp="2012-03-31T17:50:27Z" uid="544370" user="atari_matari" changeset="11169384">
+    <nd ref="1309479848"/>
+    <nd ref="1699937874"/>
+    <nd ref="1699937878"/>
+    <nd ref="1117636186"/>
+    <nd ref="243069961"/>
+    <tag k="highway" v="residential"/>
+    <tag k="foot" v="yes"/>
+    <tag k="cycleway" v="no"/>
+    <tag k="horse" v="no"/>
+    <tag k="name" v="бул. Стефан Стамболов"/>
+    <tag k="oneway" v="-1"/>
+    <tag k="motor_vehicle" v="yes"/>
+    <tag k="access" v="yes"/>
+    <tag k="bicycle" v="yes"/>
+  </way>
+  <way id="157740249" version="1" timestamp="2012-03-31T17:50:29Z" uid="544370" user="atari_matari" changeset="11169384">
+    <nd ref="242144801"/>
+    <nd ref="1117636873"/>
+    <nd ref="1117636423"/>
+    <nd ref="1117637075"/>
+    <nd ref="1117636450"/>
+    <nd ref="267762083"/>
+    <nd ref="242143335"/>
+    <nd ref="1117637036"/>
+    <nd ref="1117636703"/>
+    <nd ref="1117636815"/>
+    <nd ref="1117636544"/>
+    <nd ref="1117636616"/>
+    <nd ref="1117636104"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="пл. Възраждане"/>
+  </way>
+  <way id="157755956" version="1" timestamp="2012-03-31T19:55:26Z" uid="182953" user="REAKTOR" changeset="11170596">
+    <nd ref="243139285"/>
+    <nd ref="214875433"/>
+    <nd ref="243179933"/>
+    <nd ref="243137769"/>
+    <nd ref="1117636931"/>
+    <nd ref="243137770"/>
+    <nd ref="1117636550"/>
+    <nd ref="1547030927"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="Антим I"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="157755962" version="1" timestamp="2012-03-31T19:55:27Z" uid="182953" user="REAKTOR" changeset="11170596">
+    <nd ref="1117636634"/>
+    <nd ref="1309479848"/>
+    <nd ref="1700085427"/>
+    <nd ref="1700085423"/>
+    <nd ref="1700085415"/>
+    <nd ref="1700085404"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="Братя Миладинови"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="157755987" version="1" timestamp="2012-03-31T19:55:35Z" uid="182953" user="REAKTOR" changeset="11170596">
+    <nd ref="249315174"/>
+    <nd ref="1117701995"/>
+    <nd ref="1117702102"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="Цар Самуил"/>
+  </way>
+  <way id="157756035" version="1" timestamp="2012-03-31T19:55:48Z" uid="182953" user="REAKTOR" changeset="11170596">
+    <nd ref="1700085193"/>
+    <nd ref="215649167"/>
+    <nd ref="215649174"/>
+    <nd ref="215649182"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Георги Бенковски"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="157756042" version="1" timestamp="2012-03-31T19:55:50Z" uid="182953" user="REAKTOR" changeset="11170596">
+    <nd ref="207598675"/>
+    <nd ref="1117288033"/>
+    <nd ref="1117288393"/>
+    <nd ref="1117288486"/>
+    <nd ref="1700085194"/>
+    <nd ref="1700085235"/>
+    <nd ref="207598676"/>
+    <nd ref="1700085369"/>
+    <nd ref="332052263"/>
+    <nd ref="1700085400"/>
+    <nd ref="1700085402"/>
+    <nd ref="1699936205"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Княз Александър I"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="157756043" version="1" timestamp="2012-03-31T19:55:50Z" uid="182953" user="REAKTOR" changeset="11170596">
+    <nd ref="1117331305"/>
+    <nd ref="1117331169"/>
+    <nd ref="1700085364"/>
+    <nd ref="1700085378"/>
+    <nd ref="215670478"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Лавеле"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="157756044" version="1" timestamp="2012-03-31T19:55:50Z" uid="182953" user="REAKTOR" changeset="11170596">
+    <nd ref="1700085316"/>
+    <nd ref="1700085349"/>
+    <nd ref="1700085386"/>
+    <nd ref="1700085406"/>
+    <nd ref="1700085408"/>
+    <nd ref="207599032"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Леге"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="157756046" version="1" timestamp="2012-03-31T19:55:51Z" uid="182953" user="REAKTOR" changeset="11170596">
+    <nd ref="1700085349"/>
+    <nd ref="1700085362"/>
+    <nd ref="1700085373"/>
+    <nd ref="215670472"/>
+    <nd ref="1700085381"/>
+    <nd ref="215670478"/>
+    <nd ref="215670487"/>
+    <nd ref="215670494"/>
+    <nd ref="1700085404"/>
+    <nd ref="245963828"/>
+    <nd ref="1117636337"/>
+    <nd ref="215670511"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Позитано"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+  <way id="157756049" version="1" timestamp="2012-03-31T19:55:52Z" uid="182953" user="REAKTOR" changeset="11170596">
+    <nd ref="1700085369"/>
+    <nd ref="1700085386"/>
+    <nd ref="207599327"/>
+    <nd ref="207599686"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Съборна"/>
+  </way>
+  <way id="157756050" version="1" timestamp="2012-03-31T19:55:52Z" uid="182953" user="REAKTOR" changeset="11170596">
+    <nd ref="152618236"/>
+    <nd ref="1700085362"/>
+    <nd ref="207599327"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="ул. Цар Калоян"/>
+  </way>
+  <way id="157756052" version="1" timestamp="2012-03-31T19:55:53Z" uid="182953" user="REAKTOR" changeset="11170596">
+    <nd ref="214875403"/>
+    <nd ref="243074066"/>
+    <nd ref="204756426"/>
+    <nd ref="1119319704"/>
+    <nd ref="243074067"/>
+    <nd ref="1119319670"/>
+    <nd ref="1700085425"/>
+    <nd ref="1547727137"/>
+    <tag k="name:en" v="Street Knyaz Boris I"/>
+    <tag k="highway" v="residential"/>
+    <tag k="name" v="улица Княз Борис I"/>
+    <tag k="oneway" v="yes"/>
+  </way>
+</osm>

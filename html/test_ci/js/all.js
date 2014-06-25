@@ -478,6 +478,7 @@ function initSQL()
 		DBCTRL.DB.run(e);
 		//stmt = DB.prepare("SELECT * FROM agencies WHERE 1");
 	});
+	return init;
 	//console.log(init);
 }
 
@@ -577,8 +578,8 @@ var DBCTRL=
 				this.controller = "SQL";
 			break;
 			case "NoSQL":
-				initNoSQL();
 				this.controller = "NoSQL";
+				return initNoSQL();
 			break;
 		};
 	},
@@ -586,10 +587,18 @@ var DBCTRL=
 	controller: "SQL"
 };
 
-function displayResults(results)
+function displayResults(results, toElement, fElIn)
 {
-	var mainEl=$('#browseList');
+	var mainEl=null;
+	if(toElement instanceof $) mainEl=toElement;
+	else mainEl=$('#browseList');
 	mainEl.html('');
+
+	var fEl=null;
+	if(fElIn instanceof $) fEl=fElIn;
+	else fEl=$('#pbody');
+
+
 	var fltrsOrder=["",
 "<select id=\"fOrderSelect\">",
 "	<option value=\"0\" "+((FILTERS.order==0)?"selected":"")+">Цена</option>",
@@ -605,6 +614,14 @@ function displayResults(results)
 		displayResults(DBCTRL.getResults());
 		//updateFilters();
 	});
+
+	fEl.find("#priceLower").val(FILTERS.price.min);
+	fEl.find("#priceHigher").val(FILTERS.price.max);
+	fEl.find("#areaLower").val(FILTERS.area.min);
+	fEl.find("#areaHigher").val(FILTERS.area.max);
+	fEl.find("#fPriceSlider").slider("values", [FILTERS.price.min, FILTERS.price.max]);
+	fEl.find("#fAreaSlider").slider("values", [FILTERS.area.min, FILTERS.area.max]);
+
 	var len=results.length;
 	for(var i=0;i<len;i++)
 	{
@@ -615,7 +632,7 @@ function displayResults(results)
 
 function initNoSQL()
 {
-	jQuery.getJSON("/test_ci/query/nosql").done(function(e){
+	return jQuery.getJSON("/test_ci/query/nosql").done(function(e){
 		DBCTRL.DB=e.db;
 	}).fail(function(e){console.log(this)});
 }
@@ -744,7 +761,7 @@ var FILTERS=
 	price:
 	{
 		min: 10,
-		max: 100
+		max: 249902
 	},
 	area:
 	{
@@ -755,38 +772,47 @@ var FILTERS=
 	page: 0
 };
 
-function filtersRdy()
+function filtersRdy(fElIn)
 {
+	var fEl=null;
+	if(fElIn instanceof $) fEl = fElIn
+	else fEl = $("#pbody");
 	//*/
-	var priceSlider=$('#fPriceSlider').slider({
+	var priceSlider=fEl.find('#fPriceSlider').slider({
 		range: true,
 		min: 0,
 		max: 500000,
-		values: [10000, 100000],
+		values: [FILTERS.price.min, FILTERS.price.max],
 		change: function(e, s){
-			FILTERS.price.min=s.values[0];
-			FILTERS.price.max=s.values[1];
-			displayResults(DBCTRL.getResults());
-			//updateFilters();
+			if(e.originalEvent)
+			{
+				FILTERS.price.min=s.values[0];
+				FILTERS.price.max=s.values[1];
+				displayResults(DBCTRL.getResults());
+				//updateFilters();
+			};
 		}
 	});
 
-	var areaSlider=$('#fAreaSlider').slider({
+	var areaSlider=fEl.find('#fAreaSlider').slider({
 		range: true,
 		min: 0,
 		max: 500,
-		values: [10, 500],
+		values: [FILTERS.area.min, FILTERS.area.max],
 		change: function(e, s){
-			FILTERS.area.min=s.values[0];
-			FILTERS.area.max=s.values[1];
-			//DBCTRL.getResults();
-			displayResults(DBCTRL.getResults());
-			//updateFilters();
+			if(e.originalEvent)
+			{
+				FILTERS.area.min=s.values[0];
+				FILTERS.area.max=s.values[1];
+				//DBCTRL.getResults();
+				displayResults(DBCTRL.getResults());
+				//updateFilters();
+			};
 		}
 	});
 	//*/	
 
-	$(".ctrlFilter.spinner").spinner({
+	fEl.find(".ctrlFilter.spinner").spinner({
 		min: 0,
 		max: 1000000,
 		step: 150,
@@ -794,16 +820,118 @@ function filtersRdy()
 		{
 		//	e.preventDefault();
 			//$(this).val(s.value);
-			FILTERS.price.min=$("#priceLower").val();
-			FILTERS.price.max=$("#priceHigher").val();
-			FILTERS.area.min=$("#areaLower").val();
-			FILTERS.area.max=$("#areaHigher").val();
+			FILTERS.price.min=fEl.find("#priceLower").val();
+			FILTERS.price.max=fEl.find("#priceHigher").val();
+			FILTERS.area.min=fEl.find("#areaLower").val();
+			FILTERS.area.max=fEl.find("#areaHigher").val();
 			displayResults(DBCTRL.getResults());
 		}
 	});
+	
+	fEl.find("#fLoc").click(function(){
+		//alert("ok");
+		showFilterMap();
+	});
 
-	$(".frmBrowseTabs").buttonset();
+	fEl.find(".frmBrowseTabs").buttonset();
 };
+
+jQuery.fn.center = function () {
+    this.css("position","absolute");
+    this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) + 
+                                                $(window).scrollTop()) + "px");
+    this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) + 
+                                                $(window).scrollLeft()) + "px");
+    return this;
+}
+
+function showFilterMap()
+{
+	var polygon=null;
+
+	var backEl = $(document.createElement('div'));
+	backEl.attr("style", "display:block;position:absolute;z-index:4;top:0px;left:0px")
+		.css("height", $(document).height())
+		.css("width", $(document).width())
+		.css("background", "black")
+		.css("opacity", 0.4);
+
+	var mapEl = $(document.createElement('div'))
+			.attr("id", "fMap");
+	mapEl.attr("style", "display:block;height:480px;width:640px;background:green;z-index:6");
+	//mapEl.center();
+
+	addBtnRdyEl=$(document.createElement("input"))
+		.attr("type", "button")
+		.css("width", "48%")
+		.button()
+		.val("Ready");
+
+	addBtnClrEl=$(document.createElement("input"))
+		.attr("type", "button")
+		.attr("id", "fMapClrBtn")
+		.css("width", "48%")
+		.button()
+		.val("Clear");
+
+	addBtnWrapEl=$(document.createElement("div"))
+		.css("width", "100%")
+		.append(addBtnClrEl)
+		.append(addBtnRdyEl);
+	//mapWrapEl.append(addBtnEl);
+
+	var mapWrapEl = $(document.createElement('div'))
+			.attr("id", "fWrapMap")
+			.css("position", "absolute")
+			.css("display", "block")
+			.attr("style", "width:"+
+				(mapEl.width())+
+				"px;height:"+
+				(mapEl.height()+40)+
+				"px;background:red;position:absolute;z-index:5")
+			.append(mapEl)
+			.append(addBtnWrapEl)
+			.center();
+
+	$("body").append(backEl);
+	$("body").append(mapWrapEl);
+	var center=new google.maps.LatLng(-34.397, 150.644);
+	var zoom=10;
+	var mapOptions = {
+		center: center, 
+		zoom: zoom
+	};
+	var map = new google.maps.Map(document.getElementById("fMap"),
+	mapOptions);
+	var drawingManager = new google.maps.drawing.DrawingManager({
+		drawingMode: google.maps.drawing.OverlayType.POLYGON,
+		drawingControl: true,
+		drawingControlOptions: {
+			position: google.maps.ControlPosition.TOP_CENTER,
+			drawingModes: [
+					google.maps.drawing.OverlayType.POLYGON,
+				]
+			},
+			polygonOptions:
+			{
+				fillOpacity: 0.1,
+				editable: true
+			}
+	});
+	drawingManager.setMap(map);
+	DM=drawingManager;
+	google.maps.event.addListener(drawingManager, 'overlaycomplete', function(event) {
+		$("#fMapClrBtn").click({dtaE:event}, function(e){
+			e.data.dtaE.overlay.setPaths([]);
+		});
+		console.log(event);
+		EV=event;
+	});
+
+};
+var EV=null;
+
+var DM=null;//drawManager;
 
 var MAPEL=null;
 var GMAP=null;
@@ -814,7 +942,7 @@ function initSearchMap()
 	MAPEL.width=680;
 	$("#browseList").html("");
 	$("#browseList").append(MAPEL);
-	$(MAPEL).attr("style", "border: 2px solid green; height: 680px; width: 680px");
+	//$(MAPEL).attr("style", "border: 2px solid green; height: 680px; width: 680px");
 	var center=new google.maps.LatLng(42.692177, 23.327026);
 	var zoom=14;
 	var mapOptions = {
@@ -933,7 +1061,7 @@ var PAGES=
 		{
 			var pBodyEl=$("#pbody");
 			if(PAGES['faq'].cache.qnas!=null) pBodyEl.html("").append(PAGES['faq'].cache.wrapEl);
-			else this.load().then(this.display);
+			else this.load().done(this.display);
 			//else $("#pbody").html("").append(this.cache.wrapEl);
 			//$.when(true).then(this.load);
 			//var qnaLen=this.cache.qnas.length;
@@ -951,84 +1079,90 @@ var PAGES=
 		load: function()
 		{
 			if(PAGES['browse'].cache.pg==null)
-				$.getJSON("browse?json").done(function(data){
+			{
+				var ret=DBCTRL.init('NoSQL');
+				ret.done(function(){
+				$.getJSON("query/browseFilters").done(function(data){
+					var fEl=$(document.createElement("div"))
+						.html(data.filters)
+						.find("#brwFilters");
+					filtersRdy(fEl);
+					PAGES["browse"].cache.pEl=$(document.createElement("div"))
+						.attr("id", "browseList");
+					PAGES["browse"].cache.fWrapEl=fEl;
+					PAGES['browse'].cache.pg="loaded";
+					displayResults(DBCTRL.getResults(), PAGES["browse"].cache.pEl, fEl);
+				}).fail(function(){alert()});
+				});
+				//
+			};
+				/*
+				$.getJSON("browse?json=&type=").done(function(data){
 					PAGES['browse'].cache.pg=data;
-					console.log("data");
+					//console.log(data.str);
 					//console.log(data);
 				}).fail(function(){alert()});
+				*/
 		},
 		display: function()
 		{
-			if(PAGES['browse'].cache.pg!=null) $("#pbody").html(PAGES['browse'].cache.pg.str);
+			if(PAGES['browse'].cache.pg!=null)
+			{
+				$("#pbody")
+					.html("")
+					.append(PAGES['browse'].cache.fWrapEl)
+					.append(PAGES['browse'].cache.pEl);
+			}
 			else this.load().then(this.display);
 		},
 		cache:
 		{
+			pEl: null,
+			fWrapEl: null,
 			pg: null
+		}
+	},
+	'browse/flats':
+	{
+		load: function()
+		{
+
+		},
+		display: function()
+		{
+			//$PAGES['browse'].display();
 		}
 	}
 };
 var db;
 var resires;
 $(document).ready(function(){
-$.each(PAGES, function(i, val){
-	//var page=$(this).attr("href").slice(BASE_URL.length);
-	val.load();
-});
-$("a.knownPage").click(function(e){
-	var page=$(this).attr("href").slice(BASE_URL.length);
-	if(typeof PAGES[page]=="object")
-	{
-		e.preventDefault();
-		history.pushState(null, null, $(this).attr("href"));
-		PAGES[page].display();
-		//PAGES[page].display();
-	};
-});
-$('#priceLower').change(function(){
-	var bound = (parseInt(this.value));
-	var q="select * from offers where price > "+(bound|0)+" limit 10";
-	var res=DB.exec(q)[0];
-	resres=res;
-	var mainEl=$('#browseList');
-	mainEl.html('');
-	for(var i=0;i<res.values.length;i++)
-	{
-		var val=res.values[i];
-		var props={agency: 0, price: 0, area: 0, loc: 'hello', image: '', type: '', brief: 'brief description'};
-		props.price=val[1];
-		props.area=val[2];
-		props.loc=val[6];
-		props.image=val[4];
-		props.agency=val[3];
-		console.log(props);
-		var tType;
-		switch(val[5])
+	setTimeout(function(){$.each(PAGES, function(i, val){
+		//var page=$(this).attr("href").slice(BASE_URL.length);
+		val.load();
+	})}, 10);
+	$("a.knownPage").click(function(e){
+		var page=$(this).attr("href").slice(BASE_URL.length);
+		console.log(page);
+		if(typeof PAGES[page]=="object")
 		{
-			case 1: tType='Апартамент'; break;
-			case 2: tType='Магазин'; break;
-			case 3: tType='Гараж'; break;
-			case 4: tType='Парцел'; break;
-			case 5: tType='Къща'; break;
-			default: tType='Имот'; break;
+			e.preventDefault();
+			history.pushState(null, null, $(this).attr("href"));
+			PAGES[page].display();
+				//PAGES[page].display();
 		};
-		props.type=tType;
-		var elem=new offerEl(props);
-		mainEl.append(elem.el);
-	};
-	console.log(res);
-});
-$('#dbfile').change(function() {
-	var f = this.files[0];
-	var r = new FileReader();
-	r.onload = function() {
-	var Uints = new Uint8Array(r.result);
-	DBCTRL.DB = new SQL.Database(Uints);
-	}
-	r.readAsArrayBuffer(f);
-});
-//filtersRdy();
-addOfferRdy();
-DBCTRL.init("NoSQL");
-//initNoSQL();
+	});
+	$('#dbfile').change(function() {
+		var f = this.files[0];
+		var r = new FileReader();
+		r.onload = function() {
+		var Uints = new Uint8Array(r.result);
+		DBCTRL.DB = new SQL.Database(Uints);
+		}
+		r.readAsArrayBuffer(f);
+	});
+	//filtersRdy();
+	addOfferRdy();
+	//DBCTRL.init("NoSQL");
+	//initNoSQL();
 });

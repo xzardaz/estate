@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<osm version="0.6" generator="Osmosis SNAPSHOT-r26564">
+  <bound box="42.60026,23.22449,42.80815,23.53760" origin="Osmosis SNAPSHOT-r26564"/>
+  <node id="1168195840" version="1" timestamp="2011-02-23T13:43:24Z" uid="378052" user="ffoorrii" changeset="7372480" lat="42.6610888" lon="23.4001591"/>
+  <node id="1168195843" version="1" timestamp="2011-02-23T13:43:24Z" uid="378052" user="ffoorrii" changeset="7372480" lat="42.6613945" lon="23.4005159"/>
+  <node id="1168195845" version="1" timestamp="2011-02-23T13:43:24Z" uid="378052" user="ffoorrii" changeset="7372480" lat="42.6613334" lon="23.4005722"/>
+  <node id="1168195846" version="1" timestamp="2011-02-23T13:43:24Z" uid="378052" user="ffoorrii" changeset="7372480" lat="42.6608955" lon="23.4005765"/>
+  <way id="101183855" version="1" timestamp="2011-02-23T13:43:24Z" uid="378052" user="ffoorrii" changeset="7372480">
+    <nd ref="1168195840"/>
+    <nd ref="1168195843"/>
+    <nd ref="1168195845"/>
+    <nd ref="1168195846"/>
+    <tag k="highway" v="road"/>
+    <tag k="landuse" v="retail"/>
+    <tag k="natural" v="heath"/>
+  </way>
+</osm>

@@ -19,14 +19,21 @@ class Browse extends CI_Controller {
 	 */
 	public function index()
 	{
+		$this->index_main(array());
+	}
+
+	private function index_main($filters)
+	{
+		if(!isset($filters)) $filters=array();
 		$out="";
 		$jOut=array_key_exists('json', $_GET)||array_key_exists('json', $_POST);
-		if(!$jOut)
-			$out.=$this->load->view("head");
+
+		if(!$jOut) $out.=$this->load->view("head");
+	
 		$out.=$this->load->view("filters", NULL, $jOut);
 		$out.=$this->load->view("beginbrowse", NULL, $jOut);
 		$this->load->model('offer_mdl');
-		$ofrs=$this->offer_mdl->getList();
+		$ofrs=$this->offer_mdl->getList($filters);
 		foreach($ofrs as $offer)
 		{
 			$data=array('offer'=>$offer);
@@ -37,28 +44,33 @@ class Browse extends CI_Controller {
 		if($jOut)
 		{
 			echo json_encode(array("str"=>$out));
+			//echo (($out));
 		};
 	}
 
 	public function flats()
 	{
-		//$this->load->model("hello_mdl");
-		$out="";
-		$jOut=array_key_exists('json', $_POST);
-		if(!$jOut)
-			$out.=$this->load->view("head");
-		$out.=$this->load->view("offer", '', $jOut);
-		$out.=$this->load->view("offer", '', $jOut);
-		$out.=$this->load->view("offer", '', $jOut);
-		$out.=$this->load->view("offer", '', $jOut);
-		if(!$jOut)
-			$out.=$this->load->view("foot");
-		if($jOut)
-		{
-			echo json_encode(array("str"=>$out));
-		};
-		//echo $this->hello_mdl->searchFlats()[0];
-		//$this->load->view("head");	
+		$this->index_main(array("type" => 1));
+	}
+
+	public function stores()
+	{
+		$this->index_main(array("type" => 2));
+	}
+
+	public function garages()
+	{
+		$this->index_main(array("type" => 3));
+	}
+
+	public function field()
+	{
+		$this->index_main(array("type" => 4));
+	}
+
+	public function houses()
+	{
+		$this->index_main(array("type" => 5));
 	}
 
 	public function mtwo($p1, $p2)

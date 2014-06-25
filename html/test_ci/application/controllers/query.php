@@ -84,6 +84,18 @@ class Query extends CI_Controller {
 		echo json_encode($a);
 	}
 
+	public function browseFilters()
+	{
+		$out="";
+		$out.=$this->load->view("filters", NULL, true);
+		echo json_encode(array("filters"=>$out));
+	}
+
+	public function browse()
+	{
+		return true;
+	}
+
 	/**
 	 * Index Page for this controller.
 	 *

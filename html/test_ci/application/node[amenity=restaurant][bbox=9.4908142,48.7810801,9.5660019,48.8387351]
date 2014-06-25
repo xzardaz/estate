@@ -1,0 +1,239 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<osm version="0.6" generator="Osmosis SNAPSHOT-r26564">
+  <node id="185612117" version="5" timestamp="2011-01-08T19:23:43Z" uid="290680" user="wheelmap_visitor" changeset="6906586" lat="48.8037523" lon="9.5248779">
+    <tag k="addr:postcode" v="73614"/>
+    <tag k="wheelchair" v="yes"/>
+    <tag k="website" v="http://www.courage-restaurant.de/"/>
+    <tag k="addr:country" v="DE"/>
+    <tag k="name" v="Courage"/>
+    <tag k="amenity" v="restaurant"/>
+    <tag k="addr:street" v="Künkelinstraße"/>
+    <tag k="addr:city" v="Schorndorf"/>
+    <tag k="addr:housenumber" v="33"/>
+  </node>
+  <node id="252619189" version="5" timestamp="2011-01-08T19:21:43Z" uid="290680" user="wheelmap_visitor" changeset="6906586" lat="48.8067032" lon="9.5314986">
+    <tag k="addr:postcode" v="73614"/>
+    <tag k="wheelchair" v="yes"/>
+    <tag k="website" v="www.kesselhaus-schorndorf.de"/>
+    <tag k="addr:country" v="DE"/>
+    <tag k="name" v="Kesselhaus"/>
+    <tag k="amenity" v="restaurant"/>
+    <tag k="addr:street" v="Arnoldstraße"/>
+    <tag k="addr:city" v="Schorndorf"/>
+    <tag k="addr:housenumber" v="3"/>
+  </node>
+  <node id="319597380" version="1" timestamp="2008-12-17T21:13:15Z" changeset="444629" lat="48.8277913" lon="9.5477029">
+    <tag k="name" v="Gasthaus zur Linde"/>
+    <tag k="amenity" v="restaurant"/>
+  </node>
+  <node id="319597382" version="1" timestamp="2008-12-17T21:13:15Z" changeset="444629" lat="48.8282523" lon="9.5503109">
+    <tag k="name" v="China-Garden"/>
+    <tag k="amenity" v="restaurant"/>
+  </node>
+  <node id="339591124" version="2" timestamp="2011-09-22T17:33:36Z" uid="290680" user="wheelmap_visitor" changeset="9366746" lat="48.7888015" lon="9.5079525">
+    <tag k="cuisine" v="italian"/>
+    <tag k="wheelchair" v="limited"/>
+    <tag k="name" v="Pizzeria da Rocco"/>
+    <tag k="amenity" v="restaurant"/>
+  </node>
+  <node id="392682646" version="3" timestamp="2010-05-11T19:00:20Z" uid="12973" user="MattGPS" changeset="4671372" lat="48.8315734" lon="9.5468864">
+    <tag k="name" v="Gasthaus an der Wieslauf"/>
+    <tag k="amenity" v="restaurant"/>
+  </node>
+  <node id="454516720" version="4" timestamp="2010-12-11T15:30:21Z" uid="12982" user="Michael Schulze" changeset="6625571" lat="48.8031264" lon="9.5344371">
+    <tag k="addr:postcode" v="73614"/>
+    <tag k="cuisine" v="regional"/>
+    <tag k="website" v="http://www.deutscheshaus-schorndorf.de/"/>
+    <tag k="addr:country" v="DE"/>
+    <tag k="name" v="Deutsches Haus"/>
+    <tag k="amenity" v="restaurant"/>
+    <tag k="addr:street" v="Sonnenscheinstraße"/>
+    <tag k="addr:city" v="Schorndorf"/>
+    <tag k="addr:housenumber" v="13"/>
+  </node>
+  <node id="572362430" version="3" timestamp="2010-07-04T06:59:50Z" uid="106522" user="neuntoeter" changeset="5130101" lat="48.807953" lon="9.5379673">
+    <tag k="smoking" v="no"/>
+    <tag k="name" v="Club Kneipe"/>
+    <tag k="amenity" v="restaurant"/>
+  </node>
+  <node id="613988559" version="1" timestamp="2010-01-15T01:20:03Z" uid="24748" user="mabapla" changeset="3621550" lat="48.7991827" lon="9.551828">
+    <tag k="name" v="Gaststätte Schützenhaus"/>
+    <tag k="amenity" v="restaurant"/>
+  </node>
+  <node id="631421882" version="4" timestamp="2010-07-04T07:45:38Z" uid="309463" user="gastromat" changeset="5130327" lat="48.8070643" lon="9.5437351">
+    <tag k="cuisine" v="italian"/>
+    <tag k="smoking" v="isolated"/>
+    <tag k="name" v="Remstalstuben"/>
+    <tag k="amenity" v="restaurant"/>
+  </node>
+  <node id="672817732" version="4" timestamp="2010-08-14T15:07:47Z" uid="106522" user="neuntoeter" changeset="5491601" lat="48.8045127" lon="9.5254423">
+    <tag k="cuisine" v="african"/>
+    <tag k="website" v="http://hantialem.de/"/>
+    <tag k="addr:country" v="DE"/>
+    <tag k="name" v="Hanti Alem"/>
+    <tag k="amenity" v="restaurant"/>
+    <tag k="addr:street" v="Schlichtener Straße"/>
+    <tag k="addr:city" v="Schorndorf"/>
+    <tag k="addr:housenumber" v="12"/>
+  </node>
+  <node id="677555759" version="3" timestamp="2010-12-02T10:17:45Z" uid="32786" user="Netzwolf" changeset="6512944" lat="48.8048108" lon="9.5243952">
+    <tag k="cuisine" v="german"/>
+    <tag k="addr:country" v="DE"/>
+    <tag k="name" v="Weinstube St. Urban"/>
+    <tag k="amenity" v="restaurant"/>
+    <tag k="addr:street" v="Römmelgasse"/>
+    <tag k="addr:city" v="Schorndorf"/>
+    <tag k="addr:housenumber" v="10"/>
+    <tag k="opening_hours" v="Mo-Sa 18:00+; Su 12:00-14:00,18:00-21:00"/>
+  </node>
+  <node id="677578941" version="3" timestamp="2010-08-12T22:40:32Z" uid="12982" user="Michael Schulze" changeset="5477739" lat="48.8052132" lon="9.5246951">
+    <tag k="cuisine" v="italian"/>
+    <tag k="name" v="Bei Domenico"/>
+    <tag k="amenity" v="restaurant"/>
+  </node>
+  <node id="677578944" version="2" timestamp="2010-08-13T15:56:31Z" uid="106522" user="neuntoeter" changeset="5483221" lat="48.8055998" lon="9.5261987">
+    <tag k="cuisine" v="asian"/>
+    <tag k="name" v="Little Saigon"/>
+    <tag k="amenity" v="restaurant"/>
+  </node>
+  <node id="677578962" version="3" timestamp="2010-08-13T20:23:48Z" uid="106522" user="neuntoeter" changeset="5485480" lat="48.8056176" lon="9.5250472">
+    <tag k="cuisine" v="german"/>
+    <tag k="website" v="http://www.weisseslamm-schorndorf.de/"/>
+    <tag k="addr:country" v="DE"/>
+    <tag k="name" v="Weisses Lamm"/>
+    <tag k="amenity" v="restaurant"/>
+    <tag k="addr:street" v="Neue Straße"/>
+    <tag k="addr:city" v="Schorndorf"/>
+    <tag k="addr:housenumber" v="21"/>
+  </node>
+  <node id="677578970" version="4" timestamp="2010-08-13T21:09:32Z" uid="106522" user="neuntoeter" changeset="5485919" lat="48.8058831" lon="9.5252927">
+    <tag k="addr:postcode" v="73614"/>
+    <tag k="cuisine" v="german"/>
+    <tag k="addr:country" v="DE"/>
+    <tag k="smoking" v="no"/>
+    <tag k="name" v="Becka Kurze"/>
+    <tag k="amenity" v="restaurant"/>
+    <tag k="addr:street" v="Hetzelgasse"/>
+    <tag k="addr:city" v="Schorndorf"/>
+    <tag k="addr:housenumber" v="26"/>
+  </node>
+  <node id="721241970" version="1" timestamp="2010-05-04T19:01:28Z" uid="260302" user="mabe75" changeset="4607010" lat="48.830856" lon="9.5116892">
+    <tag k="name" v="Lamm"/>
+    <tag k="amenity" v="restaurant"/>
+  </node>
+  <node id="857702480" version="2" timestamp="2011-10-09T12:05:56Z" uid="290680" user="wheelmap_visitor" changeset="9508573" lat="48.8062176" lon="9.5251109">
+    <tag k="cuisine" v="greek"/>
+    <tag k="wheelchair" v="limited"/>
+    <tag k="addr:country" v="DE"/>
+    <tag k="name" v="Theo&apos;s Kneipe"/>
+    <tag k="amenity" v="restaurant"/>
+    <tag k="addr:street" v="Rosenstraße"/>
+    <tag k="addr:city" v="Schorndorf"/>
+    <tag k="addr:housenumber" v="19"/>
+  </node>
+  <node id="857702560" version="3" timestamp="2010-08-14T15:02:40Z" uid="106522" user="neuntoeter" changeset="5491559" lat="48.8058515" lon="9.5246727">
+    <tag k="addr:postcode" v="73614"/>
+    <tag k="website" v="http://www.hotel-stadtmauer.com/"/>
+    <tag k="addr:country" v="DE"/>
+    <tag k="name" v="Restaurant an der Stadtmauer"/>
+    <tag k="amenity" v="restaurant"/>
+    <tag k="addr:street" v="An der Mauer"/>
+    <tag k="addr:city" v="Schorndorf"/>
+    <tag k="addr:housenumber" v="1"/>
+  </node>
+  <node id="857702596" version="1" timestamp="2010-08-12T22:40:23Z" uid="12982" user="Michael Schulze" changeset="5477739" lat="48.8046259" lon="9.5241606">
+    <tag k="cuisine" v="pizza"/>
+    <tag k="addr:country" v="DE"/>
+    <tag k="name" v="King Pizza Heimservice"/>
+    <tag k="amenity" v="restaurant"/>
+    <tag k="addr:street" v="Urbanstraße"/>
+    <tag k="addr:city" v="Schorndorf"/>
+    <tag k="addr:housenumber" v="21"/>
+  </node>
+  <node id="857702622" version="2" timestamp="2010-08-13T20:25:43Z" uid="106522" user="neuntoeter" changeset="5485498" lat="48.8056297" lon="9.5239792">
+    <tag k="website" v="http://www.jugendstil-schorndorf.de/"/>
+    <tag k="addr:country" v="DE"/>
+    <tag k="name" v="Jugend Stil"/>
+    <tag k="amenity" v="restaurant"/>
+    <tag k="addr:street" v="Neue Straße"/>
+    <tag k="addr:city" v="Schorndorf"/>
+    <tag k="addr:housenumber" v="34"/>
+  </node>
+  <node id="857702701" version="2" timestamp="2011-10-20T17:08:15Z" uid="290680" user="wheelmap_visitor" changeset="9604904" lat="48.8050746" lon="9.5266583">
+    <tag k="cuisine" v="asian"/>
+    <tag k="wheelchair" v="no"/>
+    <tag k="name" v="Elefanten"/>
+    <tag k="amenity" v="restaurant"/>
+  </node>
+  <node id="858744924" version="3" timestamp="2011-02-03T07:09:22Z" uid="290680" user="wheelmap_visitor" changeset="7171157" lat="48.8056263" lon="9.5270395">
+    <tag k="addr:postcode" v="73614"/>
+    <tag k="cuisine" v="thai"/>
+    <tag k="wheelchair" v="no"/>
+    <tag k="website" v="http://www.thai-garden.de/"/>
+    <tag k="addr:country" v="DE"/>
+    <tag k="name" v="Thai Garden"/>
+    <tag k="amenity" v="restaurant"/>
+    <tag k="addr:street" v="Marktplatz"/>
+    <tag k="addr:city" v="Schorndorf"/>
+    <tag k="addr:housenumber" v="7"/>
+  </node>
+  <node id="858918523" version="3" timestamp="2011-11-13T14:43:20Z" uid="164883" user="blan" changeset="9814581" lat="48.8060494" lon="9.5269145">
+    <tag k="addr:postcode" v="73614"/>
+    <tag k="contact:fax" v="+49 7181 991933"/>
+    <tag k="cuisine" v="italian"/>
+    <tag k="contact:phone" v="+49 7181 410738"/>
+    <tag k="amenity" v="restaurant"/>
+    <tag k="addr:street" v="Marktplatz"/>
+    <tag k="addr:city" v="Schorndorf"/>
+    <tag k="opening_hours" v="Mo-Su 12:00-15:00; 18:00-23:00"/>
+    <tag k="addr:housenumber" v="15"/>
+    <tag k="contact:email" v="info@la-scala-schorndorf.de"/>
+    <tag k="addr:country" v="DE"/>
+    <tag k="name" v="La Scala"/>
+    <tag k="contact:website" v="http://www.la-scala-schorndorf.de/"/>
+  </node>
+  <node id="858993764" version="1" timestamp="2010-08-13T17:35:19Z" uid="106522" user="neuntoeter" changeset="5484068" lat="48.8061154" lon="9.5255907">
+    <tag k="cuisine" v="italian"/>
+    <tag k="name" v="Rossini"/>
+    <tag k="amenity" v="restaurant"/>
+    <tag k="operator" v="Giuseppe Dovico"/>
+  </node>
+  <node id="859532024" version="2" timestamp="2011-09-13T17:09:14Z" uid="64008" user="E-Malte" changeset="9291121" lat="48.8054963" lon="9.5323282">
+    <tag k="cuisine" v="greek"/>
+    <tag k="website" v="http://www.dimitra-schorndorf.de/"/>
+    <tag k="name" v="Dimitra"/>
+    <tag k="amenity" v="restaurant"/>
+  </node>
+  <node id="859532036" version="3" timestamp="2011-11-13T14:43:22Z" uid="164883" user="blan" changeset="9814581" lat="48.8058906" lon="9.5287322">
+    <tag k="cuisine" v="italian;balkan;german"/>
+    <tag k="name" v="Harmonie"/>
+    <tag k="contact:website" v="http://www.restaurant-harmonie.de/"/>
+    <tag k="amenity" v="restaurant"/>
+    <tag k="opening_hours" v="Mo-Tu 11:00-14:30;Mo-Tu 17:00-24:00;Th-Su 11:00-14:30;Th-Su 17:00-24:00;"/>
+  </node>
+  <node id="859532052" version="1" timestamp="2010-08-13T23:05:13Z" uid="130472" user="fx99" changeset="5486736" lat="48.8061126" lon="9.5281237">
+    <tag k="name" v="Altstadt-Treff"/>
+    <tag k="amenity" v="restaurant"/>
+    <tag k="addr:street" v="Konstanzer Hof Gasse"/>
+    <tag k="addr:housenumber" v="16"/>
+  </node>
+  <node id="859532067" version="1" timestamp="2010-08-13T23:05:14Z" uid="130472" user="fx99" changeset="5486736" lat="48.8061863" lon="9.5282177">
+    <tag k="cuisine" v="regional"/>
+    <tag k="website" v="http://www.pfauen-schorndorf.de/"/>
+    <tag k="name" v="Pfauen"/>
+    <tag k="amenity" v="restaurant"/>
+    <tag k="addr:street" v="Höllgasse"/>
+    <tag k="addr:housenumber" v="9"/>
+  </node>
+  <node id="859532091" version="1" timestamp="2010-08-13T23:05:14Z" uid="130472" user="fx99" changeset="5486736" lat="48.8062337" lon="9.5278548">
+    <tag k="website" v="http://www.weinstube-buechsenmacher.de/"/>
+    <tag k="name" v="Weinstube zum Büchsenmacher"/>
+    <tag k="amenity" v="restaurant"/>
+    <tag k="addr:housename" v="5"/>
+    <tag k="addr:street" v="Höllgasse"/>
+  </node>
+  <node id="1625565012" version="1" timestamp="2012-02-09T18:00:04Z" uid="131968" user="changchun_1" changeset="10636279" lat="48.8151893" lon="9.5310692">
+    <tag k="name" v="Gasthaus Sonne"/>
+    <tag k="amenity" v="restaurant"/>
+  </node>
+</osm>
