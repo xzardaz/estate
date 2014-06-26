@@ -13,7 +13,28 @@
         padding: 0px
       }
     </style>
+<script id="shader-fs" type="x-shader/x-fragment">
+	precision mediump float;
+	varying vec4 vColor;
+	void main(void) {
+		gl_FragColor = vColor;
+	}
+</script>
+
+<script id="shader-vs" type="x-shader/x-vertex">
+	attribute vec3 aVertexPosition;
+	attribute vec4 aVertexColor;
+	uniform mat4 uMVMatrix;
+	uniform mat4 uPMatrix;
+	varying vec4 vColor;
+	void main(void) {
+		gl_Position = uPMatrix * uMVMatrix * vec4(aVertexPosition, 1.0);
+		vColor = aVertexColor;
+	}
+</script>
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js" type="text/javascript"></script>
+	<script src="glm.min.js" type="text/javascript"></script>
+	<script src="three.js" type="text/javascript"></script>
     <!--<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>-->
 <script>
 	var data=<?=file_get_contents("g2.json");?>;
@@ -100,7 +121,7 @@
   <body>
     <!--<div id="map-canvas"></div>-->
 	<input id="target" type="text" value="Hello there">
-	<canvas style="border: 1px solid red" id="cn" width="840" height="680"></canvas>
+<!--	<canvas style="border: 1px solid red" id="cn" width="840" height="680"></canvas>-->
     <script>
 var MAP;
 var cr=data.features[0].geometry.coordinates;
@@ -120,8 +141,11 @@ var bbox=
 	h:  28000.10,
 	w:  28000.05
 };
-var ch=$("#cn").height();
-var cw=$("#cn").width();
+//var ch=$("#cn").height();
+//var cw=$("#cn").width();
+
+var ch=480;
+var cw=640;
 
 var cr=ch/cw;
 
@@ -154,33 +178,178 @@ function getRandomColor() {
 
 function drawLines(crds)
 {
-	ctx.beginPath();
-	ptm=Conv.ll2m(crds[0][0], crds[0][1]);
-	pt=cvt(ptm.x, ptm.y);
-	ctx.moveTo(pt.x, pt.y);
-	for(var i=0;i<crds.length;i++)
-	{
-		ptm=Conv.ll2m(crds[i][0], crds[i][1]);
-		pt=cvt(ptm.x, ptm.y);
+	//ctx.beginPath();
+	//ptm=Conv.ll2m(crds[0][0], crds[0][1]);
+	//pt=cvt(ptm.x, ptm.y);
+	GL.addLine(crds);
+	//ctx.moveTo(pt.x, pt.y);
+	//for(var i=0;i<crds.length;i++)
+	//{
+		//ptm=Conv.ll2m(crds[i][0], crds[i][1]);
+		//pt=cvt(ptm.x, ptm.y);
 		/*/
 		if(pt.x>maxX) maxX=pt.x;
 		if(pt.x<minX&&pt.x!=0) minX=pt.x;
 		if(pt.y>maxY) maxY=pt.y;
 		if(pt.y<minY&&pt.y!=0) minY=pt.y;
 		//*/
-		ctx.lineTo(pt.x, pt.y);
+		//ctx.lineTo(pt.x, pt.y);
 		//ctx.fillRect(pt.x, pt.y, 4, 4);
-	};
-	ctx.stroke();
+	//};
+	//ctx.stroke();
 }
 var color="#AAAAAA";
+
+
+var renderer=null;
+var scene=null;
+var camera=null;
+/*/
+$(document).ready(function(){
+renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setClearColor(new THREE.Color( 0xff0000 ));
+renderer.setSize(640, 480);
+document.body.appendChild(renderer.domElement);
+
+var material = new THREE.LineBasicMaterial({
+        color: 0x0000ff
+    });
+var geometry = new THREE.Geometry();
+    geometry.vertices.push(new THREE.Vector3(0, 0, 0));
+    geometry.vertices.push(new THREE.Vector3(1, 2, 0));
+    geometry.vertices.push(new THREE.Vector3(2, 4, 0));
+    geometry.vertices.push(new THREE.Vector3(3, 8, 0));
+    geometry.vertices.push(new THREE.Vector3(4, 12, 0));
+
+var line = new THREE.Line(geometry, material);
+
+ 
+scene = new THREE.Scene;
+
+var cubeGeometry = new THREE.BoxGeometry(100, 100, 100);
+var cubeMaterial = new THREE.MeshLambertMaterial({ color: 0xaaaaaa });
+var cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
+ 
+cube.rotation.y = Math.PI * 45 / 180;
+ 
+//scene.add(cube);
+scene.add(line);
+
+//var camera = new THREE.PerspectiveCamera(45, 640 / 480, 0.1, 10000);
+//var camera = new THREE.PerspectiveCamera(0, 0, 640, 480, 0.1, 10000);
+
+camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 500);
+camera.position.set(0, 0, 100);
+camera.lookAt(new THREE.Vector3(0, 0, 0));
+
+renderer.render(scene, camera);
+});
+//*/
+
+var GL=
+{
+	renderer: null,
+	scene: null,
+	camera: null,
+	streetMaterial: null,
+	lines: [],
+	w: 640,
+	h: 480,
+	scale: 1,
+	init: function()
+	{
+		this.renderer = new THREE.WebGLRenderer({ antialias: true });
+		this.renderer.setClearColor(new THREE.Color( 0xffffff ));
+		this.renderer.setSize(640, 480);
+		document.body.appendChild(this.renderer.domElement);
+		
+		this.scene = new THREE.Scene;
+		
+		this.streetMaterial= new THREE.LineBasicMaterial({
+			color: 0xaaaaaa//,
+			//linewidth: 1
+		});
+		
+		this.camera = new THREE.OrthographicCamera(-this.w/2,  this.w/2, this.h/2, -this.h/2, 0.1, 500);
+		//this.camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 500);
+		this.camera.position.set(0, 0, 100);
+		//this.camera.lookAt(new THREE.Vector3(0, 0, 0));
+		this.renderer.render(this.scene, this.camera);
+	},
+	addLine: function(crds)
+	{
+		var geometry = new THREE.Geometry();
+		for(var i=0;i<crds.length;i++)
+		{
+			var ptm=Conv.ll2m(crds[i][0], crds[i][1]);
+			var pt=cvt(ptm.x, ptm.y);
+			//console.log(((bbox.cy-ptm.y)/bbox.sh)*this.h);
+			//console.log(((bbox.cx-ptm.x)/bbox.sw)*this.w);
+			//geometry.vertices.push(new THREE.Vector3(LLCrds[i].lat, LLCrds[i].lon, 0));
+			//console.log(pt.x);
+			geometry.vertices.push(new THREE.Vector3(pt.x, pt.y, 0));
+		};
+		//var line=new THREE.Line(geometry, this.streetMaterial);
+		var line=new THREE.Line(geometry, new THREE.LineBasicMaterial({
+			color: Math.floor(Math.random()*0xaaaaaa),
+			linewidth: 1
+		}));
+
+		this.scene.add(line);
+		this.lines.push(line);
+	},
+	render: function()
+	{
+		var then=performance.now();
+		this.renderer.render(this.scene, this.camera);
+		var now=performance.now();
+		//console.log(this.lines.length/((then-now)/1000));
+		console.log(then-now);
+	},
+	panLeft: function(x)
+	{
+		this.camera.translateX(x);
+		this.render();
+	},
+	pan: function(objXY)
+	{
+		this.camera.translateX(objXY.x);
+		this.camera.translateY(objXY.y);
+		this.render();
+	},
+	zoom: function(scale)
+	{
+		if(typeof scale != "number")
+		{
+			throw "scale must b a num";
+			return;
+		};
+		this.scale*=scale;
+		this.camera.top=this.camera.top*scale;
+		this.camera.bottom=this.camera.bottom*scale;
+		this.camera.left=this.camera.left*scale;
+		this.camera.right=this.camera.right*scale;
+		this.camera.updateProjectionMatrix();
+		this.render();
+	}
+}
+
 function drawStreeds(dta)
 {
 	var features=dta.features;
-	ctx.strokeStyle = "#AAAAAA";
+	//ctx.strokeStyle = "#AAAAAA";
 	//if(big!=true) big=false
 	for(var i=0;i<features.length;i++)
 	{
+		if(typeof kinds[features[i].properties['kind']]!="number")
+			kinds[features[i].properties['kind']]=0;
+		else
+			kinds[features[i].properties['kind']]++;
+
+		if(typeof highw[features[i].properties['highway']]!="number")
+			highw[features[i].properties['highway']]=0;
+		else
+			highw[features[i].properties['highway']]++;
 		/*/
 		if(features[i].properties.highway=="primary")
 		{
@@ -206,7 +375,10 @@ function drawStreeds(dta)
 			//ctx.strokeStyle = color;
 			//ctx.fillStyle = color;
 			//console.log("stroke"+i);
-			drawLines(features[i].geometry.coordinates);
+			
+			//if(features[i].properties['kind']=="major_road")
+			if(features[i].properties['kind']=="highway")
+				drawLines(features[i].geometry.coordinates);
 		}
 		else
 		{
@@ -214,6 +386,9 @@ function drawStreeds(dta)
 		};
 	};
 }
+
+var kinds=[];
+var highw=[];
 
 
 function drawBuilding(crds)
@@ -303,13 +478,93 @@ function drawWater(crds)
 	//ctx.stroke();
 	ctx.fill();
 }
-
+/*/
+var GL=
+{
+	gl: null,
+	shaderProgram: null,
+	init: function(cId)
+	{
+		try {
+			var canvas = document.getElementById(cId);
+			this.gl = canvas.getContext("experimental-webgl");
+			this.gl.viewportWidth = canvas.width;
+			this.gl.viewportHeight = canvas.height;
+		} catch (e) {console.log(e)};
+		if (!this.gl) {
+			alert("Could not initialise WebGL, sorry :-(");
+		};
+		this.initShaders();
+		this.gl.clearColor(0.0, 0.0, 0.0, 1.0);
+	},
+	getShader: function(id)
+	{
+		var shaderScript = document.getElementById(id);
+		if (!shaderScript) {
+			return null;
+		}
+		
+		var str = "";
+		var k = shaderScript.firstChild;
+		while (k) {
+			if (k.nodeType == 3) {
+				str += k.textContent;
+			}
+			k = k.nextSibling;
+		}
+		
+		var shader;
+		if (shaderScript.type == "x-shader/x-fragment") {
+			shader = this.gl.createShader(this.gl.FRAGMENT_SHADER);
+		} else if (shaderScript.type == "x-shader/x-vertex") {
+			shader = this.gl.createShader(this.gl.VERTEX_SHADER);
+		} else {
+			return null;
+		}
+		
+		this.gl.shaderSource(shader, str);
+		this.gl.compileShader(shader);
+		
+		if (!this.gl.getShaderParameter(shader, this.gl.COMPILE_STATUS)) {
+			alert(this.gl.getShaderInfoLog(shader));
+			return null;
+		}
+		
+		return shader;
+	},
+	initShaders: function()
+	{
+		var fragmentShader = this.getShader("shader-fs");
+		var vertexShader   = this.getShader("shader-vs");
+		
+		this.shaderProgram = this.gl.createProgram();
+		this.gl.attachShader(this.shaderProgram, vertexShader);
+		this.gl.attachShader(this.shaderProgram, fragmentShader);
+		this.gl.linkProgram(this.shaderProgram);
+		
+		if (!this.gl.getProgramParameter(this.shaderProgram, this.gl.LINK_STATUS)) {
+			alert("Could not initialise shaders");
+		}
+		
+		this.gl.useProgram(this.shaderProgram);
+		
+		this.shaderProgram.vertexPositionAttribute = this.gl.getAttribLocation(this.shaderProgram, "aVertexPosition");
+		this.gl.enableVertexAttribArray(this.shaderProgram.vertexPositionAttribute);
+		
+		this.shaderProgram.vertexColorAttribute = this.gl.getAttribLocation(this.shaderProgram, "aVertexColor");
+		this.gl.enableVertexAttribArray(this.shaderProgram.vertexColorAttribute);
+		
+		this.shaderProgram.pMatrixUniform = this.gl.getUniformLocation(this.shaderProgram, "uPMatrix");
+		this.shaderProgram.mvMatrixUniform = this.gl.getUniformLocation(this.shaderProgram, "uMVMatrix");
+	}
+};
+//*/
 
 function zo()
 {
 	bbox.h+=0.01;
 	bbox.w+=0.01;
-	ctx.clearRect(0, 0, cw, ch);
+	//ctx.clearRect(0, 0, cw, ch);
 	drawStreeds(data.features);
 }
 
@@ -317,7 +572,7 @@ function zi()
 {
 	bbox.h-=0.1;
 	bbox.w-=0.1;
-	ctx.clearRect(0, 0, cw, ch);
+	//ctx.clearRect(0, 0, cw, ch);
 	drawStreeds(data.features);
 }
 
@@ -341,13 +596,13 @@ function drawWaterAll(dta)
 
 //google.maps.event.addDomListener(window, 'load', initialize);
 	
-	var c = document.getElementById("cn");
-	var ctx = c.getContext("2d");
-	ctx.beginPath();
-	ctx.moveTo(0,0);
-	ctx.lineTo(200,100);
+	//var c = document.getElementById("cn");
+	//var ctx = c.getContext("2d");
+	//ctx.beginPath();
+	//ctx.moveTo(0,0);
+	//ctx.lineTo(200,100);
 	//ctx.arc(95,50,40,0,2*Math.PI);
-	ctx.stroke();
+	//ctx.stroke();
 
 
 	function long2tile(lon,zoom) { return (Math.floor((lon+180)/360*Math.pow(2,zoom))); }
@@ -443,28 +698,28 @@ function drawWaterAll(dta)
 		//console.log(tx, ty, tz);
 		TILES.get(tz, tx, ty)
 		.done(function(r1, r2, r3){
-		var then=performance.now();
+		//var then=performance.now();
 			//console.log(TILES.data[tz][tx][ty]);
 			var ar=TILES.data[tz][tx][ty];
 			//drawBuildingsAll(ar[1]);
 			//drawWaterAll(ar[0]);
 			drawStreeds(ar[2]);
-		var now=performance.now();
-		console.log(now-then, ar[2].features.length, (now-then)/ar[2].features.length);
+		//var now=performance.now();
+		//console.log(now-then, ar[2].features.length, (now-then)/ar[2].features.length);
 		});
 	}
 
 	var then=0;
 	var rendermap=function()
 	{
-		ctx.clearRect(0, 0, cw, ch);
+	//	ctx.clearRect(0, 0, cw, ch);
 		var ll=Conv.m2ll(bbox.cx, bbox.cy);
 		var ll2=Conv.m2ll(bbox.cx+bbox.sh/cr, bbox.cy+bbox.sh);
 		var heightDiff=-ll.lat+ll2.lat;
 		var tilex=long2tile(ll.lon, tz);
 		var tiley=lat2tile(ll.lat, tz);
 
-		then=performance.now();
+		//then=performance.now();
 		$.when(
 		drawTile(tilex, tiley, tz),
 		drawTile(tilex+2, tiley+2, tz),
@@ -480,8 +735,8 @@ function drawWaterAll(dta)
 		)
 		.then
 		(function(){
-		var now=performance.now();
-		console.log("total", now-then);
+		//var now=performance.now();
+		//console.log("total", now-then);
 		});
 	//*/
 		//console.log(heightDiff);
@@ -493,13 +748,18 @@ function drawWaterAll(dta)
 //	tx=long2tile();
 
 	$(document).ready(function(){
+		GL.init();
 		rendermap();
 		$("#target").keypress(function(e){
 			e.preventDefault();
 			//ctx.clearRect(0, 0, cw, ch);
-			//console.log(e);
+			console.log(e.charCode);
 			switch(e.charCode)
 			{
+				case 105: GL.pan({x: 0  , y: 20}); break;
+				case 107: GL.pan({x: 0  , y:-20}); break;
+				case 106: GL.pan({x: -20 , y: 0}); break;
+				case 108: GL.pan({x: 20, y: 0}); break;
 				case 119:
 					ty--;
 					console.log("ty-"+ty);
