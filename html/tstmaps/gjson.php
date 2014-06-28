@@ -176,12 +176,12 @@ function getRandomColor() {
 	return color;
 }
 
-function drawLines(crds)
+function drawLines(crds, type)
 {
 	//ctx.beginPath();
 	//ptm=Conv.ll2m(crds[0][0], crds[0][1]);
 	//pt=cvt(ptm.x, ptm.y);
-	GL.addLine(crds);
+	GL.addLine(crds, type);
 	//ctx.moveTo(pt.x, pt.y);
 	//for(var i=0;i<crds.length;i++)
 	//{
@@ -252,22 +252,74 @@ var GL=
 	scene: null,
 	camera: null,
 	streetMaterial: null,
+	sStreetMaterial: null,
+	waterMaterial: null,
+	buildingMaterial: null,
 	lines: [],
 	w: 640,
 	h: 480,
 	scale: 1,
+	isDragged: false,
+	dragStart:
+	{
+		x: 0,
+		y: 0
+	},
 	init: function()
 	{
 		this.renderer = new THREE.WebGLRenderer({ antialias: true });
 		this.renderer.setClearColor(new THREE.Color( 0xffffff ));
 		this.renderer.setSize(640, 480);
 		document.body.appendChild(this.renderer.domElement);
+		this.renderer.domElement.onmousedown=function(e){
+			GL.isDragged=true;
+			GL.dragStart.x=e.layerX;
+			GL.dragStart.y=e.layerY;
+		};
+		this.renderer.domElement.onmouseup=function(e){
+			GL.isDragged=false;
+		};
+		this.renderer.domElement.onmouseleave=function(e){
+			GL.isDragged=false;
+		};
+		this.renderer.domElement.onmousemove=function(e){
+			if(GL.isDragged&&e.buttons==1)
+			{
+				//console.log(e)
+				console.log(e.layerX-GL.dragStart.x, e.layerY-GL.dragStart.y);
+				GL.pan({x: e.layerX-GL.dragStart.x, y: e.layerY-GL.dragStart.y});
+				GL.render();
+				GL.dragStart.x=e.layerX;
+				GL.dragStart.y=e.layerY;
+			};
+		};
+		$(this.renderer.domElement).bind("DOMMouseScroll mousewheel", function(e){
+			e.preventDefault();
+			console.log(e.originalEvent.detail)
+			var factor=e.originalEvent.detail;
+			var c=factor>0?factor:-1/factor;
+			GL.zoom(Math.sqrt(c));
+			GL.render();
+		});
 		
 		this.scene = new THREE.Scene;
 		
 		this.streetMaterial= new THREE.LineBasicMaterial({
-			color: 0xaaaaaa//,
-			//linewidth: 1
+			color: 0xaaaaaa,
+			linewidth: 4
+		});
+
+		this.sStreetMaterial= new THREE.LineBasicMaterial({
+			color: 0xaaaaaa,
+			linewidth: 2
+		});
+
+		this.waterMaterial= new THREE.MeshBasicMaterial({
+			color: 0x8888ff
+		});
+
+		this.buildingMaterial= new THREE.MeshBasicMaterial({
+			color: 0xdddddd
 		});
 		
 		this.camera = new THREE.OrthographicCamera(-this.w/2,  this.w/2, this.h/2, -this.h/2, 0.1, 500);
@@ -275,9 +327,15 @@ var GL=
 		this.camera.position.set(0, 0, 100);
 		//this.camera.lookAt(new THREE.Vector3(0, 0, 0));
 		this.renderer.render(this.scene, this.camera);
+		this.addLine([[-122.27116,37.83685], [0000000000, 00000000]]);
 	},
-	addLine: function(crds)
+	addLine: function(crds, type)
 	{
+		if(typeof type != "number")
+		{
+			console.log("notype");
+			type=0;
+		}
 		var geometry = new THREE.Geometry();
 		for(var i=0;i<crds.length;i++)
 		{
@@ -287,16 +345,50 @@ var GL=
 			//console.log(((bbox.cx-ptm.x)/bbox.sw)*this.w);
 			//geometry.vertices.push(new THREE.Vector3(LLCrds[i].lat, LLCrds[i].lon, 0));
 			//console.log(pt.x);
-			geometry.vertices.push(new THREE.Vector3(pt.x, pt.y, 0));
+			geometry.vertices.push(new THREE.Vector3(pt.x, pt.y, 01));
 		};
-		//var line=new THREE.Line(geometry, this.streetMaterial);
-		var line=new THREE.Line(geometry, new THREE.LineBasicMaterial({
-			color: Math.floor(Math.random()*0xaaaaaa),
-			linewidth: 1
-		}));
+		var line=null;
+		if(type==0) line=new THREE.Line(geometry, this.streetMaterial);
+		else if(type==1) line=new THREE.Line(geometry, this.sStreetMaterial);
+		//var line=new THREE.Line(geometry, new THREE.LineBasicMaterial({
+		//	color: Math.floor(Math.random()*0xaaaaaa),
+		//	linewidth: 1
+		//}));
 
 		this.scene.add(line);
 		this.lines.push(line);
+	},
+	addWater: function(crds)
+	{
+		var sh = new THREE.Shape();
+		var ptm=Conv.ll2m(crds[0][0], crds[0][1]);
+		var pt=cvt(ptm.x, ptm.y);
+		sh.moveTo(pt.x, pt.y, 1);
+		for(var i=1;i<crds.length;i++)
+		{
+			ptm=Conv.ll2m(crds[i][0], crds[i][1]);
+			pt=cvt(ptm.x, ptm.y);
+			sh.lineTo(pt.x, pt.y);
+		};
+		var geometry=sh.makeGeometry();
+		var lake=new THREE.Mesh(geometry, this.waterMaterial);
+		this.scene.add(lake);
+	},
+	addBuilding: function(crds)
+	{
+		var sh = new THREE.Shape();
+		var ptm=Conv.ll2m(crds[0][0], crds[0][1]);
+		var pt=cvt(ptm.x, ptm.y);
+		sh.moveTo(pt.x, pt.y, -1);
+		for(var i=1;i<crds.length;i++)
+		{
+			ptm=Conv.ll2m(crds[i][0], crds[i][1]);
+			pt=cvt(ptm.x, ptm.y);
+			sh.lineTo(pt.x, pt.y, -1);
+		};
+		var geometry=sh.makeGeometry();
+		var lake=new THREE.Mesh(geometry, this.buildingMaterial);
+		this.scene.add(lake);
 	},
 	render: function()
 	{
@@ -304,7 +396,7 @@ var GL=
 		this.renderer.render(this.scene, this.camera);
 		var now=performance.now();
 		//console.log(this.lines.length/((then-now)/1000));
-		console.log(then-now);
+		//console.log(then-now);
 	},
 	panLeft: function(x)
 	{
@@ -313,8 +405,13 @@ var GL=
 	},
 	pan: function(objXY)
 	{
-		this.camera.translateX(objXY.x);
-		this.camera.translateY(objXY.y);
+		//this.camera.translateX(objXY.x);
+		//this.camera.translateY(objXY.y);
+		this.camera.top+=objXY.y*this.scale;
+		this.camera.bottom+=objXY.y*this.scale;
+		this.camera.left-=objXY.x*this.scale;
+		this.camera.right-=objXY.x*this.scale;
+		this.camera.updateProjectionMatrix();
 		this.render();
 	},
 	zoom: function(scale)
@@ -376,9 +473,11 @@ function drawStreeds(dta)
 			//ctx.fillStyle = color;
 			//console.log("stroke"+i);
 			
-			//if(features[i].properties['kind']=="major_road")
-			if(features[i].properties['kind']=="highway")
-				drawLines(features[i].geometry.coordinates);
+			if(features[i].properties['kind']=="major_road")
+				drawLines(features[i].geometry.coordinates, 0);
+			//if(features[i].properties['kind']=="highway")
+			else if(features[i].properties['kind']=="minor_road")
+				drawLines(features[i].geometry.coordinates, 1);
 		}
 		else
 		{
@@ -446,13 +545,17 @@ function drawBuildingsAll(dta)
 		//if(df[i].properties.kind=="park")
 		if(df[i].geometry.type=="Polygon")
 		{
-			drawBuilding(df[i].geometry.coordinates[0]);
+			//drawBuilding(df[i].geometry.coordinates[0]);
+			GL.addBuilding(df[i].geometry.coordinates[0]);
 		}
+		/*/
 		else if(df[i].geometry.type=="MultiPolygon")
 		{
 			for(var j=0;j<df[i].geometry.coordinates.length;j++)
-				drawBuilding(df[i].geometry.coordinates[j][0]);
+				//drawBuilding(df[i].geometry.coordinates[j][0]);
+				GL.addBuilding(df[i].geometry.coordinates[j][0]);
 		}
+		//*/
 		else console.log("none");
 	};
 };
@@ -460,23 +563,24 @@ function drawBuildingsAll(dta)
 
 function drawWater(crds)
 {
-	ctx.beginPath();
-	ctx.strokeStyle = "#4444FF";
-	ctx.fillStyle = "#4444FF";
-	ctx.lineWidth=1;
-	ptm=Conv.ll2m(crds[0][0], crds[0][1]);
-	pt=cvt(ptm.x, ptm.y);
-	ctx.moveTo(pt.x, pt.y);
-	for(var i=0;i<crds.length;i++)
-	{
+	GL.addWater(crds);
+	//ctx.beginPath();
+	//ctx.strokeStyle = "#4444FF";
+	//ctx.fillStyle = "#4444FF";
+	//ctx.lineWidth=1;
+	//ptm=Conv.ll2m(crds[0][0], crds[0][1]);
+	//pt=cvt(ptm.x, ptm.y);
+	//ctx.moveTo(pt.x, pt.y);
+	//for(var i=0;i<crds.length;i++)
+	//{
 		//console.log("hello");
-		ptm=Conv.ll2m(crds[i][0], crds[i][1]);
-		pt=cvt(ptm.x, ptm.y);
-		ctx.lineTo(pt.x, pt.y);
-	};
-	ctx.closePath();
+		//ptm=Conv.ll2m(crds[i][0], crds[i][1]);
+		//pt=cvt(ptm.x, ptm.y);
+		//ctx.lineTo(pt.x, pt.y);
+	//};
+	//ctx.closePath();
 	//ctx.stroke();
-	ctx.fill();
+	//ctx.fill();
 }
 /*/
 var GL=
@@ -701,8 +805,8 @@ function drawWaterAll(dta)
 		//var then=performance.now();
 			//console.log(TILES.data[tz][tx][ty]);
 			var ar=TILES.data[tz][tx][ty];
-			//drawBuildingsAll(ar[1]);
-			//drawWaterAll(ar[0]);
+			drawBuildingsAll(ar[1]);
+			drawWaterAll(ar[0]);
 			drawStreeds(ar[2]);
 		//var now=performance.now();
 		//console.log(now-then, ar[2].features.length, (now-then)/ar[2].features.length);
@@ -721,9 +825,9 @@ function drawWaterAll(dta)
 
 		//then=performance.now();
 		$.when(
-		drawTile(tilex, tiley, tz),
-		drawTile(tilex+2, tiley+2, tz),
-	//*/
+		//drawTile(tilex, tiley, tz),
+		drawTile(tilex+2, tiley+2, tz)//,
+	/*/
 		drawTile(tilex, tiley+1, tz),
 		drawTile(tilex, tiley+2, tz),
 		drawTile(tilex+1, tiley, tz),
@@ -732,13 +836,13 @@ function drawWaterAll(dta)
 		drawTile(tilex+2, tiley, tz),
 		drawTile(tilex+2, tiley+1, tz),
 		drawTile(tilex+2, tiley+2, tz)
+	//*/
 		)
 		.then
 		(function(){
 		//var now=performance.now();
 		//console.log("total", now-then);
 		});
-	//*/
 		//console.log(heightDiff);
 	};
 	
